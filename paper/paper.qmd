@@ -276,21 +276,48 @@ In a separate audit, I generated 100 questions and used JEV to judge each questi
 
 # Experimental Setup
 
-- Evaluation populations: full FinRank benchmark (1,185 questions) and all 376 questions labeled quantitative; identify coverage by condition.
-- Remark selection and generation tended to yield questions about numerical financial results (how many had a number cited?). Broader questions often lacked a specific answer in the matched filing and were filtered out by the judge. We therefore evaluated all 376 questions labeled *Quantitative* across topics.
-- Shared retrieval metrics: Recall\@k, MRR, nDCG\@10; candidate and reranking depths.
-- Baselines: TF-IDF, BM25, MPNet, and MPNet with MiniLM reranking.
-- Oracle baseline: filter using benchmark-supplied source metadata.
-- Metadata conditions: passage enrichment, query-derived filtering, and both together.
-- Training conditions: enriched passages with direct-remark or synthetic-question supervision.
+For each FinRank question, I ranked candidate passages from the same corpus of `r data_count("FinRank", "Unique candidate passages")` unique filing passages. Filtering conditions restricted the candidate pool before scoring the final ranking. In the MPNet–MiniLM conditions, MPNet ranked the passages and MiniLM reranked the top 20 eligible candidates. I averaged the metrics across questions. Recall at ranks 1, 5, 10, and 20 measures the fraction of supporting passages retrieved by each cutoff. MRR measures the reciprocal rank of the first supporting passage, and nDCG at rank 10 gives more weight to supporting passages near the top of the ranking. All scores are on a 0–100 scale.
+
+For the full set of `r data_count("FinRank", "Human-authored questions")` questions, I report FinRank’s saved TF-IDF, BM25, MPNet, and MPNet–MiniLM baselines, along with its BM25 oracle filter using the supplied issuer, filing year, and form. For the `r data_count("FinRank", "Quantitative evaluation questions")` quantitative questions, I report the same four unfiltered baselines and compare passage enrichment, query-derived filtering, both together, and enrichment with an oracle filter. On that same subset, I compare the metadata-enriched baseline with models fine-tuned on direct remark–passage pairs or synthetic question–passage pairs.
+
+I used all questions FinRank labeled quantitative because the generation pipeline tended to produce questions about reported values and comparisons. Broader generated questions were harder to support with the retrieved passages. The quantitative label covers questions across several topics, including Financials and Accounting. This evaluation tests the training conditions on human-authored questions closer to the type of supervision the pipeline produced.
 
 # Results and Discussion
 
-- Retrieval table: full benchmark and quantitative subset; compare within each population.
-- Metadata results: gains from enrichment and filtering relative to baseline and oracle.
-- Training results: direct and synthetic supervision relative to metadata alone; recall versus ranking quality.
-- Generation quality: automatic acceptances, review corrections, and unsupported examples.
-- Limits of inference: noisy supervision, unequal pair counts, and training scale.
+Table\~\ref{tab:retrieval-results} reports results for the full benchmark and its quantitative subset.
+
+```{r}
+#| label: retrieval-results-table
+#| echo: false
+#| output: asis
+retrieval <- read.csv("../data/retrieval-results.csv", check.names = FALSE)
+metrics <- c("Recall@1", "Recall@5", "Recall@10", "Recall@20", "MRR", "nDCG@10")
+print_results <- function(n, title) {
+  rows <- retrieval[retrieval$Questions == n, ]
+  stopifnot(nrow(rows) > 0L)
+  cat("\\multicolumn{7}{@{}l}{\\textbf{", title, "}} \\\\ \n", sep = "")
+  for (i in seq_len(nrow(rows))) {
+    values <- unlist(rows[i, metrics], use.names = FALSE)
+    cells <- ifelse(is.na(values), "--", sprintf("%.2f", values))
+    cat(paste(c(rows$Condition[i], cells), collapse = " & "), " \\\\ \n", sep = "")
+  }
+}
+cat("\\begin{table*}[t]\n\\centering\n\\small\n",
+    "\\begin{tabular}{@{}lrrrrrr@{}}\n\\hline\n",
+    "Condition & R@1 & R@5 & R@10 & R@20 & MRR & nDCG@10 \\\\ \n\\hline\n",
+    sep = "")
+print_results(1185, "Full FinRank benchmark (1,185 questions)")
+cat("\\hline\n")
+print_results(376, "Quantitative subset (376 questions)")
+cat("\\hline\n\\end{tabular}\n",
+    "\\caption{Gold-passage retrieval scores on a 0--100 scale. ",
+    "The dash indicates that FinRank did not report Recall@20 for filtered BM25.}\n",
+    "\\label{tab:retrieval-results}\n\\end{table*}\n", sep = "")
+```
+
+**Metadata.** On the full benchmark, filtering BM25 with FinRank's source metadata raised Recall@10 from 32.10 to 55.00. On the quantitative subset, adding passage metadata to MPNet and MiniLM raised Recall@10 from 28.54 to 31.78 and nDCG@10 from 18.33 to 21.24. Query-derived filtering alone reached 38.35 Recall@10. Combining filtering and enrichment slightly lowered Recall@10 to 37.94 and raised nDCG@10 to 25.01, the best ranking score among the conditions that derived filters from the question. With enrichment and the supplied source metadata, the oracle reached 52.37 Recall@10 and 36.29 nDCG@10.
+
+**Supervised training.** With metadata enrichment alone, Recall@10 was 31.78 and nDCG@10 was 21.24. Direct remark training reached 28.57 and 19.41, while synthetic question training reached 30.75 and 20.54. Synthetic questions performed better than direct remarks on both measures in this comparison. Both fell below enrichment alone. The comparison changes both query form and training set size, which limits what I can attribute to the use of generated questions. An earlier synthetic training run improved recall while lowering nDCG@10, so the outcome also depended on the training configuration and metric.
 
 # Conclusion
 
