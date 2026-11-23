@@ -1,0 +1,20 @@
+{
+  "updated_at": "2026-11-20T00:22:18.248660+00:00",
+  "original_jev_passes": 59,
+  "retained": 55,
+  "unchanged": 41,
+  "corrected": 14,
+  "excluded": 4,
+  "excluded_numbers": [
+    5,
+    27,
+    30,
+    59
+  ],
+  "note": "Curated copy only. Original generation, JEV, retrieval and assistant-review artifacts unchanged. Original JEV judgments apply to original text; corrected variants have not been rerun through JEV/retrieval. This approval does not assert independent human review of all 55 records. No training started.",
+  "files": {
+    "corrected_acceptances.jsonl": "b6bb481e48be281fff2ef0239d44e134b8a7b6547c1a5a80b9d23f3843f7249c",
+    "excluded_acceptances.jsonl": "112a7c5dbdf59027d7c3e17c839a5a20b769391f4e5bdb5fcc170dfc0ab2776f",
+    "corrections.json": "742c954cb7be89beb3ddb00c663d5ac5b02dfece33b7bf4da5dd2be7522106af"
+  }
+}

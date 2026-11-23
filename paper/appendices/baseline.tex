@@ -1,0 +1,30 @@
+% Evidence table and writing scaffold only. Dave supplies the substantive prose.
+% Include after \appendix in the eventual manuscript.
+\section{FinRank Baseline Study}
+\label{app:finrank-baseline}
+
+% TODO (author): Describe the reproduction procedure and execution provenance.
+% TODO (author): Explain global retrieval versus in-record reranking.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lrr}
+\hline
+Method & Recall@10 (\%) & nDCG@10 ($\times100$) \\
+\hline
+TF-IDF & 32.82 & 21.93 \\
+BM25 & 32.10 & 21.77 \\
+MPNet & 31.77 & 20.37 \\
+MPNet + MS MARCO CE & 35.19 & 24.58 \\
+\hline
+\end{tabular}
+\caption{Global retrieval metrics from the saved FinRank baseline results.
+The cross-encoder reranks the top 20 dense candidates.}
+\label{tab:finrank-baseline}
+\end{table}
+
+% TODO (author): Interpret the comparison in your own words.
+% TODO (author): Cite the FinRank paper after its BibTeX entry is verified.
+% TODO (author): Distinguish the paper's boilerplate explanation from what this
+% baseline comparison alone establishes.

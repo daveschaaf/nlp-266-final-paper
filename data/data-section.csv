@@ -1,0 +1,50 @@
+Population,Measure,Count
+FinRank,Human-authored questions,1185
+FinRank,Quantitative evaluation questions,376
+FinRank,Unique candidate passages,5230
+FinRank,Unique gold passages,1580
+FinRank,Unique hard-negative passages,3775
+FinRank,Passages in both roles,125
+FinRank,Benchmark issuers,22
+All parsed,Earnings-call transcripts,497
+All parsed,Companies with transcripts,123
+All parsed,SEC filings,486
+All parsed,Companies with parsed filings,116
+All parsed,Filing passage chunks,63128
+All parsed,Prepared-remark segments,2180
+All parsed,Remark chunks,69673
+Matched corpus,Call–filing pairs,448
+Matched corpus,Issuers,111
+Matched corpus,10-K filings,114
+Matched corpus,10-Q filings,334
+Matched corpus,Filing passage chunks,54701
+Matched corpus,Prepared-remark segments,1970
+Matched corpus,Remark chunks,61785
+Matched corpus,Q&A rounds,8920
+Matched corpus,Question turns,8949
+Matched corpus,Answer turns,13818
+"Matched, ex-FinRank",Call–filing pairs,440
+"Matched, ex-FinRank",Issuers,109
+"Matched, ex-FinRank",Prepared-remark segments,1938
+"Matched, ex-FinRank",Remark chunks,60687
+"Matched, ex-FinRank",Q&A rounds,8741
+"Matched, ex-FinRank",Question turns,8770
+"Matched, ex-FinRank",Answer turns,13588
+"Matched, ex-FinRank",Eligible remark chunks,52595
+"Synthetic questions, train",Training pairs,474
+"Synthetic questions, train",Issuers,97
+"Synthetic questions, train",Earnings-call transcripts,278
+"Synthetic questions, train",SEC filings,278
+"Synthetic questions, train",10-Q filings,201
+"Synthetic questions, train",10-K filings,77
+"Synthetic questions, train",Distinct positive passages,455
+"Direct remarks, train",Training pairs,533
+"Direct remarks, train",Issuers,99
+"Direct remarks, train",Earnings-call transcripts,286
+"Direct remarks, train",SEC filings,286
+"Direct remarks, train",10-Q filings,207
+"Direct remarks, train",10-K filings,79
+"Direct remarks, train",Distinct positive passages,489
+Remark usefulness,Labeled chunks,32200
+Remark usefulness,Useful,13042
+Remark usefulness,Not useful,19158

@@ -1,0 +1,16 @@
+Questions,Condition,Recall@1,Recall@5,Recall@10,Recall@20,MRR,nDCG@10,Source relative to Dearborn data,Source key
+1185,TF-IDF,7.68,23.67,32.82,41.92,23.88,21.93,FinRank/baselines/results/results.json,models.tfidf
+1185,BM25,8.26,24.45,32.1,40.07,23.78,21.77,FinRank/baselines/results/results.json,models.bm25
+1185,MPNet,6.54,21.5,31.77,42.04,22.24,20.37,FinRank/baselines/results/results.json,models.dense
+1185,MPNet + MiniLM,9.61,27.47,35.19,42.04,26.92,24.58,FinRank/baselines/results/results.json,models.ce_dense
+1185,BM25 + oracle filter,17.05,43.36,55.0,,41.88,39.89,FinRank/baselines/results/results.json,metadata_filtered.bm25
+376,TF-IDF,3.88,18.02,26.29,35.31,17.18,16.14,experiments/finrank_quantitative_baseline/results.json,models.tfidf.metrics
+376,BM25,5.67,19.28,27.02,35.31,18.45,17.21,experiments/finrank_quantitative_baseline/results.json,models.bm25.metrics
+376,MPNet,3.41,14.26,24.95,35.93,14.78,14.21,experiments/finrank_quantitative_baseline/results.json,models.dense.metrics
+376,MPNet + MiniLM,5.74,19.28,28.54,35.93,19.44,18.33,experiments/finrank_quantitative_baseline/results.json,models.ce_dense.metrics
+376,MPNet + MiniLM + enrichment,7.51,24.2,31.78,36.92,22.18,21.24,experiments/finrank_hyst_filter/v2_enriched/results.json,summary.enriched_rerank
+376,MPNet + MiniLM + query filter,6.76,25.4,38.35,45.87,23.4,23.82,experiments/finrank_hyst_filter/v2_enriched/results.json,summary.hyst_raw_rerank
+376,MPNet + MiniLM + enrichment + query filter,8.49,28.15,37.94,44.52,25.05,25.01,experiments/finrank_hyst_filter/v2_enriched/results.json,summary.hyst_enriched_rerank
+376,MPNet + MiniLM + enrichment + oracle filter,14.69,40.58,52.37,64.25,36.53,36.29,experiments/finrank_hyst_filter/v2_enriched/results.json,summary.oracle_enriched_rerank
+376,Enrichment + direct remark training,6.87,22.19,28.57,32.11,20.64,19.41,experiments/finrank_training/remark561-metadata-lr2e7-v1/evaluation/results.json,models.remark_training.gold_passage_metrics
+376,Enrichment + synthetic question training,6.78,23.96,30.75,34.76,21.46,20.54,experiments/finrank_training/remark561-metadata-lr2e7-v1/evaluation/results.json,models.question_training_500.gold_passage_metrics

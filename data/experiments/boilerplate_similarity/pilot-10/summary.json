@@ -1,0 +1,80 @@
+{
+  "method": "tfidf_cosine",
+  "ngram_range": [
+    1,
+    1
+  ],
+  "seed": 42,
+  "minimum_words": 10,
+  "requested_company_count": 10,
+  "comparison_count": 10,
+  "peer_call_count": 1,
+  "sentence_count": 1138,
+  "audit_count": 100,
+  "same_company_median_threshold": 0.31766599251153455,
+  "cross_company_median_threshold": 0.14507877842864153,
+  "quadrant_counts": {
+    "same_high__cross_high": 352,
+    "same_low__cross_high": 217,
+    "same_low__cross_low": 352,
+    "same_high__cross_low": 217
+  },
+  "target_call_ids": [
+    "1059556:2025:Q1",
+    "75362:2025:Q1",
+    "851968:2025:Q1",
+    "55785:2025:Q1",
+    "354190:2025:Q1",
+    "1099800:2025:Q1",
+    "789019:2025:Q1",
+    "908255:2025:Q1",
+    "8670:2025:Q1",
+    "707549:2025:Q1"
+  ],
+  "previous_call_ids": [
+    "1059556:2024:Q4",
+    "75362:2024:Q4",
+    "851968:2024:Q4",
+    "55785:2024:Q4",
+    "354190:2024:Q4",
+    "1099800:2024:Q4",
+    "789019:2024:Q4",
+    "908255:2024:Q4",
+    "8670:2024:Q4",
+    "707549:2024:Q4"
+  ],
+  "peer_call_ids": [
+    [
+      "1123360:2025:Q1"
+    ],
+    [
+      "354190:2025:Q1"
+    ],
+    [
+      "4977:2025:Q1"
+    ],
+    [
+      "1090872:2025:Q1"
+    ],
+    [
+      "906107:2025:Q1"
+    ],
+    [
+      "1050915:2025:Q1"
+    ],
+    [
+      "1097149:2025:Q1"
+    ],
+    [
+      "1123360:2025:Q1"
+    ],
+    [
+      "779152:2025:Q1"
+    ],
+    [
+      "1136893:2025:Q1"
+    ]
+  ],
+  "score_path": "data/experiments/boilerplate_similarity/pilot-10/sentence_similarity_scores.jsonl",
+  "audit_path": "data/experiments/boilerplate_similarity/pilot-10/blinded_audit.jsonl"
+}

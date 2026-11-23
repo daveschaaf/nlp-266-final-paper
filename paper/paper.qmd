@@ -1,0 +1,453 @@
+---
+title: "NLP266 Final Report"
+author: "David Schaaf"
+format:
+  pdf:
+    documentclass: article
+    fontsize: 11pt
+    papersize: a4
+    pdf-engine: pdflatex
+    geometry: margin=2.5cm
+    number-sections: true
+    include-in-header:
+      text: |
+        \usepackage{times}
+        \usepackage{template/acl2023}
+abstract: "Retrieval problem, two supervision strategies, principal finding."
+editor: visual
+---
+
+# Introduction
+
+SEC filings are the primary data source available for public companies. They are at their core legal documents with significant boilerplate legalese language and text carried across filings periods. This linguistic style and repetition creates a challenge for dense passage retrievers to identify relevant information in retrieval tasks. FinRank (Mansouri 2026) established a benchmark for this task using human generated questions and matched filings pairs. The baseline result demonstrates that a dense passage retreiver (Karpukhin 202) performs on par with algorithmic methods TF-IDF and BM25.
+
+Training a retriever/reranker requires significant volume of labeled training data in the forms of natural language question and matched filing passage pairs. This is a significant human effort to interpret and label, so I look to other sources to scale the training process faster. Earnings call transcripts fit the shape of the gap. They have a natural language interpretation of the most important parts of the related SEC filings.
+
+In this study, I ask 2 research questions: - Can earnings call transcript supervision be used to train a retriever/reranker for SEC passage retrieval? - Can a small set of human labels extend the supervised learning through remark classification and question generation?
+
+```{r}
+#| label: data-construction-counts
+#| include: false
+
+data_dir <- "../data"
+data_section <- read.csv(file.path(data_dir, "data-section.csv"))
+
+data_count <- function(population, measure) {
+  value <- with(data_section, Count[Population == population & Measure == measure])
+  stopifnot(length(value) == 1L)
+  value
+}
+
+count_records <- function(path) {
+  con <- gzfile(file.path(data_dir, path), open = "rt")
+  on.exit(close(con))
+  length(readLines(con))
+}
+
+fmt_count <- function(n) {
+  format(n, big.mark = ",", scientific = FALSE, trim = TRUE)
+}
+
+# Data sources
+sec_filings <- data_count("All parsed", "SEC filings")
+earnings_calls <- data_count("All parsed", "Earnings-call transcripts")
+prepared_remarks <- data_count("All parsed", "Prepared-remark segments")
+remark_chunks <- data_count("All parsed", "Remark chunks")
+qa_pairs <- 4610L  # COUNT(*) FROM question_answer_pair in corpus.sqlite
+
+# Processed data
+remark_filing_pairs <- count_records(
+  "experiments/finrank_training/remark561-metadata-v1/records.jsonl.gz"
+)
+synthetic_questions <- count_records(
+  "experiments/finrank_training/hard-negatives-ablation-v1/records.jsonl.gz"
+)
+```
+
+```{r}
+#| label: data-sources-counts
+#| include: false
+
+data_section <- read.csv("../data/data-section.csv")
+
+data_count <- function(population, measure) {
+  result <- with(
+    data_section,
+    Count[Population == population & Measure == measure]
+  )
+  if (length(result) != 1L || is.na(result)) {
+    stop("Expected one count for ", population, " / ", measure)
+  }
+  format(result, big.mark = ",", scientific = FALSE, trim = TRUE)
+}
+
+n_issuers <- data_count("Matched, ex-FinRank", "Issuers")
+n_matches <- data_count("Matched, ex-FinRank", "Call–filing pairs")
+n_filings <- data_count("All parsed", "SEC filings")
+n_passages <- data_count("All parsed", "Filing passage chunks")
+n_transcripts <- data_count("All parsed", "Earnings-call transcripts")
+n_prepared_segments <- data_count("All parsed", "Prepared-remark segments")
+n_remark_chunks <- data_count("All parsed", "Remark chunks")
+
+# From corpus.sqlite: SELECT COUNT(*) FROM question_answer_pair
+n_qa_pairs <- "4,610"
+
+# From FilingParser.chunk_size
+filing_chunk_words <- 384L
+```
+
+# Prior work
+
+## SEC Filings
+
+FinRank (Mansouri et al., 2026) evaluates whether a retriever can find the passages in SEC filings that support an answer to a financial question. The benchmark includes hard negatives from industry peers and different filing types, as well as passages with similar content. This reflects the problem described in the introduction: passages can use similar language while referring to different companies or reporting periods.
+
+## Earnings Call
+
+Huang et al. (2025) used the structure of earnings calls, including prepared remarks and analyst Q&A, to extract key sentences from 41,511 transcripts without human labels. Their method combined an information bottleneck with contrastive learning that used the structure of the call as a training signal. This motivated my use of prepared remarks as a source of training examples. I then needed to determine which remarks could guide a question that the corresponding filing could answer.
+
+Brown and Tucker (2011) measured how much a company’s MD&A changed from one year to the next. I adapted their comparison to prepared remarks by comparing sentences with language from the same company’s preceding call and from another company’s call. In my review, repeated wording sometimes conveyed a substantive update, such as a new quarterly value reported in familiar terms. I used hand-labeled examples to teach a model to distinguish these updates from boilerplate.
+
+## Metadata retrieval
+
+Bin Yousuf et al. (2026) tested whether adding metadata to SEC filing passages before embedding them improved retrieval. They found that metadata prefixes improved retrieval and that company and year helped distinguish passages with similar wording. This motivated my use of issuer, filing year, and filing type in the passage text.
+
+FinRank also evaluates filtering with known source metadata: company, filing type, and year. In practice, a search system may need to infer that information from the question. Myung et al. (2025) developed HyST to extract structured filters from natural-language questions and evaluated it on product retrieval. I adapted that approach to SEC filings and compared query-derived filters with filters based on FinRank’s supplied metadata.
+
+## Synthetic question training
+
+Dai et al. (2022) introduced Promptagator, which uses a few labeled examples to guide the generation of synthetic queries for training dense retrievers. I adapted this approach to reduce the human effort needed to create question–passage pairs. The earnings-call remark guides what to ask, and the matched filing passage supplies the evidence needed to answer it. This gives me two ways to test transcript-derived supervision: training on the original remark paired with the passage, or training on a generated question paired with the passage.
+
+# Data
+
+The FinRank data consists of 1,185 human-authored questions and 5,230 unique passages from SEC filings. Across questions, 1,580 passages are supporting evidence and 3,775 serve as hard negatives, with 125 passages appearing in both roles. FinRank labels 376 questions as quantitative and 809 as qualitative. FinRank provides a test and training split, but I chose to hold out FinRank data as a gold set to test against.
+
+The training data for this study comes from SEC filings and earnings-call transcripts ([@kurry], 2025) for S&P 500 companies . I matched calls to filings by issuer and fiscal period. After excluding FinRank issuers, the matched corpus contained `r n_matches` call–filing pairs from `r n_issuers` issuers. The source corpus included pharmaceuticals, oil and gas, and automotive issuers, among other industries.
+
+I split selected filing sections into non-overlapping passages of up to `r filing_chunk_words` words. I retained Form 10-K and 10-Q Parts I and II consisting of Business, Risk Factors, Cybersecurity, Legal Proceedings, MD&A, Market Risk, Financial Statements, Controls and Procedures. In total, `r n_filings` parsed filings yielded `r n_passages` passages.
+
+I parsed `r n_transcripts` earnings-call transcripts into prepared remarks and analyst Q&A. The parser split `r n_prepared_segments` prepared-remark segments into `r n_remark_chunks` sentence-level chunks and retained `r n_qa_pairs` matched question–answer pairs.
+
+# Methods
+
+## Data exploration
+
+```{r}
+#| label: ect-skie-audit-counts
+#| include: false
+
+audit_n <- 100L
+boilerplate_n <- 6L
+boilerplate_high_high <- 5L
+high_high_substantive <- 17L
+high_high_n <- 25L
+```
+
+### Part I ECT-SKIE matching (need inline variables)
+
+Huang et al. (2025) used an information bottleneck and the structure of earnings calls to select informative remarks without human labels. I adapted this approach to ask whether a selector using transcript and filing embeddings could identify remarks with supporting evidence in the corresponding SEC filing. In the exploratory runs, boilerplate in a call sometimes matched boilerplate in the filing. These matches could score well while providing little useful evidence for a financial question. The selector ablation (@tbl-ect-skie-ablation) compares held-out filing alignment, Q&A alignment, and duplicate selections.”
+
+```{r}
+#| label: load-blinded-audit
+#| include: false
+audit_dir <- "../data/experiments/boilerplate_similarity/pilot-10"
+read_audit_jsonl <- function(name) {
+  con <- file(file.path(audit_dir, name), open = "rt")
+  on.exit(close(con))
+  jsonlite::stream_in(con, verbose = FALSE)
+}
+audit <- read_audit_jsonl("blinded_audit.jsonl")
+events <- read_audit_jsonl("blinded_audit_labels.jsonl")
+scores <- read_audit_jsonl("sentence_similarity_scores.jsonl")
+latest <- events[!duplicated(events$audit_id, fromLast = TRUE), ]
+labels <- latest$label[match(audit$audit_id, latest$audit_id)]
+groups <- scores$quadrant[match(audit$sentence_id, scores$sentence_id)]
+group_ids <- c("same_high__cross_high", "same_high__cross_low",
+               "same_low__cross_high", "same_low__cross_low")
+label_ids <- c("novel_substantive", "repeated_substantive",
+               "boilerplate", "administrative")
+stopifnot(!anyDuplicated(audit$audit_id), !anyDuplicated(scores$sentence_id),
+          all(labels %in% label_ids), all(groups %in% group_ids))
+audit_counts <- table(factor(groups, levels = group_ids),
+                      factor(labels, levels = label_ids))
+audit_high_substantive <- sum(audit_counts[1, 1:2])
+```
+
+Following Brown and Tucker (2011), I used TF-IDF cosine similarity to compare each prepared remark with sentences from the same company’s preceding call and another company’s call, keeping the highest score for each comparison. Similarity was higher for the same company’s preceding call (median 0.3177) than for another company’s call (median 0.1451), so I report the audit results by same-company similarity. Of the `r sum(audit_counts[, 1:2])` substantive sentences in the blinded audit, `r sum(audit_counts[, 2])` were labeled repeated substantive. Also, `r sum(audit_counts[1:2, 3:4])` of the `r sum(audit_counts[, 3:4])` sentences labeled boilerplate or administrative had at-or-above-median similarity to the same company’s preceding call. This helps explain why the ECT-SKIE-inspired selector could retain boilerplate when it relied on alignment. Companies could reuse the same wording to report a new result, so I used hand-labeled examples to help the model distinguish substantive updates from boilerplate. The [blinded audit protocol](#sec-blinded-remark-audit) defines the similarity groups and human labels. Table\~\ref{tab:blinded-remark-audit} reports the counts.
+
+### Part II LLM matching
+
+```{r}
+#| label: load-usefulness-audit
+#| include: false
+usefulness_dir <- "../data/experiments/labeling_evaluation/human-substantive-usefulness"
+read_usefulness_jsonl <- function(name) {
+  con <- file(file.path(usefulness_dir, name), open = "rt")
+  on.exit(close(con))
+  jsonlite::stream_in(con, verbose = FALSE)
+}
+usefulness_items <- read_usefulness_jsonl("audit.jsonl")
+usefulness_events <- read_usefulness_jsonl("audit_usefulness_labels.jsonl")
+usefulness_final <- usefulness_events[!duplicated(usefulness_events$audit_id, fromLast = TRUE), ]
+usefulness_labels <- usefulness_final$label[match(usefulness_items$audit_id, usefulness_final$audit_id)]
+stopifnot(all(usefulness_labels %in% c("yes", "no")))
+usefulness_total <- length(usefulness_labels)
+usefulness_yes <- sum(usefulness_labels == "yes")
+usefulness_no <- sum(usefulness_labels == "no")
+usefulness_example <- function(id, label) {
+  row <- match(id, usefulness_items$audit_id)
+  stopifnot(identical(usefulness_labels[row], label))
+  usefulness_items$current_sentence[row]
+}
+```
+
+I reviewed `r usefulness_total` remarks previously labeled substantive and judged `r usefulness_yes` useful for generating a specific question that the matched SEC filing could plausibly answer. I gave Qwen3-8B examples of both decisions in a few-shot prompt. Qwen screened `r data_count("Remark usefulness", "Labeled chunks")` prepared-remark chunks and flagged `r data_count("Remark usefulness", "Useful")` as useful. The [usefulness audit](#sec-usefulness-audit) gives the decision rules and examples.
+
+For each flagged remark selected for the training-data pipeline, I used BM25 to search the filing for the same company and fiscal period. The highest-ranked passage became the candidate evidence. The generator used the remark and candidate passage to produce a summary and a question. After a retrieval check, JEV judged whether the passage supported the claims in the generated summary, including any figures, reporting periods, and qualifiers. This gave each stage a distinct role. Qwen screened for a promising topic, BM25 proposed a passage, and JEV checked the evidence behind the summary.
+
+In practice, the process favored questions about reported financial results, especially questions about specific values and comparisons. Broader questions were harder to support with the retrieved evidence. This motivated the focus on FinRank’s quantitative questions in the training evaluations.
+
+### Processed data
+
+I constructed two datasets from remarks and their associated filing passages. The direct dataset used the original prepared remark as the query. It contained `r remark_filing_pairs` remark–passage pairs. These were recovered from accepted generation runs, where verification checked the generated summary against the passage. The passage could therefore support the topic without supporting every statement in the original remark.
+
+```{r}
+#| label: load-generation-cases
+#| include: false
+generation_inputs <- read.csv("../data/generation-cases.csv")
+case_keys <- generation_inputs[c("run", "case_id")]
+generation_cases <- generation_inputs[!duplicated(case_keys), ]
+generation_n <- function(n) format(n, big.mark = ",", trim = TRUE)
+generation_status <- function(status) sum(generation_cases$status == status)
+generation_unique <- length(unique(generation_cases$accepted_question_hash[
+  generation_cases$status == "accepted"
+]))
+generation_rate <- sprintf("%.1f%%", 100 * generation_status("accepted") / nrow(generation_cases))
+```
+
+The synthetic-data pipeline processed `r generation_n(nrow(generation_inputs))` remark–passage inputs across the initial run and `r generation_n(sum(startsWith(unique(generation_cases$run), "batch-")))` batches, representing `r generation_n(length(unique(generation_inputs$remark_text_hash)))` distinct remark texts. BM25 proposed one passage per input from the filing for the same issuer and fiscal period. Within each batch, I grouped remarks that pointed to the same passage. This left `r generation_n(nrow(generation_cases))` generation cases covering `r generation_n(length(unique(generation_cases$passage_id)))` distinct passage IDs. A passage could appear in more than one batch.
+
+Following Promptagator, I used few-shot examples to guide Nemotron Nano 9B in generating a summary and then a question. The remark guided the topic, and the passage supplied the evidence. The final training example paired the generated question with the passage.
+
+Removing `r sum(generation_cases$status == "accepted") - generation_unique` duplicate questions left `r generation_unique` unique accepted questions. I retained the first `r synthetic_questions` pairs for the experiment.
+
+### Part III. Supervised learning
+
+I fine-tuned MPNet for retrieval and MiniLM for reranking in separate runs for the two datasets. MPNet used paired InfoNCE to bring the query closer to its positive passage than to sampled negatives. MiniLM used binary cross-entropy to score query–passage pairs as positive or negative. For the main comparison, I prefixed both positive and negative passages with the issuer, filing year, and form.
+
+For each query and positive passage, I randomly sampled up to one negative from each of four groups: a different section of the same filing, the same form and section from a different fiscal period for the same issuer, the same form and section from another issuer in the same industry (preferring the same fiscal period), and any passage from another issuer. I used a fixed seed, drew passages from issuers in the same split as the query, excluded exact text duplicates after normalizing case and whitespace, and skipped groups with no eligible passage. These were assumed negatives. A passage from another section or fiscal period could still contain relevant evidence.
+
+The direct dataset contained 533 training and 28 validation pairs. The synthetic dataset contained 474 training and 26 validation pairs. I separated training and validation by issuer and chose checkpoints by validation MRR. Both the query form and the number of training pairs differed between the two conditions.
+
+## Evaluation of generated data
+
+I used the generated question to test whether MPNet recovered the source passage in its top 50 and MiniLM kept it in the top five. JEV then checked the summary claims against the source passage.
+
+The pipeline accepted `r generation_status("accepted")` of `r generation_n(nrow(generation_cases))` cases (`r generation_rate`). Table\~\ref{tab:generation-outcomes} reports the outcomes. The acceptance rate describes the pipeline’s decisions.
+
+```{r}
+#| label: generation-outcomes-table
+#| echo: false
+#| output: asis
+outcomes <- c(
+  "Accepted" = "accepted",
+  "Source missed dense top 50" = "rejected_retrieval",
+  "Source missed reranked top 5" = "rejected_rerank",
+  "Summary declined" = "declined_summary",
+  "JEV rejected summary claims" = "rejected_verification",
+  "Question declined" = "declined_question",
+  "Generation failed" = "failed_generation_skipped"
+)
+counts <- vapply(outcomes, generation_status, integer(1))
+total <- nrow(generation_cases)
+stopifnot(sum(counts) == total)
+counts <- c(counts, Total = total)
+rows <- sprintf("%s & %s & %.1f \\\\", names(counts), generation_n(counts),
+                100 * counts / total)
+cat("\\begin{table}[t]", "\\centering", "\\small",
+    "\\begin{tabular}{@{}lrr@{}}", "\\hline",
+    "Outcome & Cases & Share (\\%) \\\\", "\\hline",
+    rows, "\\hline", "\\end{tabular}",
+    "\\caption{Pipeline outcomes before question deduplication. Each case has one recorded outcome.}",
+    "\\label{tab:generation-outcomes}", "\\end{table}", sep = "\n")
+```
+
+In a separate audit, I generated 100 questions and used JEV to judge each question and its proposed answer against the supplied filing evidence. I recorded source-passage recovery separately and reviewed the 59 cases JEV accepted. The review identified unsupported claims and cases where the question or answer needed a correction to its scope or reporting period.
+
+# Experimental Setup
+
+- Evaluation populations: full FinRank benchmark (1,185 questions) and all 376 questions labeled quantitative; identify coverage by condition.
+- Remark selection and generation tended to yield questions about numerical financial results (how many had a number cited?). Broader questions often lacked a specific answer in the matched filing and were filtered out by the judge. We therefore evaluated all 376 questions labeled *Quantitative* across topics.
+- Shared retrieval metrics: Recall\@k, MRR, nDCG\@10; candidate and reranking depths.
+- Baselines: TF-IDF, BM25, MPNet, and MPNet with MiniLM reranking.
+- Oracle baseline: filter using benchmark-supplied source metadata.
+- Metadata conditions: passage enrichment, query-derived filtering, and both together.
+- Training conditions: enriched passages with direct-remark or synthetic-question supervision.
+
+# Results and Discussion
+
+- Retrieval table: full benchmark and quantitative subset; compare within each population.
+- Metadata results: gains from enrichment and filtering relative to baseline and oracle.
+- Training results: direct and synthetic supervision relative to metadata alone; recall versus ranking quality.
+- Generation quality: automatic acceptances, review corrections, and unsupported examples.
+- Limits of inference: noisy supervision, unequal pair counts, and training scale.
+
+# Conclusion
+
+- What transcript-derived supervision achieved on human-authored questions.
+- What limited human labeling enabled and where evidence verification remained necessary.
+
+\newpage
+
+# References
+
+Alberti, C., Andor, D., Pitler, E., Devlin, J., & Collins, M. (2019). Synthetic QA corpora generation with roundtrip consistency. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics (pp. 6168–6173). Association for Computational Linguistics. https://doi.org/10.18653/v1/P19-1620
+
+Asai, A., He, J., Shao, R., Shi, W., Singh, A., Chang, J. C., Lo, K., Soldaini, L., Feldman, S., D’Arcy, M., Wadden, D., Latzke, M., Sparks, J., Hwang, J. D., Kishore, V., Tian, M., Ji, P., Liu, S., Tong, H., … Hajishirzi, H. (2026). Synthesizing scientific literature with retrieval-augmented language models. Nature, 650, 857–863. https://doi.org/10.1038/s41586-025-10072-4
+
+BehnamGhader, P., Adlakha, V., Mosbach, M., Bahdanau, D., Chapados, N., & Reddy, S. (2024). LLM2Vec: Large language models are secretly powerful text encoders. In Proceedings of the First Conference on Language Modeling. https://arxiv.org/abs/2404.05961v2
+
+Bin Yousuf, R., Xu, S., Sharma, M., Neeser, A., Latimer, C., & Ramakrishnan, N. (2026). Utilizing metadata for better retrieval-augmented generation. arXiv. https://arxiv.org/abs/2601.11863v1
+
+Brown, S. V., & Tucker, J. W. (2011). Large-sample evidence on firms’ year-over-year MD&A modifications. Journal of Accounting Research, 49(2), 309–346. https://doi.org/10.1111/j.1475-679X.2010.00396.x
+
+Chandradevan, R., Dhole, K. D., & Agichtein, E. (2024). DUQGen: Effective unsupervised domain adaptation of neural rankers by diversifying synthetic query generation. arXiv. https://arxiv.org/abs/2404.02489v1
+
+Chen, Q., Zhuo, Z., & Wang, W. (2019). BERT for joint intent classification and slot filling. arXiv. https://arxiv.org/abs/1902.10909v1
+
+Chen, S., Jiménez Gutiérrez, B., & Su, Y. (2025). Attention in large language models yields efficient zero-shot re-rankers. In The Thirteenth International Conference on Learning Representations. https://arxiv.org/abs/2410.02642v2
+
+Dai, Z., Zhao, V. Y., Ma, J., Luan, Y., Ni, J., Lu, J., Bakalov, A., Guu, K., Hall, K. B., & Chang, M.-W. (2022). Promptagator: Few-shot dense retrieval from 8 examples. arXiv. https://arxiv.org/abs/2209.11755v1
+
+Dekel, S., Tennenholtz, M., & Kurland, O. (2026). Addressing corpus knowledge poisoning attacks on RAG using sparse attention. arXiv. https://arxiv.org/abs/2602.04711v3
+
+de Souza P. Moreira, G., Ak, R., Schifferer, B., Xu, M., Osmulski, R., & Oldridge, E. (2024). Enhancing Q&A text retrieval with ranking models: Benchmarking, fine-tuning and deploying rerankers for RAG. arXiv. https://arxiv.org/abs/2409.07691v1
+
+de Souza P. Moreira, G., Osmulski, R., Xu, M., Ak, R., Schifferer, B., & Oldridge, E. (2024). NV-Retriever: Improving text embedding models with effective hard-negative mining. arXiv. https://arxiv.org/abs/2407.15831v1
+
+Hu, E., Shen, Y., Wallis, P., Allen-Zhu, Z., Li, Y., Wang, S., Wang, L., & Chen, W. (2021). LoRA: Low-rank adaptation of large language models. arXiv. https://arxiv.org/abs/2106.09685v2
+
+Huang, Y., Lei, Y., Tai, W., Cheng, Z., Zhong, T., & Zhang, K. (2024). Explainable earnings call representation learning (student abstract). Proceedings of the AAAI Conference on Artificial Intelligence, 38(21), 23518–23519. https://doi.org/10.1609/aaai.v38i21.30454
+
+Huang, Y., Tai, W., Zhou, F., Gao, Q., & Zhong, T. (2025). Extracting key insights from earnings call transcript via information-theoretic contrastive learning. Information Processing & Management, 62(3), Article 103998. https://doi.org/10.1016/j.ipm.2024.103998
+
+Izacard, G., & Grave, E. (2021). Distilling knowledge from reader to retriever for question answering. In The Ninth International Conference on Learning Representations. https://arxiv.org/abs/2012.04584v2
+
+Karpukhin, V., Oğuz, B., Min, S., Lewis, P., Wu, L., Edunov, S., Chen, D., & Yih, W.-t. (2020). Dense passage retrieval for open-domain question answering. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP) (pp. 6769–6781). Association for Computational Linguistics. https://doi.org/10.18653/v1/2020.emnlp-main.550
+
+Lee, J., Lee, Y., Kim, J., Kosiorek, A. R., Choi, S., & Teh, Y. W. (2019). Set Transformer: A framework for attention-based permutation-invariant neural networks. In Proceedings of the 36th International Conference on Machine Learning (Vol. 97, pp. 3744–3753). PMLR. https://proceedings.mlr.press/v97/lee19d.html
+
+Lu, Y., Hu, Y., Foroosh, H., Jin, W., & Liu, F. (2025). STRUX: An LLM for decision-making with structured explanations. In Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 2: Short Papers) (pp. 131–141). Association for Computational Linguistics. https://doi.org/10.18653/v1/2025.naacl-short.11
+
+Ma, X., Wang, L., Yang, N., Wei, F., & Lin, J. (2023). Fine-tuning LLaMA for multi-stage text retrieval. arXiv. https://arxiv.org/abs/2310.08319v1
+
+Mansouri, S., Saad, D., Wahrenburg, M., Weissel, M., & Woebbeking, F. (2026). FinRank: An evidence-grounded benchmark for financial question answering and retrieval over SEC filings. arXiv. https://arxiv.org/abs/2608.07400v1
+
+Myung, J., Park, J., & Han, J. (2025). HyST: LLM-powered hybrid retrieval over semi-structured tabular data. arXiv. https://arxiv.org/abs/2508.18048v1
+
+Qu, C., Yang, L., Chen, C., Croft, W. B., Krishna, K., & Iyyer, M. (2021). Weakly-supervised open-retrieval conversational question answering. arXiv. https://arxiv.org/abs/2103.02537v1
+
+Sciavolino, C., Zhong, Z., Lee, J., & Chen, D. (2021). Simple entity-centric questions challenge dense retrievers. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing (pp. 6138–6148). Association for Computational Linguistics. https://doi.org/10.18653/v1/2021.emnlp-main.496
+
+van den Oord, A., Li, Y., & Vinyals, O. (2019). Representation learning with contrastive predictive coding (Version 2). arXiv. https://arxiv.org/abs/1807.03748v2
+
+Wang, K., Reimers, N., & Gurevych, I. (2024). DAPR: A benchmark on document-aware passage retrieval. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers) (pp. 4313–4330). Association for Computational Linguistics. https://doi.org/10.18653/v1/2024.acl-long.236
+
+Yu, D., Han, S., & Park, W. (2026). Is position bias in dense retrievers built in—or learned from data? arXiv. https://arxiv.org/abs/2605.26578v1
+
+Zhan, J., Mao, J., Liu, Y., Guo, J., Zhang, M., & Ma, S. (2021). Optimizing dense retrieval model training with hard negatives. arXiv. https://arxiv.org/abs/2104.08051v1
+
+Zhang, B., Suganthan, P., Liu, G., Philippov, I., Dua, S., Hora, B., Black, K., Martins, G., Sanseviero, O., Pathak, S., Hardin, C., Visin, F., Zhang, J., Kenealy, K., Yin, Q., Song, X., Lacombe, O., Joulin, A., Warkentin, T., & Roberts, A. (2025). T5Gemma 2: Seeing, reading, and understanding longer. arXiv. https://arxiv.org/abs/2512.14856v2
+
+Zhao, Y., Long, Y., Jiang, Y., Wang, C., Chen, W., Liu, H., Zhang, Y., Tang, X., Zhao, C., & Cohan, A. (2024). FinDVer: Explainable claim verification over long and hybrid-content financial documents. In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing (pp. 14739–14752). Association for Computational Linguistics. https://doi.org/10.18653/v1/2024.emnlp-main.818
+
+Zhu, F., Lei, W., Huang, Y., Wang, C., Zhang, S., Lv, J., Feng, F., & Chua, T.-S. (2021). TAT-QA: A question answering benchmark on a hybrid of tabular and textual content in finance. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers) (pp. 3277–3287). Association for Computational Linguistics. https://doi.org/10.18653/v1/2021.acl-long.254
+
+Tran, Kurry (huggingface: [@kurry]). (2025). S&P 500 earnings call transcripts \[Data set\]. Hugging Face. https://huggingface.co/datasets/kurry/sp500_earnings_transcripts
+
+# Appendix
+
+- Baseline reproduction and oracle filter fields.
+- Blinded labeling audit, classifier evaluation, and training-source counts.
+- Worked remark–filing match, generation prompts, and reviewed examples.
+- Training ablations and subgroup results.
+- Fine-tuning control using FinRank-labeled examples.
+- Data sources, code entry points, and saved experiment outputs.
+
+## ECT-SKIE-inspired remark selection
+
+**Question** Could a model learn to select prepared remarks that point to useful filing evidence without hand-labeled remark–passage pairs?
+
+**Approach** I adapted Huang et al.’s (2025) information bottleneck to select a small set of prepared remarks from each call. I trained the selector with two InfoNCE loss terms. One aligned the selected remarks with passages from the same issuer’s filing for that fiscal period. The other aligned them with analyst Q&A from the same call. Training used in-batch negatives and filtered BM25 hard negatives. I also tested a KL divergence penalty that encouraged the model to distribute weight more evenly across its selection slots. The experiment used 350 company-quarters for training, 44 for validation, and 43 for testing.
+
+**Result** At a KL weight of 0.1, the duplicate-slot rate fell from 10.56% to 9.63%, and Q&A alignment loss fell from 0.4674 to 0.4404. Filing alignment loss rose from 0.4017 to 0.4315. The selector without KL had the lowest filing alignment loss, so I retained the two InfoNCE terms. The experiment measured alignment and duplicate selections. Whether the selected remarks could support filing-grounded questions remained open.
+
+```{=latex}
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}rrrr@{}}
+\hline
+KL weight & Q\&A loss & Filing loss & Duplicates (\%) \\
+\hline
+0     & 0.4674          & \textbf{0.4017} & 10.56 \\
+0.001 & 0.4703          & 0.4107          & 10.35 \\
+0.01  & 0.5727          & 0.4369          & \textbf{9.52} \\
+0.1   & \textbf{0.4404} & 0.4315          & 9.63 \\
+\hline
+\end{tabular}
+\caption{Held-out results for the ECT-SKIE-inspired remark selector on 43 calls.
+Duplicates is the percentage of duplicate selection slots.
+Bold marks the lowest value in each metric.}
+\label{tab:ect-skie-ablation}
+\end{table}
+```
+
+**Hand labeling** During exploration, I saw boilerplate in a call align with boilerplate in its filing. I then examined repetition in a separate blinded audit. I report the audit counts by similarity to the same company’s preceding call, where the median similarity was higher. Reused wording could carry a new result, so I gave the model labeled examples of both repeated substantive updates and boilerplate. See Table\~\ref{tab:blinded-remark-audit}.
+
+#### Blinded audit of repeated language {#sec-blinded-remark-audit}
+
+For each target sentence, I computed two TF-IDF cosine similarity scores. The first was the highest score against sentences from the same company’s preceding call. The second was the highest score against sentences from another company’s call in the same fiscal quarter. Across the 1,138 target sentences, the medians were 0.3177 for same company and 0.1451 for different company. High means at or above the median for that comparison. For example, High / Low means high similarity to the same company’s preceding call and low similarity to the other company’s call.
+
+I sampled 25 sentences from each of the four groups. For each sentence, I saw the target and its two closest matches. The scores and group assignments were hidden. I assigned one of four labels:
+
+- **Novel substantive** identifies company-specific information materially different from both comparison sentences.
+- **Repeated substantive** identifies a meaningful company-specific claim expressed in language similar to a comparison sentence, such as a recurring update with a new quarterly value.
+- **Boilerplate** identifies generic, reusable language with little company- or period-specific information.
+- **Administrative** identifies call logistics, including introductions, transitions, and instructions.
+
+Table\~\ref{tab:blinded-remark-audit} combines the peer-call groups and reports label counts by similarity to the same company’s preceding call. The totals describe the audit sample.
+
+```{r}
+#| label: blinded-audit-table
+#| echo: false
+#| output: asis
+counts <- rbind(
+  colSums(audit_counts[1:2, ]),
+  colSums(audit_counts[3:4, ]),
+  colSums(audit_counts)
+)
+rows <- cbind(c("High", "Low", "Total"), counts)
+stopifnot(sum(counts[3, 1:2]) == 87L, counts[3, 2] == 19L)
+cat(
+  "\\begin{table}[t]", "\\centering", "\\small",
+  "\\begin{tabular}{@{}lrrrr@{}}", "\\hline",
+  "Similarity & \\shortstack{Novel\\\\substantive} & \\shortstack{Repeated\\\\substantive} & Boilerplate & \\shortstack{Admini-\\\\strative} \\\\", "\\hline",
+  paste0(apply(rows, 1, paste, collapse = " & "), " \\\\"),
+  "\\hline", "\\end{tabular}",
+  "\\caption{Blinded audit labels by TF-IDF cosine similarity to the same company’s preceding call. High indicates a score at or above the median.}",
+  "\\label{tab:blinded-remark-audit}", "\\end{table}", sep = "\n"
+)
+```
+
+
+### Usefulness audit {#sec-usefulness-audit}
+
+I pooled the substantive remarks from the blinded repetition audit and two reviews of Qwen–JEV disagreements. After keeping the latest human label per remark, I reviewed `r usefulness_total` distinct remarks for usefulness. I marked `r usefulness_yes` useful and `r usefulness_no` not useful.
+
+A remark qualified if it suggested a specific question that financial statements, MD&A, business disclosures, or risk factors might answer. Reported results, concrete developments, and specific risks could qualify. Broad commentary and standalone earnings guidance generally did not. Passage matching later checked actual filing support.
+
+- **Useful.** “`r usefulness_example(8, "yes")`” The remark gives specific growth figures that can guide a question about reported segment results.
+- **Not useful.** “`r usefulness_example(12, "no")`” The remark gives no specific result or action to look up.
+
+Eight reviewed remarks became prompt examples. On the remaining 89, Qwen retained 32 of 52 useful remarks and five of 37 non-useful remarks, yielding 86.5% precision and 61.5% recall for the useful class.

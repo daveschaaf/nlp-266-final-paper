@@ -1,0 +1,958 @@
+{
+  "reviewed_at": "2026-11-19T23:36:55.635051+00:00",
+  "source_sha256": "d675f43192b1f53390243a2a1eba3065b78bccdc290b280b1987343c732bdd33",
+  "scope": "All 59 ungated JEV passes reviewed against supplied full passage text. Question relevance and diagnostic-answer correctness recorded separately. Targeted adjacent parsed context checked for section/unit headers; 3M raw HTML also checked. No new inference and no automatic human approvals or training export.",
+  "counts": {
+    "supported": 41,
+    "answer_correction": 5,
+    "reject": 4,
+    "scope_period_correction": 7,
+    "human_review": 2
+  },
+  "results": [
+    {
+      "number": 1,
+      "id": "55b1cd5833dc38f5d69513d96b64903463a06661ff8d62a3befe43190a3fbc34",
+      "case_id": "scale-001",
+      "ticker": "YUM",
+      "question": "What impact did the Middle East conflict have on Yum! Brands' same-store sales growth in Q2 2024?",
+      "diagnostic_answer": "The Middle East conflict represented a low single-digit headwind to Yum! Brands' overall same-store sales growth in both the quarter and year to date ended June 30, 2024.",
+      "assistant_verdict": "supported",
+      "reason": "Low single-digit same-store-sales headwind is explicit for the quarter and YTD.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0001041061-24-000033:PART I:ITEM 2:section0:15"
+      ]
+    },
+    {
+      "number": 2,
+      "id": "01a775a50b9629e9d0c4b92566f88e891383445c99c5c4ae4160fd0ba1c2d8ec",
+      "case_id": "scale-002",
+      "ticker": "AIZ",
+      "question": "What was Assurant's consolidated net income in Q3 2024, and how did it compare to Q3 2023?",
+      "diagnostic_answer": "Consolidated net income decreased to $133.8 million in Q3 2024 from $190.1 million in Q3 2023.",
+      "assistant_verdict": "supported",
+      "reason": "133.8 versus 190.1 million current/prior-quarter net income is explicit.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0001267238-24-000047:PART I:ITEM 2:section0:3"
+      ]
+    },
+    {
+      "number": 3,
+      "id": "74d6ce45b3c69500800bba6db0bc10f160380a1e59cb2f62e9be629ef032ace0",
+      "case_id": "scale-002",
+      "ticker": "AIZ",
+      "question": "What was the primary driver of the decrease in Global Housing Adjusted EBITDA in Q3 2024?",
+      "diagnostic_answer": "The decrease was primarily due to $110.6 million of higher pre-tax reportable catastrophes.",
+      "assistant_verdict": "supported",
+      "reason": "110.6 million higher catastrophe costs explicitly drives Global Housing Adjusted EBITDA decline.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0001267238-24-000047:PART I:ITEM 2:section0:3"
+      ]
+    },
+    {
+      "number": 4,
+      "id": "7382c216b079f1abd7ca3144021b04fda51b7372973d0e6454560fba7a9608cc",
+      "case_id": "scale-002",
+      "ticker": "AIZ",
+      "question": "How did Connected Living contribute to the increase in Global Lifestyle net earned premiums in Q3 2024?",
+      "diagnostic_answer": "Connected Living contributed through mobile growth, including new trade-in programs and global device protection programs, leading to a $143.7 million increase in net earned premiums.",
+      "assistant_verdict": "answer_correction",
+      "reason": "Question is supported. The 143.7 million increase is the TOTAL Global Lifestyle net earned premiums, fees and other income increase, primarily driven by Connected Living. It is not a separately quantified Connected Living contribution.",
+      "recommended_action": "State that Connected Living was the primary driver; do not attribute the entire total exclusively to it.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0001267238-24-000047:PART I:ITEM 2:section0:3"
+      ]
+    },
+    {
+      "number": 5,
+      "id": "e859f29033e1bf18b065c581e44e14e545ee4f1585afd849ee88fbd5585f7656",
+      "case_id": "scale-006",
+      "ticker": "EXPE",
+      "question": "What was Expedia Group's revenue impact from the One Key loyalty program rollout in the U.S. during Q2 2024?",
+      "diagnostic_answer": "The One Key loyalty program rollout in the U.S. in 2023 aimed to unify rewards across brands and products, with plans to expand to the UK in 2024. The passage does not provide specific revenue figures for One Key in Q2 2024, only strategic intent to improve retention and direct business.",
+      "assistant_verdict": "reject",
+      "reason": "Question asks for revenue impact in Q2 2024. Passage gives rollout strategy and anticipated retention benefits, no realized revenue impact. The diagnostic answer itself admits missing evidence.",
+      "recommended_action": "Reject as written; do not replace revenue impact with strategic purpose silently.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0001324424-24-000038:PART I:ITEM 1:9:duplicate1"
+      ]
+    },
+    {
+      "number": 6,
+      "id": "4b55ee034ac338efc26a6ec136ecf4b8cb73058be22de293951e4d3f99bc8235",
+      "case_id": "scale-007",
+      "ticker": "NKE",
+      "question": "What were Nike's revenues and NIKE Direct revenues in fiscal Q2 2024?",
+      "diagnostic_answer": "Nike's revenues were $13.4 billion, and NIKE Direct revenues were $5.7 billion.",
+      "assistant_verdict": "supported",
+      "reason": "Fiscal Q2 revenues 13.4 billion and NIKE Direct 5.7 billion are explicit.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0000320187-24-000004:PART I:ITEM 2:section0:0"
+      ]
+    },
+    {
+      "number": 7,
+      "id": "b411f0329d9c13295e964dcdaded75a95f32ccf0371bf156fccc93493fbbc08a",
+      "case_id": "scale-009",
+      "ticker": "DE",
+      "question": "What was Deere & Company's equipment sales outlook for Brazil in Q3 2024, and what factors contributed to the expected decline?",
+      "diagnostic_answer": "Deere & Company expected Brazil equipment sales to decline due to strong global yields reducing commodity prices and persistently high interest rates.",
+      "assistant_verdict": "scope_period_correction",
+      "reason": "Passage states demand in Brazil expected down within Agriculture and Turf Outlook for 2024, not a measured Q3 decline or specifically Deere-only equipment sales.",
+      "recommended_action": "Ask about the 2024 Brazil agricultural equipment demand outlook disclosed in the Q3 filing and its stated drivers.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0001558370-24-012529:PART I:ITEM 2:3"
+      ]
+    },
+    {
+      "number": 8,
+      "id": "f15f9cd6b88bc5677721068165674a6b3c122d3152517899b9489df9f5b16e25",
+      "case_id": "scale-010",
+      "ticker": "NTRS",
+      "question": "What was Northern Trust Corporation's common equity Tier 1 ratio under the standardized approach in Q2 2024?",
+      "diagnostic_answer": "12.6%",
+      "assistant_verdict": "supported",
+      "reason": "Northern Trust Corporation standardized CET1 12.6% is in the June 30 table.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0000073124-24-000206:PART I:ITEM 1:section0:46"
+      ]
+    },
+    {
+      "number": 9,
+      "id": "af5c4914aa9b0831b812e58bace3834ae1433c73982d07668c18efbdee92b4b8",
+      "case_id": "scale-010",
+      "ticker": "NTRS",
+      "question": "What was the minimum Common Equity Tier 1 capital ratio requirement for Northern Trust Corporation under the DFAST results in Q2 2024?",
+      "diagnostic_answer": "7.0%",
+      "assistant_verdict": "supported",
+      "reason": "June DFAST results state effective CET1 minimum remains 7.0%, with next cycle October 2024\u2013September 2025. This is a DFAST-result question, not a demand for a new June effective date. Adding the cycle would improve clarity.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0000073124-24-000206:PART I:ITEM 1:section0:46"
+      ]
+    },
+    {
+      "number": 10,
+      "id": "d7485389d0df56e55eed953f862d19cfbcd22ea2bc704d4b0361d0fba0c96032",
+      "case_id": "scale-010",
+      "ticker": "NTRS",
+      "question": "What was the estimated increase in expanded risk-based approach RWAs compared to standardized approach RWAs for Northern Trust Corporation under the Basel III Endgame Proposal?",
+      "diagnostic_answer": "5% to 15% higher",
+      "assistant_verdict": "supported",
+      "reason": "Hypothetical expanded RWAs 5\u201315% above standardized RWAs is explicitly conditional on full phase-in and no mitigation; preserve those qualifiers.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0000073124-24-000206:PART I:ITEM 1:section0:46"
+      ]
+    },
+    {
+      "number": 11,
+      "id": "fc388665f6f0f5b96ca457587a593174727fec443758252a548268c2420742aa",
+      "case_id": "scale-011",
+      "ticker": "JBHT",
+      "question": "What was J.B. Hunt's productivity change in Q2 2024 compared to Q2 2023, and what factors contributed to the decrease?",
+      "diagnostic_answer": "Productivity decreased 3% compared to Q2 2023, primarily due to decreased asset utilization and increased idle equipment, partially offset by contractual index-based rate increases.",
+      "assistant_verdict": "scope_period_correction",
+      "reason": "The productivity metric is revenue per truck per week in the Dedicated Contract Services discussion, not an aggregate company-wide productivity measure. The stated drivers concern productivity EXCLUDING fuel surcharge revenue.",
+      "recommended_action": "Name Dedicated Contract Services and productivity excluding fuel surcharge revenue.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0001437749-24-023553:PART I:ITEM 2:6"
+      ]
+    },
+    {
+      "number": 12,
+      "id": "7bab8ea440deb0c0e5d389072744dd3fa728c1fd3409941c19f22ef0298fab81",
+      "case_id": "scale-013",
+      "ticker": "KMB",
+      "question": "What was Kimberly-Clark's adjusted operating profit for Q1 2025, and what were the key drivers of its change compared to Q1 2024?",
+      "diagnostic_answer": "Adjusted operating profit was $844 million for Q1 2025, down 6.0% from $898 million in Q1 2024. The decrease was driven by lower net sales and adjusted gross profit, partially offset by lower marketing, research, and general expenses.",
+      "assistant_verdict": "supported",
+      "reason": "Adjusted profit 844 versus 898 million and 6% decrease, with stated drivers, are supported.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0000055785-25-000039:PART I:ITEM 2:section0:4"
+      ]
+    },
+    {
+      "number": 13,
+      "id": "ca7cd39e6d5c0b2b292966b6babb8343f16c5303eb157285743bbd5b2a26a847",
+      "case_id": "scale-013",
+      "ticker": "KMB",
+      "question": "What was the impact of the 2024 Transformation Initiative charges on Kimberly-Clark's operating profit in Q1 2025?",
+      "diagnostic_answer": "The $75 million charge related to the 2024 Transformation Initiative reduced operating profit by $75 million in Q1 2025 compared to Q1 2024, where a $45 million charge was recorded.",
+      "assistant_verdict": "answer_correction",
+      "reason": "Question is supported. Current-quarter transformation charge is 75 million, versus 45 million prior year. The extra year-over-year charge is 30 million, not 75 million.",
+      "recommended_action": "Distinguish 75 million current-period charge from 30 million incremental year-over-year charge.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0000055785-25-000039:PART I:ITEM 2:section0:4"
+      ]
+    },
+    {
+      "number": 14,
+      "id": "b8e59aac4635a3d63214e2fdd540d2d63f127126b1d9d9f62035e0685728b373",
+      "case_id": "scale-014",
+      "ticker": "JKHY",
+      "question": "What was the percentage increase in Services and Support revenue for Jack Henry & Associates in Q3 2024 compared to Q3 2023?",
+      "diagnostic_answer": "4.5%",
+      "assistant_verdict": "supported",
+      "reason": "Services/support fiscal-Q3 growth 4.5% is explicit.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0000779152-24-000033:PART I:ITEM 2:section0:3"
+      ]
+    },
+    {
+      "number": 15,
+      "id": "ed904c4b1dafa7d61e1d69e40f0fd5fabe7366b97a56d4c142e3615c707f70cf",
+      "case_id": "scale-014",
+      "ticker": "JKHY",
+      "question": "What was the total Services and Support revenue for Jack Henry & Associates in Q3 2024?",
+      "diagnostic_answer": "$305,017",
+      "assistant_verdict": "answer_correction",
+      "reason": "Question is supported. The MD&A explicitly says all discussion amounts are in THOUSANDS except per share. 305017 therefore means 305.017 million dollars, not 305017 dollars.",
+      "recommended_action": "Correct answer to $305.017 million; retain unit header as context.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0000779152-24-000033:PART I:ITEM 2:section0:3"
+      ]
+    },
+    {
+      "number": 16,
+      "id": "932c63203837c6d9c5866752a8750b04357859a38919715a6a803f5537a82d5f",
+      "case_id": "scale-015",
+      "ticker": "WBD",
+      "question": "What was Warner Bros. Discovery's distribution revenue change in Q2 2024, and what factors contributed to it?",
+      "diagnostic_answer": "Distribution revenue increased 1% in Q2 2024, primarily due to a 7% subscriber increase from Max launches in Latin America and Europe, partially offset by domestic linear wholesale subscriber declines.",
+      "assistant_verdict": "scope_period_correction",
+      "reason": "Max subscriber and distribution discussion concerns the Direct-to-Consumer business, not consolidated Warner Bros. Discovery distribution revenue.",
+      "recommended_action": "Specify the Direct-to-Consumer segment.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0001437107-24-000165:PART I:ITEM 2:section0:18"
+      ]
+    },
+    {
+      "number": 17,
+      "id": "9f0a7a1202bf7fc551a2c5b2d2230749d97c49a6aecbeed8a17785b47e076072",
+      "case_id": "scale-015",
+      "ticker": "WBD",
+      "question": "How did Warner Bros. Discovery's advertising revenue perform in Q2 2024, and what drove the growth?",
+      "diagnostic_answer": "Advertising revenue increased 99% for the three months ended June 30, 2024, primarily due to higher Max domestic engagement and ad-lite subscriber growth.",
+      "assistant_verdict": "scope_period_correction",
+      "reason": "99% advertising growth and Max engagement drivers refer to Direct-to-Consumer, not all company advertising revenue.",
+      "recommended_action": "Specify the Direct-to-Consumer segment.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0001437107-24-000165:PART I:ITEM 2:section0:18"
+      ]
+    },
+    {
+      "number": 18,
+      "id": "872ae4e0147c8d1b4a91ad02a0e649c7d8ab7db8ed497e169442b1346b890451",
+      "case_id": "scale-015",
+      "ticker": "WBD",
+      "question": "What was the impact of content revenue changes in Q2 2024, and what were the main reasons?",
+      "diagnostic_answer": "Content revenue decreased 70% for the three months ended June 30, 2024, primarily due to lower volume of third-party licensing deals.",
+      "assistant_verdict": "scope_period_correction",
+      "reason": "70% content revenue decline is in the same Direct-to-Consumer discussion, not consolidated content revenue.",
+      "recommended_action": "Specify the Direct-to-Consumer segment.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0001437107-24-000165:PART I:ITEM 2:section0:18"
+      ]
+    },
+    {
+      "number": 19,
+      "id": "e8269d4a10c4f726e83851599dc3d944987b1c026e41d958850062b15194beae",
+      "case_id": "scale-016",
+      "ticker": "WFC",
+      "question": "What was the amount of the wire deposit Wells Fargo received in Q4 2024 related to legal services under Executive Order 13224, and what was its impact on gross revenue?",
+      "diagnostic_answer": "The wire deposit was $500,000, and there was no measurable gross revenue associated with this transaction.",
+      "assistant_verdict": "supported",
+      "reason": "500000 deposit in Q4 and no measurable gross revenue are explicit.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0000072971-25-000066:PART II:ITEM 9A:1"
+      ]
+    },
+    {
+      "number": 20,
+      "id": "6cde98cfc4a292056974153e4a73df1409e9651e5c27184867f76054f25927d9",
+      "case_id": "scale-019",
+      "ticker": "NDAQ",
+      "question": "What was Nasdaq's Capital Markets Technology ARR growth in 2024 compared to 2023?",
+      "diagnostic_answer": "Capital Markets Technology ARR increased from $799 million in 2023 to $868 million in 2024.",
+      "assistant_verdict": "supported",
+      "reason": "ARR 868 versus 799 million is explicit.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0001120193-25-000008:PART II:ITEM 7:section0:7"
+      ]
+    },
+    {
+      "number": 21,
+      "id": "346b4e6a12911410583057664c860a37076c45c181d462536cc7261afd769ab5",
+      "case_id": "scale-019",
+      "ticker": "NDAQ",
+      "question": "What factors contributed to the increase in Capital Markets Technology revenues in 2024?",
+      "diagnostic_answer": "The increase was primarily due to the inclusion of revenues from Calypso associated with the acquisition of Adenza, higher trade management services revenues from data center expansion and market technology license/support demands, partially offset by lower professional services revenue from a large 2023 project delivery.",
+      "assistant_verdict": "supported",
+      "reason": "Calypso/Adenza and service-revenue drivers and offset are explicitly described.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0001120193-25-000008:PART II:ITEM 7:section0:7"
+      ]
+    },
+    {
+      "number": 22,
+      "id": "de623bccd2c2aba6fc3fd93948e0d3553c53e57f306b03067b9005308e1210e7",
+      "case_id": "scale-019",
+      "ticker": "NDAQ",
+      "question": "What was the percentage change in Market Services net revenue from 2023 to 2024?",
+      "diagnostic_answer": "Market Services net revenue increased by 3.4% from $987 million in 2023 to $1,020 million in 2024.",
+      "assistant_verdict": "supported",
+      "reason": "Market Services net revenues 1020 versus 987 million, 3.4%, are explicit.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0001120193-25-000008:PART II:ITEM 7:section0:7"
+      ]
+    },
+    {
+      "number": 23,
+      "id": "54c326e30688402d80acd783c2c8eec5c532b77080fc5571f6a01d8cb337d6c1",
+      "case_id": "scale-021",
+      "ticker": "KMX",
+      "question": "What was the percentage decrease in wholesale vehicle revenues for CarMax in fiscal 2024, and what were the primary factors?",
+      "diagnostic_answer": "Wholesale vehicle revenues decreased by 16.9% in fiscal 2024, primarily due to an 11.8% decrease in average selling price and a 6.6% decrease in unit sales.",
+      "assistant_verdict": "supported",
+      "reason": "Wholesale revenues down 16.9%, price down 11.8%, volume down 6.6% are explicit.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0001170010-24-000034:PART II:ITEM 7:18"
+      ]
+    },
+    {
+      "number": 24,
+      "id": "879856dae9be54572a6972fa579c69a2eb7a245f9498bfaed0eb40dc09a2e840",
+      "case_id": "scale-021",
+      "ticker": "KMX",
+      "question": "What was the percentage decline in comparable store used unit sales for CarMax in fiscal 2024 compared to the prior year?",
+      "diagnostic_answer": "Comparable store used unit sales declined 6.7% compared to the prior year.",
+      "assistant_verdict": "supported",
+      "reason": "Comparable-store used units down 6.7% for fiscal 2024 is explicit.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0001170010-24-000034:PART II:ITEM 7:18"
+      ]
+    },
+    {
+      "number": 25,
+      "id": "64559e5d2bde7c6437148a6dc9ac6ae0549397233cac9e99106f235b247ad0b7",
+      "case_id": "scale-024",
+      "ticker": "PSX",
+      "question": "What was Phillips 66's NGL composite barrel price change in Q2 2024 compared to Q2 2023, and what factors influenced this change?",
+      "diagnostic_answer": "The NGL composite barrel price increased in Q2 2024 compared to Q2 2023, partially due to rising crude oil prices and decreased natural gas prices from increased production, pipeline maintenance, and limited export infrastructure growth.",
+      "assistant_verdict": "answer_correction",
+      "reason": "Question is supported. Passage attributes NGL composite price increase partly to crude prices. Natural-gas price decline and its causes are a separate observation, not established causes of the NGL increase.",
+      "recommended_action": "Keep NGL increase and rising crude oil prices; do not invent a causal role for lower natural gas prices.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0001534701-24-000132:PART I:ITEM 2:3"
+      ]
+    },
+    {
+      "number": 26,
+      "id": "4d71d702ebc7163a5f3d44724a18b91b34a78d1f0b7da2260112060b16397654",
+      "case_id": "scale-025",
+      "ticker": "TSN",
+      "question": "What was Tyson Foods' Beef segment sales volume change and average sales price change in fiscal Q1 2025?",
+      "diagnostic_answer": "Sales volume increased by 5.6% due to higher average carcass weights and increased head harvested. Average sales price increased primarily due to increased input costs and strong demand.",
+      "assistant_verdict": "answer_correction",
+      "reason": "Question is supported. The table explicitly supplies 5.6% sales-volume growth AND 0.6% average-price growth. Generated answer gives the second direction and causes but omits its amount.",
+      "recommended_action": "Add the 0.6% average sales price increase.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0000100493-25-000007:PART I:ITEM 2:section0:6"
+      ]
+    },
+    {
+      "number": 27,
+      "id": "d0093294a8904baa5f84861d474caa9d0c1a2e3b79a4efa08ae0acb6c7cf2b7e",
+      "case_id": "scale-026",
+      "ticker": "PWR",
+      "question": "What was Quanta Services' net cash provided by operating activities in Q2 2024, and how did it compare to Q2 2023?",
+      "diagnostic_answer": "Net cash provided by operating activities was $629.3 million in Q2 2024, a 279% increase compared to the same period in 2023.",
+      "assistant_verdict": "reject",
+      "reason": "629.3 million cash from operations and 279% growth cover SIX MONTHS ended June 30, not Q2 alone.",
+      "recommended_action": "Reject current quarterly pair. Any YTD rewrite must be recorded as a new question, not treated as a correct original acceptance.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0001050915-24-000140:PART I:ITEM 2:section0:1"
+      ]
+    },
+    {
+      "number": 28,
+      "id": "ccd586920fe305b20bbbb447c96e9d77a5afcbc16038d0c5e373937581805b95",
+      "case_id": "scale-026",
+      "ticker": "PWR",
+      "question": "What was the total available liquidity (credit facility commitments plus cash and cash equivalents) for Quanta Services as of June 30, 2024?",
+      "diagnostic_answer": "The total available liquidity was $2.77 billion, combining senior credit facility commitments and cash and cash equivalents.",
+      "assistant_verdict": "supported",
+      "reason": "2.77 billion available facility commitments plus cash as of June 30 is explicit.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0001050915-24-000140:PART I:ITEM 2:section0:1"
+      ]
+    },
+    {
+      "number": 29,
+      "id": "9086c15e0d89e752a347a0ce06721def73d36dfeda44fb23eebf3bebed221722",
+      "case_id": "scale-030",
+      "ticker": "SOLV",
+      "question": "What transition-related expenses did Solventum recognize in Q2 2024 related to its agreements with 3M?",
+      "diagnostic_answer": "Solventum recognized $88 million in expense related to transition agreements between the Company and 3M and its affiliates for the three months ended June 30, 2024.",
+      "assistant_verdict": "supported",
+      "reason": "88 million transition-agreement expense for THREE months June 30 is explicit.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0001964738-24-000020:PART I:ITEM 1:section0:33"
+      ]
+    },
+    {
+      "number": 30,
+      "id": "58e24e17f481b792439afa98e3bdd5c76e9da13cf71aa8f1507ab822ebdae5a6",
+      "case_id": "scale-031",
+      "ticker": "GL",
+      "question": "What was Globe Life Inc.'s excess cash flow in Q3 2024, and how is it defined?",
+      "diagnostic_answer": "Excess cash flow was not explicitly quantified in the provided passages, but it is defined as dividends received by the parent from subsidiaries less interest paid on debt, available for dividends or share repurchases.",
+      "assistant_verdict": "reject",
+      "reason": "Question requires a Q3 excess-cash-flow amount AND definition. Passage only defines parent-company excess cash flow; no amount is established.",
+      "recommended_action": "Reject as written; a definition-only question would be a separate revised candidate.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0000320335-24-000060:PART I:ITEM 2:section0:34"
+      ]
+    },
+    {
+      "number": 31,
+      "id": "a3c0ff835cc4dbbe2e9c792b3c3024f6ffd8f8b475427785ed8ab02bbed848f4",
+      "case_id": "scale-033",
+      "ticker": "BWA",
+      "question": "What was BorgWarner's decision regarding its charging business in Q1 2025, and when was this decision made?",
+      "diagnostic_answer": "BorgWarner decided to exit its charging business within the Battery & Charging Systems segment in February 2025, with substantial completion expected by Q2 2025.",
+      "assistant_verdict": "supported",
+      "reason": "Charging-business exit decision February 2025 and planned Q2 completion are explicit.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0000908255-25-000019:PART I:ITEM 1:section0:7"
+      ]
+    },
+    {
+      "number": 32,
+      "id": "6f30802186a5c8e4ebfb766dfcfbcf850f656c93adf584ef54662fa32e8a8b4d",
+      "case_id": "scale-035",
+      "ticker": "MMM",
+      "question": "What was 3M's discount rate for U.S. pension plans in 2024, and how did it change from 2023?",
+      "diagnostic_answer": "The discount rate for U.S. pension plans was 5.64% in 2024, up 66 percentage points from 2023.",
+      "assistant_verdict": "human_review",
+      "reason": "Parsed passage AND raw saved filing literally say increase of 66 percentage points. The preceding pension assumption table reports 5.64% in 2024 and 4.98% in 2023, implying 0.66 percentage points = 66 basis points. JEV repeated a source error rather than inventing it.",
+      "recommended_action": "Decide whether to retain the question with a corrected answer and the preceding table attached, or exclude this source-error example.",
+      "human_review_needed": true,
+      "human_approved": false,
+      "evidence_ids": [
+        "0000066740-25-000006:PART II:ITEM 8:section0:58"
+      ]
+    },
+    {
+      "number": 33,
+      "id": "83f0800b515e1c3e5fb8d9253747d2aeeea676d7fdfc3c008fc9666d968179d0",
+      "case_id": "scale-038",
+      "ticker": "TDY",
+      "question": "What was the non-cash impairment charge for the FLIR trademark in fiscal 2024, and what factors influenced its fair value determination?",
+      "diagnostic_answer": "The FLIR trademark incurred a $49.5 million non-cash impairment charge in fiscal 2024. The fair value determination was influenced by net sales growth rates, discount rate (including a 50 basis point risk premium), and royalty rate assumptions.",
+      "assistant_verdict": "supported",
+      "reason": "49.5 million noncash FLIR impairment and valuation assumptions including 50-bp risk premium are explicit.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0001094285-25-000053:PART II:ITEM 7:section0:22"
+      ]
+    },
+    {
+      "number": 34,
+      "id": "85813eaa5facb765571421929a9e369d3609c4abc892b33ceb346e1594fec79c",
+      "case_id": "scale-039",
+      "ticker": "PHM",
+      "question": "What was PulteGroup's Q3 2024 home sale revenue change in Texas compared to the prior year, and what factors contributed to the decrease in income before income taxes?",
+      "diagnostic_answer": "Texas home sale revenues increased 18% year-over-year due to a 23% rise in closings offset by a 4% decrease in average selling price. Income before income taxes decreased 4% primarily due to increased overhead costs and reduced gross margins across most markets.",
+      "assistant_verdict": "supported",
+      "reason": "Texas revenue +18%, closings +23%, ASP -4%, income -4%, with stated reasons, are explicit.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0000822416-24-000037:PART I:ITEM 2:19"
+      ]
+    },
+    {
+      "number": 35,
+      "id": "e513ee3e945949652e52ce879cdf875fcb46d793e264f5b1481b9e270e271da4",
+      "case_id": "scale-039",
+      "ticker": "PHM",
+      "question": "How did PulteGroup's Q3 2024 West home sale revenue and income before income taxes perform compared to the prior year, and what trend was observed in net new orders?",
+      "diagnostic_answer": "West home sale revenues rose 29% year-over-year from a 24% increase in closings and a 4% higher average selling price. Income before income taxes grew 42% due to higher revenues and gross margins. Net new orders decreased in certain markets.",
+      "assistant_verdict": "supported",
+      "reason": "West revenue +29%, closings +24%, ASP +4%, income +42% and orders trend are explicit.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0000822416-24-000037:PART I:ITEM 2:19"
+      ]
+    },
+    {
+      "number": 36,
+      "id": "d68d7afbe6c31f91ce39fd9e7700f0b6ca9d1ce2e6a1d13a1e1be7eff3b67922",
+      "case_id": "scale-042",
+      "ticker": "PG",
+      "question": "What market share and consumption estimates did The Procter & Gamble Company use to evaluate performance in fiscal Q3 2024?",
+      "diagnostic_answer": "The company used market share and consumption estimates based on vendor-purchased traditional brick-and-mortar and online data in key markets, as well as internal estimates. Market share is defined as the percentage of sales of their products in dollar terms on a constant currency basis relative to all product sales in the category.",
+      "assistant_verdict": "supported",
+      "reason": "Question can seek the estimate methodology described in the passage, rather than numerical market-share values. Vendor/online/internal data and share definition are explicit; wording How were ... estimated would be clearer.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0000080424-24-000051:PART I:ITEM 2:5"
+      ]
+    },
+    {
+      "number": 37,
+      "id": "5ee50bb6a9ea11bc9113bbb8ff7d79045e0f6054eff506b8df17a680f202b331",
+      "case_id": "scale-044",
+      "ticker": "PPG",
+      "question": "What was the loss on the sale of PPG's U.S. and Canada architectural coatings business in fiscal Q4 2024?",
+      "diagnostic_answer": "The loss on the sale was $285 million.",
+      "assistant_verdict": "supported",
+      "reason": "December 2 divestiture loss 285 million explicitly reported in Q4.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0000079879-25-000034:PART II:ITEM 8:section0:19"
+      ]
+    },
+    {
+      "number": 38,
+      "id": "2898a897f6019ceead1ea39470695ff03d09c7603e23c77dc8b0eb471b68cba1",
+      "case_id": "scale-044",
+      "ticker": "PPG",
+      "question": "How much in proceeds did PPG receive from the sale of its U.S. and Canada architectural coatings business in fiscal Q4 2024?",
+      "diagnostic_answer": "PPG received $516 million in proceeds.",
+      "assistant_verdict": "supported",
+      "reason": "516 million divestiture proceeds explicitly reported in Q4.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0000079879-25-000034:PART II:ITEM 8:section0:19"
+      ]
+    },
+    {
+      "number": 39,
+      "id": "984ca38162b58501212b4eaeb5053fbb82fe23481b71f113e76e2b3f9ff9c896",
+      "case_id": "scale-044",
+      "ticker": "PPG",
+      "question": "What was the impact of the divestiture of PPG's architectural coatings business on its income statement in fiscal Q4 2024?",
+      "diagnostic_answer": "The divestiture resulted in a loss of $285 million recorded in 'Income from discontinued operations'.",
+      "assistant_verdict": "supported",
+      "reason": "Loss 285 million recorded in income from discontinued operations is explicit.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0000079879-25-000034:PART II:ITEM 8:section0:19"
+      ]
+    },
+    {
+      "number": 40,
+      "id": "bcffeeec62510e2557bb13708ec84c9213c3c84dc290c0d481f4f7dfd298de31",
+      "case_id": "scale-045",
+      "ticker": "ETN",
+      "question": "What was Eaton Corporation's operating margin in Q2 2024, and how did it change from Q2 2023?",
+      "diagnostic_answer": "Eaton's operating margin was 29.9% in Q2 2024, up 300 basis points from 26.4% in Q2 2023.",
+      "assistant_verdict": "scope_period_correction",
+      "reason": "29.9% vs 26.4% is Electrical Americas, established in preceding chunk, not company-wide margin. Difference is 3.5 percentage points = 350 bps, not the generated 300 bps.",
+      "recommended_action": "Name Electrical Americas; correct the answer to 350 bps and attach its section header.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0001551182-24-000035:PART I:ITEM 2:11"
+      ]
+    },
+    {
+      "number": 41,
+      "id": "5e8488e17217eb4febb8d48c6d5dd7e7ffa90b739ed2082bc89c1ac17bfd4886",
+      "case_id": "scale-046",
+      "ticker": "MSFT",
+      "question": "What was Microsoft's Xbox content and services revenue growth in fiscal Q1 2025, and what was the net impact from the Activision acquisition?",
+      "diagnostic_answer": "Xbox content and services revenue increased 61% with a 53-point net impact from the Activision acquisition.",
+      "assistant_verdict": "supported",
+      "reason": "Xbox content/services +61% and 53 growth points from Activision are explicit.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0000950170-24-118967:PART I:ITEM 2:section0:7"
+      ]
+    },
+    {
+      "number": 42,
+      "id": "ff5c584889585275f8a0db1ae9e2266d89f57d78bbde17d92670447d0fbfd9dd",
+      "case_id": "scale-051",
+      "ticker": "LII",
+      "question": "What were Lennox International's net sales and year-over-year change in fiscal Q1 2025?",
+      "diagnostic_answer": "Net sales were $1,073 million, reflecting a 2% increase compared to the same period in 2024.",
+      "assistant_verdict": "supported",
+      "reason": "Q1 net sales 1073 million, up 2%, is explicit.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0001069202-25-000017:PART I:ITEM 2:section0:1"
+      ]
+    },
+    {
+      "number": 43,
+      "id": "061ffbf9c81cc7286ca6811c9893190b27e0cd45f60cfa0fa7e877a6e23a20f4",
+      "case_id": "scale-053",
+      "ticker": "SYY",
+      "question": "What was Sysco's Sysco brand penetration rate in U.S. broadline for fiscal 2024?",
+      "diagnostic_answer": "36.7%",
+      "assistant_verdict": "supported",
+      "reason": "US Broadline brand penetration 36.7% is explicit.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0000096021-24-000128:PART II:ITEM 7:19"
+      ]
+    },
+    {
+      "number": 44,
+      "id": "72c4b49008a1276c879c17d36f08f497181becb804d3cfbc3dd57fa4c758b8f8",
+      "case_id": "scale-053",
+      "ticker": "SYY",
+      "question": "How did Sysco's Sysco brand penetration rate in U.S. broadline change from fiscal 2023 to fiscal 2024?",
+      "diagnostic_answer": "Decreased by 19 basis points to 36.7%",
+      "assistant_verdict": "supported",
+      "reason": "19-bp decline to 36.7% is explicit.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0000096021-24-000128:PART II:ITEM 7:19"
+      ]
+    },
+    {
+      "number": 45,
+      "id": "03fa51a13a3c978756bc0be7ab85ea17fff8202ec3d999ecaab010ad4de870bc",
+      "case_id": "scale-058",
+      "ticker": "ABT",
+      "question": "What was the impact of foreign exchange rates on Abbott Laboratories' total international sales in Q1 2025?",
+      "diagnostic_answer": "The relatively stronger U.S. dollar decreased total international sales by 4.5 percent in Q1 2025.",
+      "assistant_verdict": "supported",
+      "reason": "FX decreased total international sales by 4.5%, distinct from total company sales impact 2.8%.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0001628280-25-021090:PART I:ITEM 2:section0:1"
+      ]
+    },
+    {
+      "number": 46,
+      "id": "41b0c9b6e5695ee5f9460c722548a10a8af15d91bb781bdd0b13d124f8e62e14",
+      "case_id": "scale-058",
+      "ticker": "ABT",
+      "question": "What was the change in Abbott Laboratories' Rapid Diagnostics sales in Q1 2025 compared to Q1 2024, and what was the foreign exchange impact?",
+      "diagnostic_answer": "Rapid Diagnostics sales decreased by 17.3% in Q1 2025 compared to Q1 2024, with a 1.2% foreign exchange impact.",
+      "assistant_verdict": "supported",
+      "reason": "Rapid Diagnostics sales down 17.3%; FX contribution negative 1.2 percentage points is explicit. Make the negative direction explicit if revising the diagnostic answer.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0001628280-25-021090:PART I:ITEM 2:section0:1"
+      ]
+    },
+    {
+      "number": 47,
+      "id": "025233f692ac8266cb20b6e3287da7b45da525ce3297af787d8c1310a16f4c8c",
+      "case_id": "scale-059",
+      "ticker": "NOC",
+      "question": "What was Northrop Grumman's operating income change in fiscal Q3 2024 compared to the prior year?",
+      "diagnostic_answer": "Operating income increased by $104 million.",
+      "assistant_verdict": "supported",
+      "reason": "Current-quarter operating income increase 104 million explicitly drives net earnings.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0001133421-24-000064:PART I:ITEM 2:section0:5"
+      ]
+    },
+    {
+      "number": 48,
+      "id": "3bb52999d70e59eeea88af5e2f102c42740ffa231a6f317eadda81c85993f664",
+      "case_id": "scale-059",
+      "ticker": "NOC",
+      "question": "What factors contributed to the decrease in Northrop Grumman's effective tax rate in fiscal Q3 2024?",
+      "diagnostic_answer": "The decrease was primarily due to a net reduction in tax reserves from a recent federal court decision.",
+      "assistant_verdict": "supported",
+      "reason": "Current-quarter ETR decrease principally due to federal-court-related tax reserve reduction is explicit.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0001133421-24-000064:PART I:ITEM 2:section0:5"
+      ]
+    },
+    {
+      "number": 49,
+      "id": "6fb2f2562a953be5defa6d58f59a9130b438eb5a5c66fe9520f4af61aed56af3",
+      "case_id": "scale-059",
+      "ticker": "NOC",
+      "question": "How did the realignment of the Strategic Deterrent Systems division affect Northrop Grumman's segment reporting in fiscal Q3 2024?",
+      "diagnostic_answer": "The realignment moved the Strategic Deterrent Systems division from Space Systems to Defense Systems, impacting segment operating results reporting.",
+      "assistant_verdict": "supported",
+      "reason": "SDS moved from Space to Defense effective July 1, 2024, with segment information reflecting it.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0001133421-24-000064:PART I:ITEM 2:section0:5"
+      ]
+    },
+    {
+      "number": 50,
+      "id": "597ddff3b2d6841a4e9597c3726c15b063b7ad8abfaad7339fa74a0f7aaeebdb",
+      "case_id": "scale-060",
+      "ticker": "OXY",
+      "question": "What was Occidental Petroleum's long-term debt as of March 31, 2025, and which credit rating agencies provided their ratings?",
+      "diagnostic_answer": "Occidental Petroleum's long-term debt was rated Baa3 by Moody\u2019s Investors Service, BBB- by Fitch Ratings, and BB+ by Standard and Poor\u2019s as of March 31, 2025.",
+      "assistant_verdict": "human_review",
+      "reason": "Passage reports debt CREDIT RATINGS (Baa3, BBB-, BB+) but no debt balance. Wording asks what was long-term debt and which agencies provided ratings, leaving amount versus ratings ambiguous.",
+      "recommended_action": "Recommend rewrite explicitly asking for long-term debt credit ratings and agencies. Decide whether the original is an acceptable ratings question or requires revision.",
+      "human_review_needed": true,
+      "human_approved": false,
+      "evidence_ids": [
+        "0000797468-25-000076:PART I:ITEM 2:4"
+      ]
+    },
+    {
+      "number": 51,
+      "id": "0374633260e54d2b4ce1dcd1070252e142d4af7902569d4fc8bdb90571ebe19e",
+      "case_id": "scale-061",
+      "ticker": "TXN",
+      "question": "What was Texas Instruments' Analog revenue and year-over-year change in fiscal Q3 2024?",
+      "diagnostic_answer": "Analog revenue was $3,223 million, down 4% year-over-year.",
+      "assistant_verdict": "supported",
+      "reason": "Analog revenue 3223 million down 4% is explicit.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0000097476-24-000042:PART I:ITEM 2:section0:2"
+      ]
+    },
+    {
+      "number": 52,
+      "id": "5473cb0fc9f24b77f18e3d5160e493dbd6ae721b7ebb885db73f5ef8e86da552",
+      "case_id": "scale-061",
+      "ticker": "TXN",
+      "question": "What was Texas Instruments' Embedded Processing revenue and year-over-year change in fiscal Q3 2024?",
+      "diagnostic_answer": "Embedded Processing revenue was $653 million, down 27% year-over-year.",
+      "assistant_verdict": "supported",
+      "reason": "Embedded Processing revenue 653 million down 27% is explicit.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0000097476-24-000042:PART I:ITEM 2:section0:2"
+      ]
+    },
+    {
+      "number": 53,
+      "id": "4def6869107fd509530939d020580e38e894ba7c067c75c860efd28c5ecb288a",
+      "case_id": "scale-061",
+      "ticker": "TXN",
+      "question": "What was Texas Instruments' operating profit percentage for Analog and Embedded Processing segments in fiscal Q3 2024?",
+      "diagnostic_answer": "Analog operating profit was 40.8% of revenue, and Embedded Processing operating profit was 16.7% of revenue.",
+      "assistant_verdict": "supported",
+      "reason": "Analog margin 40.8%, Embedded Processing 16.7% are explicit.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0000097476-24-000042:PART I:ITEM 2:section0:2"
+      ]
+    },
+    {
+      "number": 54,
+      "id": "7d87cad8ee6e6d590f7454d6462edc612a382b4d365297b3144d6a01be4c2b34",
+      "case_id": "scale-063",
+      "ticker": "DXCM",
+      "question": "What manufacturing challenges did DexCom face in Q4 2024 that could limit growth, and how might they impact future supply?",
+      "diagnostic_answer": "DexCom faced manufacturing and inventory challenges for G7 that caused supply disruptions in markets like the U.S., potentially leading to backorders and limited sales. These challenges could persist if manufacturing capabilities are insufficient to scale production to meet demand.",
+      "assistant_verdict": "scope_period_correction",
+      "reason": "Question ties manufacturing difficulties to Q4 specifically. The annual filing says recently and describes ongoing and potential problems; it does not locate their occurrence uniquely in Q4.",
+      "recommended_action": "Ask about challenges DISCLOSED IN the 2024 annual filing, preserving actual difficulties versus potential future effects.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0001093557-25-000036:PART I:ITEM 1A:12"
+      ]
+    },
+    {
+      "number": 55,
+      "id": "a149703caed4e5c897f91bff7406b6d8aa528e0beba50e522fd654bb7746cae8",
+      "case_id": "scale-066",
+      "ticker": "IBM",
+      "question": "What was IBM's Hybrid Platform & Solutions revenue growth in Q3 2024, and what components drove this growth?",
+      "diagnostic_answer": "Hybrid Platform & Solutions revenue increased 9.8% (9.7% adjusted for currency) in Q3 2024, driven by strong growth in Red Hat (13.7% reported, 13.8% adjusted), Automation (13.2% reported, 12.9% adjusted), and Data & AI, with Red Hat's growth fueled by demand for hybrid cloud solutions and Automation's growth supported by Apptio integration.",
+      "assistant_verdict": "supported",
+      "reason": "Hybrid Platform/Solutions +9.8%, Red Hat and Automation rates and stated drivers are explicit.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0000051143-24-000049:PART I:ITEM 1:137"
+      ]
+    },
+    {
+      "number": 56,
+      "id": "391054af62788b2cd1b9f8444c558a0d10451fe740fc09a7b9e517eba0a175a7",
+      "case_id": "scale-067",
+      "ticker": "REGN",
+      "question": "What is the purpose of Dupixent (dupilumab) in treating type 2 inflammation-related diseases according to Regeneron Pharmaceuticals' 2023 filing?",
+      "diagnostic_answer": "Dupixent is a fully human monoclonal antibody that inhibits signaling of the IL-4 and IL-13 pathways, which are key drivers of type 2 inflammation in diseases such as atopic dermatitis, asthma, CRSwNP, EoE, prurigo nodularis, and potentially other chronic allergic and inflammatory conditions.",
+      "assistant_verdict": "supported",
+      "reason": "Dupixent IL-4/IL-13 inhibition and type-2 inflammation indications are explicitly stated.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0001804220-24-000009:PART I:ITEM 1:22"
+      ]
+    },
+    {
+      "number": 57,
+      "id": "e878dd0a75434a2d4f4bb22ca690795696b46e7d7a922126def5cf801c868368",
+      "case_id": "scale-069",
+      "ticker": "EQR",
+      "question": "What was Equity Residential's liquidity position as of March 31, 2025, and how does it support future obligations?",
+      "diagnostic_answer": "Equity Residential had approximately $2.2 billion in readily available liquidity, a strong balance sheet, well-staggered debt maturities, very strong credit metrics, and ample access to capital markets, which positions it to meet future obligations and seize opportunities.",
+      "assistant_verdict": "supported",
+      "reason": "2.2 billion liquidity and company belief about future obligations and opportunities are explicit; retain this as management assessment, not guaranteed ability.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0000950170-25-061082:PART I:ITEM 2:section0:8"
+      ]
+    },
+    {
+      "number": 58,
+      "id": "a5c261d5b90a19feb6f973f0a99629cc6116b346e260170a5d105dcb17f31803",
+      "case_id": "scale-070",
+      "ticker": "FIS",
+      "question": "What was FIS's Banking segment revenue and adjusted EBITDA margin change in fiscal 2024 compared to 2023?",
+      "diagnostic_answer": "Banking segment revenue increased 2% year over year, and adjusted EBITDA margin expanded by 90 basis points.",
+      "assistant_verdict": "supported",
+      "reason": "Banking revenue +2%, adjusted EBITDA margin +90 bps is explicit.",
+      "recommended_action": "No material correction required.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0001136893-25-000014:PART II:ITEM 7:section0:15"
+      ]
+    },
+    {
+      "number": 59,
+      "id": "763a0225eb5446d164d5206bd343e5e8bd877c75441c099900193e238292fd89",
+      "case_id": "scale-073",
+      "ticker": "NRG",
+      "question": "What was NRG Energy's share repurchase amount and average price in fiscal Q3 2024?",
+      "diagnostic_answer": "NRG Energy completed $319 million of open market share repurchases at an average price of $79.26 per share in fiscal Q3 2024.",
+      "assistant_verdict": "reject",
+      "reason": "319 million repurchases at 79.26/share cover NINE MONTHS ended September 30, not Q3 alone.",
+      "recommended_action": "Reject current quarter-specific pair; any nine-month rewrite must be recorded separately.",
+      "human_review_needed": false,
+      "human_approved": false,
+      "evidence_ids": [
+        "0001013871-24-000020:PART I:ITEM 2:18"
+      ]
+    }
+  ]
+}

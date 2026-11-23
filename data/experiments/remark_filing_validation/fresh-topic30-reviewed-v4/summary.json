@@ -1,0 +1,834 @@
+{
+  "planned": 30,
+  "counts": {
+    "failed_evidence": 2,
+    "filtered_too_general": 4,
+    "model_accept": 20,
+    "model_reject": 3,
+    "filtered_personal_opinion": 1
+  },
+  "results": [
+    {
+      "case_id": "trial-01",
+      "ticker": "TDY",
+      "state": "failed_evidence",
+      "request": {
+        "eligibility": "eligible",
+        "information_request": "What was Teledyne Technologies Incorporated's non-GAAP operating margin improvement in fiscal Q1 2025 and the primary drivers?",
+        "required_evidence": [
+          "Non-GAAP operating margin improvement in fiscal Q1 2025",
+          "Contribution of FLIR to the improvement",
+          "Contribution of space-based sensor business to the improvement"
+        ],
+        "reason": "The remark specifies a 31 basis point improvement in non-GAAP operating margin and identifies FLIR and space-based sensor business as primary drivers. These elements are concrete and directly stated."
+      },
+      "judgment": null
+    },
+    {
+      "case_id": "trial-02",
+      "ticker": "NUE",
+      "state": "filtered_too_general",
+      "request": {
+        "eligibility": "too_general",
+        "information_request": "",
+        "required_evidence": [],
+        "reason": "The remark describes Nucor's positioning in growing markets with examples of projects but does not specify a concrete financial or business fact, comparison, policy, risk mechanism, transaction, or explanation requiring evidence. It is a broad business-model description without a sufficiently specific factual target."
+      },
+      "judgment": null
+    },
+    {
+      "case_id": "trial-03",
+      "ticker": "LII",
+      "state": "filtered_too_general",
+      "request": {
+        "eligibility": "too_general",
+        "information_request": "",
+        "required_evidence": [],
+        "reason": "The remark discusses potential risks (tariff impacts, product transition) without specifying a concrete financial or business fact to retrieve. It lacks a clear metric, subject, or period for evidence matching."
+      },
+      "judgment": null
+    },
+    {
+      "case_id": "trial-04",
+      "ticker": "MSI",
+      "state": "model_accept",
+      "request": {
+        "eligibility": "eligible",
+        "information_request": "What was Motorola Solutions, Inc.'s Software and Services backlog increase in fiscal Q1 2025 and the key drivers?",
+        "required_evidence": [
+          "Software and Services backlog increase, fiscal Q1 2025",
+          "Key drivers of backlog increase (multi-year contracts across technologies and UK Home Office revenue recognition)"
+        ],
+        "reason": "The remark specifies a $732 million backlog increase in Software and Services for Q1 2025, with explicit drivers (strong demand for multi-year contracts and UK Home Office impact). This matches the required evidence."
+      },
+      "judgment": {
+        "decision": "accept",
+        "reason": "The passage explicitly states a 9% increase in Software and Services segment net sales driven by $47 million in Video growth (including acquisitions) and $19 million in LMR services growth, with $11 million from unfavorable currency. This matches the requested backlog increase drivers.",
+        "request_coverage": "complete",
+        "evidence": [
+          {
+            "passage_id": "0000068505-25-000024:PART I:ITEM 2:section0:6",
+            "supplies": [
+              "9% Software and Services segment increase",
+              "$47 million Video growth (including acquisitions)",
+              "$19 million LMR services growth",
+              "$11 million unfavorable currency impact"
+            ],
+            "summary": "The passage directly attributes the 9% Software and Services backlog increase to the specified drivers, including multi-year contracts (implied by growth in Video, LMR services, and Command Center) and UK Home Office revenue recognition impact via currency effects."
+          }
+        ],
+        "original_remark_coverage": "complete",
+        "uncovered_original_assertions": []
+      }
+    },
+    {
+      "case_id": "trial-05",
+      "ticker": "REGN",
+      "state": "model_accept",
+      "request": {
+        "eligibility": "eligible",
+        "information_request": "What U.S. regulatory approvals does Regeneron Pharmaceuticals anticipate for 2025?",
+        "required_evidence": [
+          "U.S. regulatory approvals for linvoseltamab in relapsed/refractory multiple myeloma",
+          "U.S. regulatory approvals for odronextamab in late-line follicular lymphoma",
+          "U.S. regulatory approvals for Libtayo in adjuvant CSCC",
+          "U.S. regulatory approvals for Dupixent and bullous pemphigoid",
+          "Differentiated enhancements to the EYLEA HD U.S. label"
+        ],
+        "reason": "The remark explicitly lists specific regulatory approvals anticipated for 2025, which can be directly retrieved from the filing."
+      },
+      "judgment": {
+        "decision": "accept",
+        "reason": "The candidate passages explicitly list all requested regulatory approvals for 2025, including linvoseltamab, odronextamab, Libtayo, Dupixent, bullous pemphigoid, and EYLEA HD label enhancements. Each required approval is directly stated in the passages.",
+        "request_coverage": "complete",
+        "evidence": [
+          {
+            "passage_id": "0001804220-25-000022:PART I:ITEM 2:12",
+            "supplies": [
+              "Linvoseltamab in relapsed/refractory multiple myeloma",
+              "Odronextamab in late-line follicular lymphoma",
+              "Libtayo in adjuvant CSCC",
+              "Dupixent and bullous pemphigoid",
+              "EYLEA HD label enhancements"
+            ],
+            "summary": "The passage details all requested regulatory approvals under 'Select Upcoming Milestones' and 'Regulatory Review' sections."
+          },
+          {
+            "passage_id": "0001804220-25-000022:PART I:ITEM 2:11",
+            "supplies": [
+              "Dupixent and bullous pemphigoid approvals in EU/US"
+            ],
+            "summary": "Confirms FDA and EC decisions for Dupixent and bullous pemphigoid, supporting the request."
+          },
+          {
+            "passage_id": "0001804220-25-000022:PART I:ITEM 2:14",
+            "supplies": [
+              "Linvoseltamab approval in relapsed/refractory multiple myeloma"
+            ],
+            "summary": "Explicitly states EC approval for linvoseltamab in relapsed/refractory multiple myeloma."
+          }
+        ],
+        "original_remark_coverage": "complete",
+        "uncovered_original_assertions": []
+      }
+    },
+    {
+      "case_id": "trial-06",
+      "ticker": "NOC",
+      "state": "failed_evidence",
+      "request": {
+        "eligibility": "eligible",
+        "information_request": "What were Northrop Grumman Corporation’s dividend and share repurchase amounts in fiscal Q1 2025?",
+        "required_evidence": [
+          "Dividend payments, fiscal Q1 2025",
+          "Share repurchases, fiscal Q1 2025"
+        ],
+        "reason": "The remark explicitly states the total returned to shareholders ($800 million) through dividends and share repurchases. The evidence requires separation of these two components, which are not individually quantified in the provided text."
+      },
+      "judgment": null
+    },
+    {
+      "case_id": "trial-07",
+      "ticker": "NUE",
+      "state": "model_accept",
+      "request": {
+        "eligibility": "eligible",
+        "information_request": "What new senior notes did Nucor Corporation issue in fiscal Q1 2025, including the weighted average coupon and purpose of the funds?",
+        "required_evidence": [
+          "New senior notes issuance amount",
+          "Weighted average coupon of new senior notes",
+          "Purpose of funds (debt maturities and operational adjustments)"
+        ],
+        "reason": "The remark specifies $1 billion in new senior notes with a 4.88% weighted average coupon for prefunding debt maturities and operational adjustments. These details are concrete and directly stated."
+      },
+      "judgment": {
+        "decision": "accept",
+        "reason": "The passage explicitly states the issuance of $500 million 4.650% Notes due 2030 and $500 million 5.100% Notes due 2035 (totaling $1 billion) with a weighted average coupon of 4.88% (calculated from the two rates). The purpose is directly stated as using proceeds to redeem $2025 Notes and for general corporate purposes, aligning with the request.",
+        "request_coverage": "complete",
+        "evidence": [
+          {
+            "passage_id": "0000950170-25-071567:PART I:ITEM 1:29",
+            "supplies": [
+              "$1 billion in new senior notes issuance",
+              "4.88% weighted average coupon",
+              "Purpose: redeem $2025 Notes and general corporate purposes"
+            ],
+            "summary": "The passage details the issuance of $500M 4.650% and $500M 5.100% notes (total $1B) with a 4.88% weighted average coupon. Proceeds are allocated to redeem $2025 Notes and general corporate purposes."
+          }
+        ],
+        "original_remark_coverage": "complete",
+        "uncovered_original_assertions": []
+      }
+    },
+    {
+      "case_id": "trial-08",
+      "ticker": "DXCM",
+      "state": "filtered_too_general",
+      "request": {
+        "eligibility": "too_general",
+        "information_request": "",
+        "required_evidence": [],
+        "reason": "The remark provides an agenda overview without specific financial or business facts. It does not request a concrete metric, transaction, policy, or explanation requiring evidence from filings."
+      },
+      "judgment": null
+    },
+    {
+      "case_id": "trial-09",
+      "ticker": "NDAQ",
+      "state": "model_accept",
+      "request": {
+        "eligibility": "eligible",
+        "information_request": "What was Nasdaq, Inc.'s net revenue growth in fiscal Q1 2025?",
+        "required_evidence": [
+          "Net revenue, fiscal Q1 2025",
+          "Year-over-year net revenue growth percentage"
+        ],
+        "reason": "The remark explicitly states net revenue of $1.2 billion and a 12.5% increase from the prior year, which directly supports the request for revenue growth."
+      },
+      "judgment": {
+        "decision": "accept",
+        "reason": "The original remark explicitly states net revenue of $1.2 billion and a 12.5% year-over-year increase, which directly supports the request for net revenue growth. The candidate passages confirm the $1.2 billion revenue figure and the 12.5% growth in the Management’s Discussion and Analysis section.",
+        "request_coverage": "complete",
+        "evidence": [
+          {
+            "passage_id": "0001120193-25-000012:PART I:ITEM 2:section0:4",
+            "supplies": [
+              "Net revenue $1.2 billion",
+              "12.5% year-over-year growth"
+            ],
+            "summary": "The passage explicitly states net revenue of $1.2 billion and a 12.5% increase from the prior year period."
+          }
+        ],
+        "original_remark_coverage": "complete",
+        "uncovered_original_assertions": []
+      }
+    },
+    {
+      "case_id": "trial-10",
+      "ticker": "TDY",
+      "state": "model_reject",
+      "request": {
+        "eligibility": "eligible",
+        "information_request": "What were Teledyne Technologies Incorporated's orders and sales for the quarter, and how did orders compare to sales in the context of the acquired backlog?",
+        "required_evidence": [
+          "Orders for Teledyne Technologies Incorporated in the quarter",
+          "Sales for Teledyne Technologies Incorporated in the quarter",
+          "Comparison of orders to sales (excluding acquired backlog)"
+        ],
+        "reason": "The remark specifies that orders exceeded sales for the sixth consecutive quarter, excluding the acquired backlog. This requires evidence of both orders and sales figures, as well as the comparison metric."
+      },
+      "judgment": {
+        "decision": "reject",
+        "reason": "The candidate passages do not provide specific figures for orders and sales in the quarter. The text mentions 'orders exceeded sales' but lacks exact numerical values required for the request. The acquired backlog context is also not quantified.",
+        "request_coverage": "none",
+        "evidence": [],
+        "original_remark_coverage": "not_established",
+        "uncovered_original_assertions": [
+          "Orders and sales figures",
+          "Comparison of orders to sales excluding acquired backlog"
+        ]
+      }
+    },
+    {
+      "case_id": "trial-11",
+      "ticker": "GILD",
+      "state": "model_accept",
+      "request": {
+        "eligibility": "eligible",
+        "information_request": "What impact could tariffs have on Gilead Sciences' indirect costs in 2025, and how might FX headwinds influence this?",
+        "required_evidence": [
+          "Potential increase in indirect costs due to tariffs",
+          "FX headwinds' effect on cost management in 2025"
+        ],
+        "reason": "The remark identifies tariffs and FX headwinds as factors affecting indirect costs, with a specific timeframe (2025) and context (manageable due to lighter FX headwinds). The request seeks the factual basis for these claims."
+      },
+      "judgment": {
+        "decision": "accept",
+        "reason": "The candidate passages in ITEM 1A:9 and ITEM 1A:32 discuss tariffs and FX headwinds as risks that could increase indirect costs and impact cost management in 2025. The remarks align with the filing's explicit risk factors regarding tariffs and currency fluctuations.",
+        "request_coverage": "complete",
+        "evidence": [
+          {
+            "passage_id": "0000882095-25-000012:PART II:ITEM 1A:9",
+            "supplies": [
+              "Potential tariff increases on pharmaceutical imports",
+              "FX headwinds as part of regulatory uncertainty"
+            ],
+            "summary": "ITEM 1A:9 identifies tariffs and FX-related regulatory risks that could increase manufacturing costs and affect supply chain resilience, directly supporting the request."
+          },
+          {
+            "passage_id": "0000882095-25-000012:PART II:ITEM 1A:32",
+            "supplies": [
+              "FX headwinds and currency fluctuations",
+              "Cost management challenges from currency movements"
+            ],
+            "summary": "ITEM 1A:32 explicitly states that a stronger U.S. dollar (FX headwinds) could adversely impact cost management, aligning with the request's focus on FX effects."
+          }
+        ],
+        "original_remark_coverage": "complete",
+        "uncovered_original_assertions": []
+      }
+    },
+    {
+      "case_id": "trial-12",
+      "ticker": "LRCX",
+      "state": "model_accept",
+      "request": {
+        "eligibility": "eligible",
+        "information_request": "What was Lam Research Corporation's non-GAAP tax rate for fiscal Q1 2025?",
+        "required_evidence": [
+          "Non-GAAP tax rate, fiscal Q1 2025"
+        ],
+        "reason": "The remark explicitly states the non-GAAP tax rate of 13.8% for the quarter, which aligns with the fiscal Q1 2025 period specified in the metadata."
+      },
+      "judgment": {
+        "decision": "accept",
+        "reason": "The passage explicitly states the non-GAAP tax rate of 13.8% for the three months ended September 29, 2024, which corresponds to fiscal Q1 2025. The metadata confirms the fiscal period end aligns with this reporting period.",
+        "request_coverage": "complete",
+        "evidence": [
+          {
+            "passage_id": "0000707549-24-000128:PART I:ITEM 1:section0:9",
+            "supplies": [
+              "Non-GAAP tax rate 13.8% for the three months ended September 29, 2024"
+            ],
+            "summary": "The passage directly reports the non-GAAP tax rate of 13.8% for the specified period."
+          }
+        ],
+        "original_remark_coverage": "complete",
+        "uncovered_original_assertions": []
+      }
+    },
+    {
+      "case_id": "trial-13",
+      "ticker": "REGN",
+      "state": "model_accept",
+      "request": {
+        "eligibility": "eligible",
+        "information_request": "What regulatory approval did Regeneron Pharmaceuticals receive for Lynozyfic (BCMAxCD3 bispecific) in Q1 2025?",
+        "required_evidence": [
+          "Conditional marketing authorization for Lynozyfic in Europe",
+          "Regulatory approval details for BCMAxCD3 bispecific treatment of relapsed/refractory multiple myeloma"
+        ],
+        "reason": "The remark specifies a recent regulatory approval for Lynozyfic in Europe, which constitutes a concrete factual request. The evidence required is directly stated in the remark."
+      },
+      "judgment": {
+        "decision": "accept",
+        "reason": "The passage explicitly states the European Commission granted conditional marketing authorization for Lynozyfic (BCMAxCD3 bispecific) for relapsed/refractory multiple myeloma in Q1 2025, directly addressing the requested regulatory approval.",
+        "request_coverage": "complete",
+        "evidence": [
+          {
+            "passage_id": "0001804220-25-000022:PART I:ITEM 2:14",
+            "supplies": [
+              "Conditional marketing authorization for Lynozyfic in Europe",
+              "Regulatory approval details for BCMAxCD3 bispecific treatment of relapsed/refractory multiple myeloma"
+            ],
+            "summary": "The passage confirms the European Commission's conditional marketing authorization for Lynozyfic (BCMAxCD3 bispecific) for the specified indication in Q1 2025."
+          }
+        ],
+        "original_remark_coverage": "complete",
+        "uncovered_original_assertions": []
+      }
+    },
+    {
+      "case_id": "trial-14",
+      "ticker": "WEC",
+      "state": "model_accept",
+      "request": {
+        "eligibility": "eligible",
+        "information_request": "What was the percentage increase in WEC Energy Group, Inc.'s dividend at its January 2025 board meeting?",
+        "required_evidence": [
+          "Dividend increase percentage, January 2025 board meeting"
+        ],
+        "reason": "The remark explicitly states a 6.9% dividend increase at the January meeting, which corresponds to the Q1 2025 filing period."
+      },
+      "judgment": {
+        "decision": "accept",
+        "reason": "The passage explicitly states a 6.9% dividend increase at the January 2025 board meeting, directly matching the requested information.",
+        "request_coverage": "complete",
+        "evidence": [
+          {
+            "passage_id": "0000107815-25-000182:PART I:ITEM 2:41",
+            "supplies": [
+              "Dividend increase percentage (6.9%)",
+              "January 2025 board meeting context"
+            ],
+            "summary": "The passage confirms the 6.9% dividend increase effective with the March 2025 payment, aligning with the request."
+          }
+        ],
+        "original_remark_coverage": "complete",
+        "uncovered_original_assertions": []
+      }
+    },
+    {
+      "case_id": "trial-15",
+      "ticker": "O",
+      "state": "model_accept",
+      "request": {
+        "eligibility": "eligible",
+        "information_request": "What was Realty Income Corporation's rent recapture rate and percentage of leasing activity from renewals in Q1 2025?",
+        "required_evidence": [
+          "Rent recapture rate across 194 leases",
+          "Percentage of leasing activity generated from renewals"
+        ],
+        "reason": "The remark provides specific metrics about rent recapture and renewal-driven leasing activity, which are concrete financial facts requiring evidence from the filing."
+      },
+      "judgment": {
+        "decision": "accept",
+        "reason": "The passage explicitly states the rent recapture rate of 103.9% across 194 leases and 92% of leasing activity from renewals in Q1 2025. These metrics directly match the requested information.",
+        "request_coverage": "complete",
+        "evidence": [
+          {
+            "passage_id": "0000726728-25-000096:PART I:ITEM 1:section0:38",
+            "supplies": [
+              "Rent recapture rate 103.9%",
+              "92% renewal-driven leasing activity"
+            ],
+            "summary": "The passage provides both requested metrics: rent recapture rate and percentage of leasing activity from renewals."
+          }
+        ],
+        "original_remark_coverage": "complete",
+        "uncovered_original_assertions": []
+      }
+    },
+    {
+      "case_id": "trial-16",
+      "ticker": "IQV",
+      "state": "filtered_personal_opinion",
+      "request": {
+        "eligibility": "personal_opinion",
+        "information_request": "",
+        "required_evidence": [],
+        "reason": "The remark contains a speaker's introduction and acknowledgment of attendees, which does not convey a specific financial or business fact, comparison, policy, risk mechanism, transaction, or explanation requiring evidence. It is personal in nature and lacks a concrete information request."
+      },
+      "judgment": null
+    },
+    {
+      "case_id": "trial-17",
+      "ticker": "ABT",
+      "state": "model_accept",
+      "request": {
+        "eligibility": "eligible",
+        "information_request": "What were Abbott Laboratories’ gross margin and operating margin increases compared to the prior year in fiscal Q1 2025?",
+        "required_evidence": [
+          "Gross margin increase, fiscal Q1 2025",
+          "Operating margin increase, fiscal Q1 2025"
+        ],
+        "reason": "The remark specifies concrete margin improvements with quantified changes, which can be directly retrieved from the filing."
+      },
+      "judgment": {
+        "decision": "accept",
+        "reason": "The passage explicitly states the gross profit margin percentage increased from 50.5% to 52.8% in Q1 2025, representing a 140 basis point increase. The operating margin increase of 130 basis points is also directly mentioned in the context of the overall margin improvements.",
+        "request_coverage": "complete",
+        "evidence": [
+          {
+            "passage_id": "0001628280-25-021090:PART I:ITEM 2:section0:3",
+            "supplies": [
+              "Gross profit margin 52.8% (Q1 2025)",
+              "Gross profit margin 50.5% (Q1 2024)",
+              "Operating margin improvement context"
+            ],
+            "summary": "The passage directly reports the 140 basis point gross margin increase and references the 130 basis point operating margin improvement as part of the overall margin expansion."
+          }
+        ],
+        "original_remark_coverage": "complete",
+        "uncovered_original_assertions": []
+      }
+    },
+    {
+      "case_id": "trial-18",
+      "ticker": "DXCM",
+      "state": "model_reject",
+      "request": {
+        "eligibility": "eligible",
+        "information_request": "How did DexCom, Inc. expedite lead times in Q1 2025 through direct flight charters for distribution centers?",
+        "required_evidence": [
+          "Expedited lead times via direct flight charters",
+          "Higher cost compared to traditional freight processes",
+          "Q1 2025 implementation"
+        ],
+        "reason": "The remark specifies a concrete operational change with identifiable cost implications and timing tied to the fiscal Q1 2025 period."
+      },
+      "judgment": {
+        "decision": "reject",
+        "reason": "The candidate passages do not address the operational change of expediting lead times via direct flight charters for distribution centers in Q1 2025. The provided legal and risk factor passages are unrelated to supply chain logistics or cost comparisons.",
+        "request_coverage": "none",
+        "evidence": [],
+        "original_remark_coverage": "not_established",
+        "uncovered_original_assertions": [
+          "Expedited lead times via direct flight charters",
+          "Higher cost compared to traditional freight processes",
+          "Q1 2025 implementation"
+        ]
+      }
+    },
+    {
+      "case_id": "trial-19",
+      "ticker": "MMM",
+      "state": "model_accept",
+      "request": {
+        "eligibility": "eligible",
+        "information_request": "What is 3M Company's expected impact of tariffs on EPS for fiscal Q1 2025, and what is the estimated amount?",
+        "required_evidence": [
+          "Estimated tariff impact on EPS for fiscal Q1 2025",
+          "Quantitative estimate of $400 million or $0.60 per share"
+        ],
+        "reason": "The remark specifies a concrete financial estimate ($400 million or $0.60 EPS) related to tariffs, which can be directly retrieved from the filing."
+      },
+      "judgment": {
+        "decision": "accept",
+        "reason": "The passage explicitly states the expected tariff impact of $400 million or $0.60 EPS for fiscal Q1 2025, directly addressing the requested quantitative estimate.",
+        "request_coverage": "complete",
+        "evidence": [
+          {
+            "passage_id": "0000066740-25-000039:PART I:ITEM 2:section0:1",
+            "supplies": [
+              "$400 million or $0.60 EPS tariff impact estimate"
+            ],
+            "summary": "The passage directly quotes the $400 million or $0.60 EPS tariff impact mentioned in the original remark."
+          }
+        ],
+        "original_remark_coverage": "complete",
+        "uncovered_original_assertions": []
+      }
+    },
+    {
+      "case_id": "trial-20",
+      "ticker": "BIIB",
+      "state": "model_accept",
+      "request": {
+        "eligibility": "eligible",
+        "information_request": "What was Biogen Inc.'s non-GAAP core operating expense or R&D plus SG&A expense change year-over-year in fiscal Q1 2025?",
+        "required_evidence": [
+          "Non-GAAP core operating expense or R&D plus SG&A expense, fiscal Q1 2025",
+          "Year-over-year change in non-GAAP core operating expense or R&D plus SG&A expense"
+        ],
+        "reason": "The remark specifies a 1% decrease in non-GAAP core operating expense or R&D plus SG&A expense due to R&D prioritization and Fit for Growth initiatives. The evidence is directly stated in the provided text."
+      },
+      "judgment": {
+        "decision": "accept",
+        "reason": "The passage explicitly states a 1% decrease in non-GAAP core operating expense or R&D plus SG&A expense year-over-year due to R&D prioritization and Fit for Growth initiatives. The required evidence items are directly supported by the text.",
+        "request_coverage": "complete",
+        "evidence": [
+          {
+            "passage_id": "0000875045-25-000018:PART I:ITEM 2:section0:8",
+            "supplies": [
+              "Non-GAAP core operating expense or R&D plus SG&A expense decrease of 1%",
+              "R&D prioritization and Fit for Growth initiatives as causes"
+            ],
+            "summary": "The passage directly reports the 1% decrease in non-GAAP core operating expense or R&D plus SG&A expense and attributes it to R&D prioritization and Fit for Growth initiatives."
+          }
+        ],
+        "original_remark_coverage": "complete",
+        "uncovered_original_assertions": []
+      }
+    },
+    {
+      "case_id": "trial-21",
+      "ticker": "KMX",
+      "state": "model_accept",
+      "request": {
+        "eligibility": "eligible",
+        "information_request": "What was the impact of the $59 million legal settlement exclusion on CarMax, Inc.'s financial results in fiscal Q1 2025 compared to the prior year's quarter?",
+        "required_evidence": [
+          "Exclusion of $59 million legal settlement benefit in prior year's quarter financial results"
+        ],
+        "reason": "The remark specifies a comparison to the prior year's quarter with the exclusion of the $59 million legal settlement benefit. The request seeks to identify this specific adjustment and its impact."
+      },
+      "judgment": {
+        "decision": "accept",
+        "reason": "The passage explicitly states the $59.3 million legal settlement benefit received in the prior year's first quarter, which directly supports the request for the exclusion impact. The comparison to the prior year's quarter with this exclusion is addressed in the context of SG&A expense changes.",
+        "request_coverage": "complete",
+        "evidence": [
+          {
+            "passage_id": "0001170010-24-000087:PART I:ITEM 1:83",
+            "supplies": [
+              "$59.3 million benefit in the prior year period in connection with the receipt of settlement proceeds"
+            ],
+            "summary": "The passage directly references the $59.3 million legal settlement benefit received in the prior year's first quarter, which is the key evidence for the exclusion impact."
+          }
+        ],
+        "original_remark_coverage": "complete",
+        "uncovered_original_assertions": []
+      }
+    },
+    {
+      "case_id": "trial-22",
+      "ticker": "FITB",
+      "state": "model_accept",
+      "request": {
+        "eligibility": "eligible",
+        "information_request": "What was the share repurchase amount and resulting share count reduction for Fifth Third Bancorp in fiscal Q1 2025?",
+        "required_evidence": [
+          "Share repurchase amount",
+          "Share count reduction"
+        ],
+        "reason": "The remark explicitly states both the $225 million repurchase and 5.2 million share reduction, which are specific factual components requiring evidence."
+      },
+      "judgment": {
+        "decision": "accept",
+        "reason": "The candidate passages explicitly state the $225 million share repurchase amount and the 5.242 million total shares repurchased (including 4.353 million on repurchase date and 888,865 from forward settlement), which directly matches the requested information.",
+        "request_coverage": "complete",
+        "evidence": [
+          {
+            "passage_id": "0000035527-25-000137:PART I:ITEM 1:section0:89",
+            "supplies": [
+              "Share repurchase amount $225 million",
+              "Total shares repurchased 5,242,382 (5.242 million)"
+            ],
+            "summary": "The accelerated share repurchase transaction details include both the $225 million amount and the total shares repurchased (5.242 million), which aligns with the request."
+          }
+        ],
+        "original_remark_coverage": "complete",
+        "uncovered_original_assertions": []
+      }
+    },
+    {
+      "case_id": "trial-23",
+      "ticker": "PLTR",
+      "state": "model_accept",
+      "request": {
+        "eligibility": "eligible",
+        "information_request": "What was Palantir Technologies Inc.'s combined revenue growth and adjusted operating margin in fiscal Q1 2025, and how did these metrics affect the rule of 40 score?",
+        "required_evidence": [
+          "Combined revenue growth, fiscal Q1 2025",
+          "Adjusted operating margin, fiscal Q1 2025",
+          "Rule of 40 score calculation for fiscal Q1 2025"
+        ],
+        "reason": "The remark explicitly states specific metrics (83% combined revenue growth, adjusted operating margin acceleration, and rule of 40 score improvement) that require direct evidence from the filing. The passage must confirm these values and their relationship to the rule of 40 score."
+      },
+      "judgment": {
+        "decision": "accept",
+        "reason": "The passage in ITEM 2:2 explicitly states 39% revenue growth and adjusted operating margin of 44% for Q1 2025. The rule of 40 score improvement (2-point increase) is directly supported by the context of consecutive expanding rule of 40 scores.",
+        "request_coverage": "complete",
+        "evidence": [
+          {
+            "passage_id": "0001321655-25-000066:PART I:ITEM 2:2",
+            "supplies": [
+              "39% revenue growth",
+              "44% adjusted operating margin",
+              "7th consecutive expanding rule of 40 score"
+            ],
+            "summary": "The passage provides the exact revenue growth percentage, adjusted operating margin, and context for the rule of 40 score improvement."
+          }
+        ],
+        "original_remark_coverage": "complete",
+        "uncovered_original_assertions": []
+      }
+    },
+    {
+      "case_id": "trial-24",
+      "ticker": "O",
+      "state": "filtered_too_general",
+      "request": {
+        "eligibility": "too_general",
+        "information_request": "",
+        "required_evidence": [],
+        "reason": "The remark describes the company's business model as 'highly diversified global portfolio' without specifying a concrete financial or business fact, comparison, policy, risk mechanism, transaction, or explanation. It lacks a sufficiently specific factual target for retrieval."
+      },
+      "judgment": null
+    },
+    {
+      "case_id": "trial-25",
+      "ticker": "ZBRA",
+      "state": "model_accept",
+      "request": {
+        "eligibility": "eligible",
+        "information_request": "What is Zebra Technologies Corporation's adjusted EBITDA margin outlook and non-GAAP diluted earnings per share range for fiscal Q1 2025?",
+        "required_evidence": [
+          "Adjusted EBITDA margin outlook, fiscal Q1 2025",
+          "Non-GAAP diluted earnings per share range, fiscal Q1 2025"
+        ],
+        "reason": "The remark explicitly states specific numerical targets for both metrics, requiring direct evidence from the filing."
+      },
+      "judgment": {
+        "decision": "accept",
+        "reason": "The passage in ITEM 1:section0:5 explicitly states the adjusted EBITDA margin outlook reduction and the non-GAAP diluted earnings per share range. The required figures (20-21% EBITDA margin and $13.75-$14.75 EPS) are directly provided in the text.",
+        "request_coverage": "complete",
+        "evidence": [
+          {
+            "passage_id": "0000877212-25-000065:PART I:ITEM 1:section0:5",
+            "supplies": [
+              "Adjusted EBITDA margin outlook 20-21%",
+              "Non-GAAP diluted earnings per share range $13.75-$14.75"
+            ],
+            "summary": "The passage directly quotes the requested metrics from the company's statement."
+          }
+        ],
+        "original_remark_coverage": "complete",
+        "uncovered_original_assertions": []
+      }
+    },
+    {
+      "case_id": "trial-26",
+      "ticker": "GILD",
+      "state": "model_reject",
+      "request": {
+        "eligibility": "eligible",
+        "information_request": "What are Gilead Sciences' projected SG&A expense reduction percentage, operating income range, effective tax rate, and diluted EPS range for fiscal Q1 2025?",
+        "required_evidence": [
+          "SG&A expense reduction percentage compared to 2024",
+          "Operating income range for fiscal Q1 2025",
+          "Effective tax rate for fiscal Q1 2025",
+          "Diluted EPS range for fiscal Q1 2025"
+        ],
+        "reason": "The remark explicitly states specific projections for SG&A expenses, operating income, tax rate, and diluted EPS for the quarter. Each metric requires direct evidence from the filing."
+      },
+      "judgment": {
+        "decision": "reject",
+        "reason": "The requested projections (SG&A reduction percentage, operating income range, effective tax rate, diluted EPS range) are not present in the provided candidate passages. The passages focus on financial statements, tax details, and legal matters but do not include forward-looking guidance or specific quarterly projections.",
+        "request_coverage": "none",
+        "evidence": [],
+        "original_remark_coverage": "not_established",
+        "uncovered_original_assertions": [
+          "SG&A expense reduction percentage",
+          "Operating income range",
+          "Effective tax rate",
+          "Diluted EPS range"
+        ]
+      }
+    },
+    {
+      "case_id": "trial-27",
+      "ticker": "MSI",
+      "state": "model_accept",
+      "request": {
+        "eligibility": "eligible",
+        "information_request": "What was Motorola Solutions, Inc.'s GAAP earnings per share in fiscal Q1 2025 and the year-ago quarter, including the impact of the Silver Lake convertible debt settlement?",
+        "required_evidence": [
+          "GAAP earnings per share, fiscal Q1 2025",
+          "GAAP earnings per share, year-ago quarter (including non-operating loss from Silver Lake convertible debt settlement)"
+        ],
+        "reason": "The remark specifies GAAP EPS figures and attributes the prior quarter's change to a specific non-operating loss. The required evidence directly addresses these stated facts."
+      },
+      "judgment": {
+        "decision": "accept",
+        "reason": "The passage explicitly states GAAP earnings per share for Q1 2025 ($2.53) and Q1 2024 ($-0.23), including the $585 million loss from Silver Lake Convertible Debt settlement in 2024. The required evidence is directly provided.",
+        "request_coverage": "complete",
+        "evidence": [
+          {
+            "passage_id": "0000068505-25-000024:PART I:ITEM 1:section0:14",
+            "supplies": [
+              "GAAP earnings per share, fiscal Q1 2025 ($2.53)",
+              "GAAP earnings per share, year-ago quarter ($-0.23)",
+              "Loss from Silver Lake Convertible Debt settlement ($585 million)"
+            ],
+            "summary": "The financial statements section provides both GAAP EPS figures and details the $585 million non-operating loss from the Silver Lake debt settlement in 2024."
+          }
+        ],
+        "original_remark_coverage": "complete",
+        "uncovered_original_assertions": []
+      }
+    },
+    {
+      "case_id": "trial-28",
+      "ticker": "NDAQ",
+      "state": "model_accept",
+      "request": {
+        "eligibility": "eligible",
+        "information_request": "What was Nasdaq, Inc.'s gross leverage ratio at the end of fiscal Q1 2025?",
+        "required_evidence": [
+          "Gross leverage ratio, fiscal Q1 2025"
+        ],
+        "reason": "The remark explicitly states the gross leverage ratio of 3.4 times at the end of the quarter, which matches the requested information."
+      },
+      "judgment": {
+        "decision": "accept",
+        "reason": "The remark explicitly states the gross leverage ratio of 3.4 times at the end of fiscal Q1 2025, which is directly supported by the candidate passages. The financial statements and MD&A sections confirm the leverage ratio through debt covenant compliance and capital structure details.",
+        "request_coverage": "complete",
+        "evidence": [
+          {
+            "passage_id": "0001120193-25-000012:PART I:ITEM 1:section0:18",
+            "supplies": [
+              "Gross leverage ratio of 3.4 times at quarter-end"
+            ],
+            "summary": "The passage details the gross leverage ratio in the context of debt covenants and capital structure."
+          }
+        ],
+        "original_remark_coverage": "complete",
+        "uncovered_original_assertions": []
+      }
+    },
+    {
+      "case_id": "trial-29",
+      "ticker": "NOC",
+      "state": "model_accept",
+      "request": {
+        "eligibility": "eligible",
+        "information_request": "What caused the 4% decrease in Northrop Grumman's Q1 2025 operating margin for admission systems?",
+        "required_evidence": [
+          "Lower volume on certain fixed-price restricted production programs",
+          "Investments in restricted business opportunities"
+        ],
+        "reason": "The remark explicitly identifies two factors affecting the operating margin decrease. Both required elements are directly stated in the provided text."
+      },
+      "judgment": {
+        "decision": "accept",
+        "reason": "The passage explicitly states that the 4% decrease in operating margin for admission systems was due to investments in restricted business opportunities and lower volume on restricted advanced microelectronics programs. Both required evidence elements are directly supported by the text.",
+        "request_coverage": "complete",
+        "evidence": [
+          {
+            "passage_id": "0001133421-25-000023:PART I:ITEM 2:section0:10",
+            "supplies": [
+              "Lower volume on restricted advanced microelectronics programs",
+              "Investments in restricted business opportunities"
+            ],
+            "summary": "The passage directly attributes the operating margin decrease to these two factors."
+          }
+        ],
+        "original_remark_coverage": "complete",
+        "uncovered_original_assertions": []
+      }
+    },
+    {
+      "case_id": "trial-30",
+      "ticker": "NKE",
+      "state": "model_accept",
+      "request": {
+        "eligibility": "eligible",
+        "information_request": "What was NIKE, Inc.'s EBIT and gross margin change in fiscal Q1 2025?",
+        "required_evidence": [
+          "EBIT decline percentage in fiscal Q1 2025",
+          "Gross margin expansion in fiscal Q1 2025"
+        ],
+        "reason": "The remark explicitly states EBIT declined 15% and gross margin expanded, with the period specified as the quarter (Q1 2025). The evidence is directly stated in the provided text."
+      },
+      "judgment": {
+        "decision": "accept",
+        "reason": "The passage explicitly states EBIT decreased 15% and gross margin expanded by 120 basis points in fiscal Q1 2025. The required evidence is directly supported by the provided text.",
+        "request_coverage": "complete",
+        "evidence": [
+          {
+            "passage_id": "0000320187-24-000065:PART I:ITEM 2:section0:9",
+            "supplies": [
+              "EBIT decline 15%",
+              "Gross margin expansion 120 basis points"
+            ],
+            "summary": "The passage directly reports the 15% EBIT decline and 120 basis point gross margin expansion in fiscal Q1 2025."
+          }
+        ],
+        "original_remark_coverage": "complete",
+        "uncovered_original_assertions": []
+      }
+    }
+  ],
+  "note": "Model decisions only; no human accuracy calculated and no training started."
+}

@@ -1,0 +1,342 @@
+{
+  "reviewed_at": "2026-11-19T00:29:06.010167+00:00",
+  "reviewer": "assistant",
+  "scope": "28 finished cases only; trial-01 and trial-06 execution failures excluded. Saved request, original remark and retrieved passage evidence reviewed; full filings were not exhaustively adjudicated. No inference rerun.",
+  "counts": {
+    "appropriate_filter": 4,
+    "incorrect_filter": 1,
+    "unsupported_acceptance": 12,
+    "supported": 3,
+    "appropriate_rejection": 3,
+    "request_period_review": 1,
+    "fragment_review": 1,
+    "citation_repair": 1,
+    "transcript_sign_repair": 1,
+    "scope_review": 1
+  },
+  "rows": [
+    {
+      "case_id": "trial-02",
+      "ticker": "NUE",
+      "model_state": "filtered_too_general",
+      "assistant_verdict": "appropriate_filter",
+      "reason": "Broad claim of competitive positioning supported only by examples of project types; no bounded factual request selected.",
+      "cited_passage_ids": [],
+      "human_review_needed": false,
+      "human_approved": false
+    },
+    {
+      "case_id": "trial-03",
+      "ticker": "LII",
+      "model_state": "filtered_too_general",
+      "assistant_verdict": "incorrect_filter",
+      "reason": "Tariffs and transition to low-GWP products are named mechanisms for potential project delays. A specific qualitative risk is not automatically too general. No evidence retrieval was performed, so no positive match is established.",
+      "cited_passage_ids": [],
+      "human_review_needed": false,
+      "human_approved": false
+    },
+    {
+      "case_id": "trial-04",
+      "ticker": "MSI",
+      "model_state": "accept",
+      "assistant_verdict": "unsupported_acceptance",
+      "reason": "Cited passage reports 83 million / 9% Software and Services NET SALES growth, not 732 million BACKLOG growth. Contract and UK Home Office explanations are not established.",
+      "cited_passage_ids": [
+        "0000068505-25-000024:PART I:ITEM 2:section0:6"
+      ],
+      "human_review_needed": false,
+      "human_approved": false
+    },
+    {
+      "case_id": "trial-05",
+      "ticker": "REGN",
+      "model_state": "accept",
+      "assistant_verdict": "unsupported_acceptance",
+      "reason": "Cited clinical tables support some anticipated decisions, not all required approvals. Odronextamab late-line follicular-lymphoma US approval is not established by the cited passages. Approval in another jurisdiction is insufficient.",
+      "cited_passage_ids": [
+        "0001804220-25-000022:PART I:ITEM 2:12",
+        "0001804220-25-000022:PART I:ITEM 2:11",
+        "0001804220-25-000022:PART I:ITEM 2:14"
+      ],
+      "human_review_needed": false,
+      "human_approved": false
+    },
+    {
+      "case_id": "trial-07",
+      "ticker": "NUE",
+      "model_state": "accept",
+      "assistant_verdict": "supported",
+      "reason": "Two 500 million notes at 4.650% and 5.100% total 1 billion and give a principal-weighted coupon of 4.875%, rounded to 4.88%. Proceeds redeem the 2025 notes. Corporate wind-down assertion is outside the narrower request.",
+      "cited_passage_ids": [
+        "0000950170-25-071567:PART I:ITEM 1:29"
+      ],
+      "human_review_needed": false,
+      "human_approved": false
+    },
+    {
+      "case_id": "trial-08",
+      "ticker": "DXCM",
+      "model_state": "filtered_too_general",
+      "assistant_verdict": "appropriate_filter",
+      "reason": "Administrative call agenda; exclusion is appropriate even though too_general is an approximate schema label.",
+      "cited_passage_ids": [],
+      "human_review_needed": false,
+      "human_approved": false
+    },
+    {
+      "case_id": "trial-09",
+      "ticker": "NDAQ",
+      "model_state": "accept",
+      "assistant_verdict": "unsupported_acceptance",
+      "reason": "Cited passage concerns index/workflow revenues, not consolidated 12.5% net-revenue growth. Uncited candidate rank 5 reports revenues less transaction expenses of 1237 vs 1117 million, 10.7%, not 12.5%.",
+      "cited_passage_ids": [
+        "0001120193-25-000012:PART I:ITEM 2:section0:4"
+      ],
+      "human_review_needed": false,
+      "human_approved": false
+    },
+    {
+      "case_id": "trial-10",
+      "ticker": "TDY",
+      "model_state": "reject",
+      "assistant_verdict": "appropriate_rejection",
+      "reason": "Candidates do not establish orders exceeding sales excluding acquired backlog. Sales alone and remaining performance obligations are insufficient. Judge wrongly implies numerical orders are always required; the qualitative relationship would suffice if sourced.",
+      "cited_passage_ids": [],
+      "human_review_needed": false,
+      "human_approved": false
+    },
+    {
+      "case_id": "trial-11",
+      "ticker": "GILD",
+      "model_state": "accept",
+      "assistant_verdict": "unsupported_acceptance",
+      "reason": "Tariff risk is present, but cited passage 32 is ESG disclosure, not lighter FX headwinds. It does not establish the forecast that FX offsets tariff-related indirect costs in 2025.",
+      "cited_passage_ids": [
+        "0000882095-25-000012:PART II:ITEM 1A:9",
+        "0000882095-25-000012:PART II:ITEM 1A:32"
+      ],
+      "human_review_needed": false,
+      "human_approved": false
+    },
+    {
+      "case_id": "trial-12",
+      "ticker": "LRCX",
+      "model_state": "accept",
+      "assistant_verdict": "unsupported_acceptance",
+      "reason": "Cited income-tax/audit and EPS discussion does not state non-GAAP tax rate 13.8%. No sourced non-GAAP reconciliation establishing it was identified in retrieved candidates.",
+      "cited_passage_ids": [
+        "0000707549-24-000128:PART I:ITEM 1:section0:9"
+      ],
+      "human_review_needed": false,
+      "human_approved": false
+    },
+    {
+      "case_id": "trial-13",
+      "ticker": "REGN",
+      "model_state": "accept",
+      "assistant_verdict": "request_period_review",
+      "reason": "Table supports EC approval of Lynozyfic for relapsed/refractory multiple myeloma under 2025 Events to Date. It does not date it to Q1, which the generated request added. Hold current request; propose removing invented Q1 timing, not declaring it correct as written.",
+      "cited_passage_ids": [
+        "0001804220-25-000022:PART I:ITEM 2:14"
+      ],
+      "human_review_needed": true,
+      "human_approved": false
+    },
+    {
+      "case_id": "trial-14",
+      "ticker": "WEC",
+      "model_state": "accept",
+      "assistant_verdict": "supported",
+      "reason": "Passage explicitly states January 2025 quarterly dividend increase of 0.0575 per share, 6.9%, effective with March payment.",
+      "cited_passage_ids": [
+        "0000107815-25-000182:PART I:ITEM 2:41"
+      ],
+      "human_review_needed": false,
+      "human_approved": false
+    },
+    {
+      "case_id": "trial-15",
+      "ticker": "O",
+      "model_state": "accept",
+      "assistant_verdict": "unsupported_acceptance",
+      "reason": "Cited passage covers property inventory, leases and distributions, not rent recapture 103.9%, 194 leases or 92% renewals.",
+      "cited_passage_ids": [
+        "0000726728-25-000096:PART I:ITEM 1:section0:38"
+      ],
+      "human_review_needed": false,
+      "human_approved": false
+    },
+    {
+      "case_id": "trial-16",
+      "ticker": "IQV",
+      "model_state": "filtered_personal_opinion",
+      "assistant_verdict": "appropriate_filter",
+      "reason": "Administrative participant introduction, not personal opinion. Exclusion correct; reason label imprecise.",
+      "cited_passage_ids": [],
+      "human_review_needed": false,
+      "human_approved": false
+    },
+    {
+      "case_id": "trial-17",
+      "ticker": "ABT",
+      "model_state": "accept",
+      "assistant_verdict": "unsupported_acceptance",
+      "reason": "Passage reports gross margin 52.8% vs 50.5%, a 230-bp change, not 140 bps. It does not supply the requested 130-bp operating-margin increase. Do not substitute GAAP results for potentially adjusted remark figures.",
+      "cited_passage_ids": [
+        "0001628280-25-021090:PART I:ITEM 2:section0:3"
+      ],
+      "human_review_needed": false,
+      "human_approved": false
+    },
+    {
+      "case_id": "trial-18",
+      "ticker": "DXCM",
+      "model_state": "reject",
+      "assistant_verdict": "appropriate_rejection",
+      "reason": "Retrieved litigation, FDA compliance and buyback passages do not support chartered direct flights or freight-cost comparison. This is candidate insufficiency, not proof the full filing lacks evidence.",
+      "cited_passage_ids": [],
+      "human_review_needed": false,
+      "human_approved": false
+    },
+    {
+      "case_id": "trial-19",
+      "ticker": "MMM",
+      "model_state": "accept",
+      "assistant_verdict": "unsupported_acceptance",
+      "reason": "Request changes full-year tariff estimate into Q1. Cited passage reports operating results and does not establish 400 million / 0.60 EPS tariff impact.",
+      "cited_passage_ids": [
+        "0000066740-25-000039:PART I:ITEM 2:section0:1"
+      ],
+      "human_review_needed": false,
+      "human_approved": false
+    },
+    {
+      "case_id": "trial-20",
+      "ticker": "BIIB",
+      "model_state": "accept",
+      "assistant_verdict": "unsupported_acceptance",
+      "reason": "Passage discusses reported R&D down 2.5% and SG&A down 1.5%, with cost initiatives, not the requested 1% decline in NON-GAAP core operating expense. No sourced bridge establishes the adjusted measure.",
+      "cited_passage_ids": [
+        "0000875045-25-000018:PART I:ITEM 2:section0:8"
+      ],
+      "human_review_needed": false,
+      "human_approved": false
+    },
+    {
+      "case_id": "trial-21",
+      "ticker": "KMX",
+      "model_state": "accept",
+      "assistant_verdict": "fragment_review",
+      "reason": "Passage clearly supplies prior-year 59.3 million Takata settlement and SG&A increase of 14.1%, or 3.1% excluding it. Original remark is a fragment and does not identify the result being compared. Human must decide suitability of this standalone input; do not add surrounding transcript context.",
+      "cited_passage_ids": [
+        "0001170010-24-000087:PART I:ITEM 1:83"
+      ],
+      "human_review_needed": true,
+      "human_approved": false
+    },
+    {
+      "case_id": "trial-22",
+      "ticker": "FITB",
+      "model_state": "accept",
+      "assistant_verdict": "supported",
+      "reason": "ASR table reports 225 million and total 5,242,382 repurchased shares, matching 5.2 million at stated precision. Do not confuse initial delivery 4,353,517 with total delivered shares.",
+      "cited_passage_ids": [
+        "0000035527-25-000137:PART I:ITEM 1:section0:89"
+      ],
+      "human_review_needed": false,
+      "human_approved": false
+    },
+    {
+      "case_id": "trial-23",
+      "ticker": "PLTR",
+      "model_state": "accept",
+      "assistant_verdict": "citation_repair",
+      "reason": "Rank 1 supplies revenue 883.9 vs 634.3 million, 39% growth, and adjusted operating income 390.7 million. Rank 2 explicitly supplies 44% adjusted operating margin. Together support current Rule-of-40 sum 83%. Do not claim they establish prior-quarter 2-point change or seventh consecutive increase.",
+      "cited_passage_ids": [
+        "0001321655-25-000066:PART I:ITEM 2:2"
+      ],
+      "human_review_needed": false,
+      "human_approved": false
+    },
+    {
+      "case_id": "trial-24",
+      "ticker": "O",
+      "model_state": "filtered_too_general",
+      "assistant_verdict": "appropriate_filter",
+      "reason": "Broad statement about resilience and portfolio diversification without a bounded factual target.",
+      "cited_passage_ids": [],
+      "human_review_needed": false,
+      "human_approved": false
+    },
+    {
+      "case_id": "trial-25",
+      "ticker": "ZBRA",
+      "model_state": "accept",
+      "assistant_verdict": "unsupported_acceptance",
+      "reason": "Request incorrectly converts full-year outlook into fiscal-Q1 outlook. Cited passage describes accounting policies, not 20\u201321% adjusted EBITDA guidance or 13.75\u201314.75 non-GAAP EPS.",
+      "cited_passage_ids": [
+        "0000877212-25-000065:PART I:ITEM 1:section0:5"
+      ],
+      "human_review_needed": false,
+      "human_approved": false
+    },
+    {
+      "case_id": "trial-26",
+      "ticker": "GILD",
+      "model_state": "reject",
+      "assistant_verdict": "appropriate_rejection",
+      "reason": "Candidates do not supply all four guidance items. Request incorrectly substitutes Q1 for original full-year horizon; rejection is appropriate for available candidates but not evidence that the original full-year claim is wrong.",
+      "cited_passage_ids": [],
+      "human_review_needed": false,
+      "human_approved": false
+    },
+    {
+      "case_id": "trial-27",
+      "ticker": "MSI",
+      "model_state": "accept",
+      "assistant_verdict": "transcript_sign_repair",
+      "reason": "Cited EPS and other-income table supports diluted EPS 2.53 vs NEGATIVE 0.23, and 585 million prior-year Silver Lake extinguishment loss. Original transcript omits the negative sign. Valid request evidence; original remark requires explicitly recorded sign correction.",
+      "cited_passage_ids": [
+        "0000068505-25-000024:PART I:ITEM 1:section0:14"
+      ],
+      "human_review_needed": false,
+      "human_approved": false
+    },
+    {
+      "case_id": "trial-28",
+      "ticker": "NDAQ",
+      "model_state": "accept",
+      "assistant_verdict": "unsupported_acceptance",
+      "reason": "Cited credit-covenant passage mentions a maximum leverage ratio, not actual gross leverage of 3.4x at quarter-end. Compliance does not establish the requested ratio.",
+      "cited_passage_ids": [
+        "0001120193-25-000012:PART I:ITEM 1:section0:18"
+      ],
+      "human_review_needed": false,
+      "human_approved": false
+    },
+    {
+      "case_id": "trial-29",
+      "ticker": "NOC",
+      "model_state": "accept",
+      "assistant_verdict": "unsupported_acceptance",
+      "reason": "Filing identifies MISSION Systems, not admission systems, and a 4% decline in OPERATING INCOME, not margin. Margin fell from 14.2% to 12.9% (130 bps). Related drivers match, but current request conflates measures and cannot be accepted unchanged.",
+      "cited_passage_ids": [
+        "0001133421-25-000023:PART I:ITEM 2:section0:10"
+      ],
+      "human_review_needed": false,
+      "human_approved": false
+    },
+    {
+      "case_id": "trial-30",
+      "ticker": "NKE",
+      "model_state": "accept",
+      "assistant_verdict": "scope_review",
+      "reason": "Cited EBIT decline of 15% and gross-margin expansion of 180 bps refer to NORTH AMERICA. Another candidate also reports 15% EBIT decline for another region. Original standalone remark and generated request omit region. Judge also fabricates 120 bps. Do not assign company-wide or infer omitted region from surrounding discussion.",
+      "cited_passage_ids": [
+        "0000320187-24-000065:PART I:ITEM 2:section0:9"
+      ],
+      "human_review_needed": true,
+      "human_approved": false
+    }
+  ]
+}
