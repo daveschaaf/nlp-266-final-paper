@@ -1,0 +1,1066 @@
+{
+  "version": "remark-filing-matching-v1",
+  "usage": "Reviewed development examples only; not evaluation cases. First-stage request generation must not receive candidate passages or human_review.",
+  "examples": [
+    {
+      "case_id": "case-01",
+      "input": {
+        "ticker": "A",
+        "call_id": "1090872:2025:Q1",
+        "company_quarter_id": "0001090872:2025:Q1",
+        "fiscal_year": 2025,
+        "fiscal_quarter": 1,
+        "filing_accession": "0001090872-25-000008",
+        "filing_period_end": "2025-01-31",
+        "original_remark": "Operating cash flow was $431 million in the quarter, and we invested $97 million in capital expenditures.",
+        "candidate_passages": [
+          {
+            "chunk_id": "0001090872-25-000008:PART I:ITEM 1:section0:2",
+            "accession_number": "0001090872-25-000008",
+            "part": "PART I",
+            "item": "ITEM 1",
+            "item_title": "CONDENSED CONSOLIDATED FINANCIAL STATEMENTS (UNAUDITED)",
+            "chunk_index": 2,
+            "text": "authorized; none issued and outstanding at January 31, 2025 and October 31, 2024 | — | — | | Common stock; $ 0.01 par value; 2,000,000,000 shares authorized; 285,232,190 shares at January 31, 2025 and 285,193,011 shares at October 31, 2024 issued and outstanding | 3 | 3 | | Additional paid-in-capital | 5,489 | 5,450 | | Retained earnings | 916 | 750 | | Accumulated other comprehensive loss | ( 381 ) | ( 305 ) | | Total stockholders' equity | 6,027 | 5,898 | | Total liabilities and stockholders' equity | $ 11,914 | $ 11,846 | The accompanying notes are an integral part of these condensed consolidated financial statements. Table of Contents AGILENT TECHNOLOGIES, INC. CONDENSED CONSOLIDATED STATEMENT OF CASH FLOWS (in millions) (Unaudited) | | Three Months Ended | | | --- | --- | --- | | | January 31, | | | | 2025 | 2024 | | Cash flows from operating activities: | | | | Net income | $ 318 | $ 348 | | Adjustments to reconcile net income to net cash provided by operating activities: | | | | Depreciation and amortization | 72 | 62 | | Share-based compensation | 40 | 44 | | Deferred taxes expense (benefit) | ( 10 ) | — | | Excess and obsolete inventory related charges | 10 | 11 | | Net (gain) loss on equity securities | ( 1 ) | ( 3 ) | | Asset impairment charges | — | 8 | | Other non-cash (income) expense, net | — | ( 6 ) | | Changes in assets and liabilities: | | | | Accounts receivable, net | ( 30 ) | 10 | | Inventory | ( 40 ) | ( 9 ) | | Accounts payable | 3 | 84 | | Employee compensation and benefits | ( 104 ) | ( 104 ) | | Other assets and liabilities | 173 | 40 | | Net cash provided by operating activities | 431 | 485 | | Cash flows from investing activities: | | | | Payments to acquire property, plant and equipment | ( 97 ) | ( 90 ) | | Payments in exchange for convertible note | ( 1 ) | ( 5",
+            "parser_version": "section-text-chunk384-overlap0-v4",
+            "rank": 1,
+            "bm25_score": 11.76525920629021,
+            "text_sha256": "25392ee983c70b8d9c5dff0d7f9b52dd2565ae2a12f803d86bdaf088e6a3b044"
+          },
+          {
+            "chunk_id": "0001090872-25-000008:PART I:ITEM 2:section0:20",
+            "accession_number": "0001090872-25-000008",
+            "part": "PART I",
+            "item": "ITEM 2",
+            "item_title": "MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS (UNAUDITED)",
+            "chunk_index": 20,
+            "text": "next twelve months and beyond, our liquidity requirements, both globally and domestically, including the following: working capital needs, capital expenditures, business acquisitions, stock repurchases, cash dividends, contractual obligations, commitments, principal and interest payments on debt, and other liquidity requirements associated with our operations. Our financial position as of January 31, 2025 consisted of cash and cash equivalents of $1,467 million as compared to $1,329 million as of October 31, 2024. We may, from time to time, retire certain outstanding debt of ours through open market cash purchases, privately-negotiated transactions or otherwise. Such transactions, if any, will depend on prevailing market conditions, our liquidity requirements, contractual restrictions and other factors. Table of Contents *Net Cash Provided by Operating Activities* Net cash provided by operating activities was $431 million for the three months ended January 31, 2025 compared to net cash provided by operating activities of $485 million for the same period in 2024. In the three months ended January 31, 2025, we paid approximately $98 million under our variable and incentive pay programs as compared to $105 million paid for the same period in 2024. Net cash paid for income taxes in the three months ended January 31, 2025 was $19 million compared to net cash paid for income taxes of $24 million for the same period in 2024. In the three months ended January 31, 2025, accounts receivable used cash of $30 million compared to cash provided of $10 million for the same period in 2024. Days’ sales outstanding (\"DSO\") as of January 31, 2025 was 71 days when compared to 70 days as of January 31, 2024. Cash used by inventory was $40 million for the three months ended January 31, 2025 compared to cash used of $9 million for the same period in 2024. Inventory days on-hand was 115 days as of January 31, 2025 compared to 124 days as of January 31, 2024. In the three months ended January 31, 2025, accounts payable provided cash of $3 million compared to cash provided of $84 million for the same period in 2024. This was mainly due to more expenditures for direct materials as we continue optimizing our inventory levels and to timing of payments when compared to the same period in 2024. We contributed approximately $6 million to our defined benefit plans",
+            "parser_version": "section-text-chunk384-overlap0-v4",
+            "rank": 2,
+            "bm25_score": 11.332081463212106,
+            "text_sha256": "b75c81b52146a28506755f49d577da7f0380853626146597f79709fb54149fd0"
+          },
+          {
+            "chunk_id": "0001090872-25-000008:PART I:ITEM 2:section0:21",
+            "accession_number": "0001090872-25-000008",
+            "part": "PART I",
+            "item": "ITEM 2",
+            "item_title": "MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS (UNAUDITED)",
+            "chunk_index": 21,
+            "text": "in the three months ended January 31, 2025 and 2024, respectively. Our annual contributions are highly dependent on the relative performance of our assets versus our projected liabilities, among other factors. We expect to contribute approximately $12 million to our defined benefit plans during the remainder of 2025. *Net Cash Used in Investing Activities* Net cash used in investing activities was $94 million for the three months ended January 31, 2025 as compared to net cash used in investing activities of $95 million in the same period of 2024. Investments in property, plant and equipment were $97 million for the three months ended January 31, 2025 compared to $90 million in the same period of 2024. We expect that total capital expenditures for the current year will be approximately $450 million. These continued investments in property plant and equipment are primarily due to the planned expansion of our manufacturing capacity for production of nucleic acid based therapeutics in Frederick, Colorado. Some of our investment may be eligible to qualify for reimbursement incentives, which will not fully be known until the expansion is substantially complete. *Net Cash Used in Financing Activities* Net cash used in financing activities for the three months ended January 31, 2025 was $180 million compared to net cash used in financing activities of $240 million for the same period of 2024. *Treasury Stock Repurchases.* Our 2023 repurchase program authorizes the purchase of up to $2.0 billion, excluding excise taxes, of our common stock at the company's discretion and has no fixed termination date. The 2023 repurchase program does not require the company to acquire a specific number of shares and may be suspended, amended or discontinued at any time. The 2023 repurchase program commenced on March 1, 2023. During the three months ended January 31, 2024, we repurchased and retired no shares under this authorization. During the three months ended January 31, 2025, we repurchased and retired 649,857 shares for $90 million under this authorization. As of January 31, 2025, we had remaining authorization to repurchase up to approximately $284 million of our common stock under the 2023 repurchase program. On May 29, 2024, we announced that our board of directors had approved a new share repurchase program (the \"2024 repurchase program\") designed, among other things, to reduce or eliminate dilution",
+            "parser_version": "section-text-chunk384-overlap0-v4",
+            "rank": 3,
+            "bm25_score": 8.761349859461214,
+            "text_sha256": "e29e341c2bd85ee12591e8d8c0fbb7eb2560ab0b71909289c27a595cbc6002cb"
+          },
+          {
+            "chunk_id": "0001090872-25-000008:PART I:ITEM 1:section0:3",
+            "accession_number": "0001090872-25-000008",
+            "part": "PART I",
+            "item": "ITEM 1",
+            "item_title": "CONDENSED CONSOLIDATED FINANCIAL STATEMENTS (UNAUDITED)",
+            "chunk_index": 3,
+            "text": ") | | Payments to acquire businesses and intangible assets, net of cash acquired | 4 | — | | Net cash used in investing activities | ( 94 ) | ( 95 ) | | Cash flows from financing activities: | | | | Proceeds from issuance of common stock under employee stock plans | 30 | 34 | | Payments of taxes related to net share settlement of equity awards | ( 22 ) | ( 25 ) | | Payments for repurchase of common stock | ( 90 ) | — | | Payments of dividends | ( 71 ) | ( 69 ) | | Proceeds from issuance of long-term debt | 4 | — | | Repayments of long-term debt | ( 1 ) | ( 180 ) | | Net proceeds from (repayments of) short-term debt | ( 30 ) | — | | Net cash used in financing activities | ( 180 ) | ( 240 ) | | Effect of exchange rate movements | ( 19 ) | 7 | | Net increase (decrease) in cash, cash equivalents and restricted cash | 138 | 157 | | Cash, cash equivalents and restricted cash at beginning of period | 1,332 | 1,593 | | Cash, cash equivalents and restricted cash at end of period | $ 1,470 | $ 1,750 | | Supplemental cash flow information: | | | | Income tax paid, net of refunds received | $ 19 | $ 24 | | Interest payments, net of capitalized interest | $ 3 | $ 14 | | Net change in property, plant and equipment included in accounts payable and accrued liabilities-increase (decrease) | $ 8 | $ ( 16 ) | The accompanying notes are an integral part of these condensed consolidated financial statements. Table of Contents AGILENT TECHNOLOGIES, INC. CONDENSED CONSOLIDATED STATEMENT OF EQUITY (in millions, except number of shares in thousands and per share data) (Unaudited) | Three Months Ended January 31, 2025 | Common Stock — Number of Shares | Par Value | Additional Paid-in Capital | Retained Earnings | Accumulated Other Comprehensive Loss | Total Stockholders' Equity | | --- | --- | --- | --- | --- | --- | --- | | Balance as of October 31, 2024 |",
+            "parser_version": "section-text-chunk384-overlap0-v4",
+            "rank": 4,
+            "bm25_score": 5.532487762024715,
+            "text_sha256": "343f953462485be99a1e1108a2e7ba9930726736285db5077d722aa1950c84da"
+          },
+          {
+            "chunk_id": "0001090872-25-000008:PART II:ITEM 1A:section0:23",
+            "accession_number": "0001090872-25-000008",
+            "part": "PART II",
+            "item": "ITEM 1A",
+            "item_title": "RISK FACTORS",
+            "chunk_index": 23,
+            "text": "are party to a $1.5 billion five-year unsecured credit facility that will expire on June 7, 2028. Furthermore, we are permitted pursuant to the credit agreement to establish an incremental revolving credit facility of up to $750 million. We also entered into an Uncommitted Money Market Line Credit agreement which provides for an aggregate borrowing capacity of $300 million. Under our U.S. commercial paper program, the company may issue and sell unsecured, short-term promissory notes in the aggregate principal amount not to exceed $1.5 billion with up to 397-day maturities. As of January 31, 2025, we had approximately $3.4 billion in outstanding indebtedness which included an aggregate outstanding principal amount of $3.3 billion in unsecured senior notes. We may borrow additional amounts in the future and use the proceeds from any future borrowing for general corporate purposes, future acquisitions, expansion of our business or repurchases of our outstanding shares of common stock. Our incurrence of this debt, and increases in our aggregate levels of debt, may adversely affect our operating results and financial condition by, among other things: • increasing our vulnerability to downturns in our business, to competitive pressures and to adverse economic and industry conditions; • requiring the dedication of an increased portion of our expected cash flows from operations to service our indebtedness, thereby reducing the amount of expected cash flows available for other purposes, including capital expenditures, acquisitions, stock repurchases and dividends; and • limiting our flexibility in planning for or reacting to changes in our business and our industry. Our credit facility imposes restrictions on us, including restrictions on our ability to create liens on our assets and engage in certain types of sale and leaseback transactions and the ability of our subsidiaries to incur indebtedness, and requires us to maintain compliance with specified financial ratios. Our ability to comply with these ratios may be affected by events beyond our control. In addition, the indentures governing our senior notes contain covenants that may adversely affect our ability to incur certain liens or engage in certain types of sale and leaseback transactions. If we breach any of the covenants and do not obtain a waiver from the lenders or noteholders, then, subject to applicable cure periods, our outstanding indebtedness could be declared immediately due and payable. *We cannot assure that",
+            "parser_version": "section-text-chunk384-overlap0-v4",
+            "rank": 5,
+            "bm25_score": 5.514178002155479,
+            "text_sha256": "3118d6cd4397edae8e645d4d15bdddc782562312a1c5fee0bec8527c5796f32b"
+          }
+        ]
+      },
+      "human_review": {
+        "review_status": "human_approved_in_chat",
+        "remark_chunk_id": "1090872:2025:Q1:remark:3:chunk:36",
+        "topic": "Financials",
+        "reasoning_type": "Quantitative",
+        "evidence_relationship": "direct_lookup",
+        "information_request": "What were Agilent’s operating cash flow and capital expenditures in fiscal Q1 2025?",
+        "required_inputs": [
+          "Operating cash flow, fiscal Q1 2025",
+          "Capital expenditures, fiscal Q1 2025"
+        ],
+        "passages": [
+          {
+            "chunk_id": "0001090872-25-000008:PART I:ITEM 1:section0:2",
+            "coverage": "complete",
+            "supplies": [
+              "Operating cash flow: $431 million",
+              "Capital expenditures / payments to acquire property, plant and equipment: $97 million"
+            ]
+          },
+          {
+            "chunk_id": "0001090872-25-000008:PART I:ITEM 2:section0:20",
+            "coverage": "partial",
+            "supplies": [
+              "Operating cash flow: $431 million"
+            ]
+          }
+        ],
+        "period": "Three months ended January 31, 2025",
+        "notes": "Passage 1 alone is sufficient. Passage 2 is relevant partial evidence, not a negative.",
+        "reviewed_at": "2026-11-17T17:59:26.463834+00:00"
+      }
+    },
+    {
+      "case_id": "case-02",
+      "input": {
+        "ticker": "AMAT",
+        "call_id": "6951:2025:Q1",
+        "company_quarter_id": "0000006951:2025:Q1",
+        "fiscal_year": 2025,
+        "fiscal_quarter": 1,
+        "filing_accession": "0000006951-25-000011",
+        "filing_period_end": "2025-01-26",
+        "original_remark": "Moving to the segments, semiconductor system sales were $5.36 billion for Q1, up 9% year over year driven by 20% growth in foundry logic, partially offset by an expected decline in DRAM sales as prior year sales to customers in China did not repeat.",
+        "candidate_passages": [
+          {
+            "chunk_id": "0000006951-25-000011:PART I:ITEM 1:section0:28",
+            "accession_number": "0000006951-25-000011",
+            "part": "PART I",
+            "item": "ITEM 1",
+            "item_title": "*Financial Statements*",
+            "chunk_index": 28,
+            "text": "Net revenue by geographic region, determined by the location of customers’ facilities to which products were shipped and services were performed, was as follows: | | Three Months Ended — January 26, 2025 | | January 28, 2024 | | Change | | --- | --- | --- | --- | --- | --- | | | (In millions, except percentages) | | | | | | China | $ 2,243 | 31 % | $ 2,997 | 45 % | ( 25 ) % | | Korea | 1,667 | 23 % | 1,231 | 18 % | 35 % | | Taiwan | 1,183 | 17 % | 559 | 8 % | 112 % | | Japan | 540 | 8 % | 565 | 9 % | ( 4 ) % | | Southeast Asia | 286 | 4 % | 186 | 3 % | 54 % | | Asia Pacific | 5,919 | 83 % | 5,538 | 83 % | 7 % | | United States | 917 | 13 % | 759 | 11 % | 21 % | | Europe | 330 | 4 % | 410 | 6 % | ( 20 ) % | | Total | $ 7,166 | 100 % | $ 6,707 | 100 % | 7 % | Net revenue for Semiconductor Systems by market for the periods presented were as follows: | | Three Months Ended — January 26, 2025 | January 28, 2024 | | --- | --- | --- | | Foundry, logic and other | 68 % | 62 % | | Dynamic random-access memory (DRAM) | 28 % | 34 % | | Flash memory | 4 % | 4 % | | | 100 % | 100 % | The reconciling items included in Corporate and Other were as follows: | | Three Months Ended — January 26, 2025 | January 28, 2024 | | --- | --- | --- | | | (In millions) | | | Unallocated net revenue | $ 33 | $ 78 | | Unallocated cost of products sold and expenses | ( 305 ) | ( 297 ) | | Total | $ ( 272 ) | $ ( 219 ) | The following customers accounted for",
+            "parser_version": "section-text-chunk384-overlap0-v4",
+            "rank": 1,
+            "bm25_score": 15.4157745837404,
+            "text_sha256": "874f9bde549dd6217518e76139a94558a89b0a4344f4eda44e06d7c566bdfd41"
+          },
+          {
+            "chunk_id": "0000006951-25-000011:PART I:ITEM 2:section0:5",
+            "accession_number": "0000006951-25-000011",
+            "part": "PART I",
+            "item": "ITEM 2",
+            "item_title": "*Management’s Discussion and Analysis of Financial Condition and Results of Operations*",
+            "chunk_index": 5,
+            "text": "62 % | | Dynamic random-access memory (DRAM) | 28 % | 34 % | | Flash memory | 4 % | 4 % | | | 100 % | 100 % | Net revenue in the first quarter of fiscal 2025 increased as compared to the same period in the prior year. Gross margin in the three months ended January 26, 2025 increased compared to the same period in the prior year, primarily driven by favorable changes in customer and product mix and lower material and manufacturing costs. The Semiconductor Systems segment continued to represent the largest contributor of net revenue. Semiconductor Systems net revenue increased for the three months ended January 26, 2025 compared to the same period in the prior year as customers continued to make strategic investments in new capacity and new technology transitions. Foundry and logic customers’ spending increased for the three months ended January 26, 2025, compared to the same period in the prior year driven primarily by higher customer investments in leading-edge manufacturing technologies. Memory customers’ spending in the first quarter of fiscal 2025 compared to the same period in the prior year was lower due to decreased investments in DRAM technology transitions. Our AGS net revenue in the three months ended January 26, 2025 increased compared to the same period in the prior year primarily due to an increase in net revenue associated with long-term service agreements and customer spending on spares, partially offset by lower customer spending on 200mm equipment. Our Display net revenue decreased in the three months ended January 26, 2025 compared to the same period in the prior year primarily due to lower customer investments in display fabrication equipment amid ongoing weakness in end market demand. Table of Contents Net revenue by geographic region, determined by the location of customers’ facilities to which products were shipped and services were performed, was as follows: | | Three Months Ended — January 26, 2025 | January 28, 2024 | | Change | | | --- | --- | --- | --- | --- | --- | | | (In millions, except percentages) | | | | | | China | $ 2,243 | 31 % | $ 2,997 | 45 % | (25) % | | Korea | 1,667 | 23 % | 1,231",
+            "parser_version": "section-text-chunk384-overlap0-v4",
+            "rank": 2,
+            "bm25_score": 13.780035609085122,
+            "text_sha256": "9e6fd11cdd005fd45d9f6818567f5cb785e5d24bce0e8ec3baab022e29f1476c"
+          },
+          {
+            "chunk_id": "0000006951-25-000011:PART I:ITEM 2:section0:4",
+            "accession_number": "0000006951-25-000011",
+            "part": "PART I",
+            "item": "ITEM 2",
+            "item_title": "*Management’s Discussion and Analysis of Financial Condition and Results of Operations*",
+            "chunk_index": 4,
+            "text": "sanctions, tariffs and international trade disputes, have adversely impacted and could further adversely impact our business and operations, and reduce the competitiveness of our products and services relative to local and global competitors* ” in Part II, Item 1A, “Risk Factors.” Results of Operations Fiscal 2025 and 2024 each contain 52 weeks and the first three months of fiscal 2025 and 2024 each contained 13 weeks. The following table presents certain significant measurements for the periods presented: | | Three Months Ended — January 26, 2025 | January 28, 2024 | Change | | --- | --- | --- | --- | | | (In millions, except per share amounts and percentages) | | | | Net revenue | $ 7,166 | $ 6,707 | $ 459 | | Gross margin | 48.8 % | 47.8 % | 1.0 point | | Operating income | $ 2,175 | $ 1,967 | $ 208 | | Operating margin | 30.4 % | 29.3 % | 1.1 points | | Net income | $ 1,185 | $ 2,019 | $ (834) | | Earnings per diluted share | $ 1.45 | $ 2.41 | $ (0.96) | Table of Contents Net revenue by segment for the periods presented were as follows: | | Three Months Ended — January 26, 2025 | January 28, 2024 | | Change | | | --- | --- | --- | --- | --- | --- | | | (In millions, except percentages) | | | | | | Semiconductor Systems | $ 5,356 | 75 % | $ 4,909 | 73 % | 9 % | | Applied Global Services | 1,594 | 22 % | 1,476 | 22 % | 8 % | | Display | 183 | 3 % | 244 | 4 % | (25) % | | Corporate and Other | 33 | — % | 78 | 1 % | (58) % | | Total | $ 7,166 | 100 % | $ 6,707 | 100 % | 7 % | Net revenue for Semiconductor Systems by market for the periods presented were as follows: | | Three Months Ended — January 26, 2025 | January 28, 2024 | | --- | --- | --- | | Foundry, logic and other | 68 % |",
+            "parser_version": "section-text-chunk384-overlap0-v4",
+            "rank": 3,
+            "bm25_score": 10.899838226957051,
+            "text_sha256": "43d4101a286e7bb198f429bd4286de0bc2e05a1bdc478c2d41271c3ac399ab2b"
+          },
+          {
+            "chunk_id": "0000006951-25-000011:PART I:ITEM 2:section0:2",
+            "accession_number": "0000006951-25-000011",
+            "part": "PART I",
+            "item": "ITEM 2",
+            "item_title": "*Management’s Discussion and Analysis of Financial Condition and Results of Operations*",
+            "chunk_index": 2,
+            "text": "information for each reportable segment is found in Note 13 of Notes to Consolidated Condensed Financial Statements. A discussion of factors that could affect our operations is set forth under “Risk Factors” in Part II, Item 1A, which is incorporated herein by reference. Our results are driven primarily by customer spending on capital equipment and services to support key technology transitions or to increase production volume in response to worldwide demand for semiconductors and displays. The Semiconductor Systems segment is comprised primarily of capital equipment used to fabricate semiconductor chips. Spending by semiconductor customers, which include companies that operate in the foundry, logic, memory, and other semiconductor chip markets, is driven by demand for products such as smartphones, mobile devices, personal computers, servers for artificial intelligence (AI) and data centers, automobiles, clean energy, storage, and other products, and the nature and timing of technological advances in fabrication processes. The growth of data and emerging end-market drivers such as AI, the internet of things, 5G networks, electric and autonomous vehicles and augmented and virtual reality are also creating the next wave of growth for the industry. As a result, products within the Semiconductor Systems segment are subject to significant changes in customer requirements, including transitions to smaller dimensions, increasingly complex chip architectures, new materials and an increasing number of applications. Spending can also depend on customer facility readiness and timeline for installation of capital equipment at customer sites. Development efforts are focused on solving customers’ key technical challenges in patterning, transistor, interconnect, process control, and packaging performance. Table of Contents The AGS segment provides services, spares and factory automation software to customer fabrication plants globally to help customers optimize performance of our large, global installed base of semiconductor, display and other equipment. The AGS segment also includes 200mm and other equipment, which is shipped to many customers globally that serve the non-leading-edge end markets. Demand for AGS’ service and spares is driven by our large and growing installed base of manufacturing systems, and customers’ needs to shorten ramp times, improve system performance, and optimize factory output and operating costs. Industry conditions that affect AGS’ sales of spares and services are primarily characterized by changes in semiconductor manufacturers’ wafer starts and utilization rates, growth of the installed base of equipment and growing service intensity of newer",
+            "parser_version": "section-text-chunk384-overlap0-v4",
+            "rank": 4,
+            "bm25_score": 9.705269990821133,
+            "text_sha256": "0c937d5d09a24137ff24a2b3c26070945bb738b2e8ac4d2aa7476b200bdb74de"
+          },
+          {
+            "chunk_id": "0000006951-25-000011:PART I:ITEM 1:section0:27",
+            "accession_number": "0000006951-25-000011",
+            "part": "PART I",
+            "item": "ITEM 1",
+            "item_title": "*Financial Statements*",
+            "chunk_index": 27,
+            "text": "income/expense and other financial charges and income taxes. Management does not consider the unallocated costs in measuring the performance of the reportable segments. APPLIED MATERIALS, INC. NOTES TO CONSOLIDATED CONDENSED FINANCIAL STATEMENTS - (Continued) Net revenue and operating income (loss) for each reportable segment were as follows: | | Three Months Ended — Net Revenue | Operating Income (Loss) | | --- | --- | --- | | | (In millions) | | | January 26, 2025: | | | | Semiconductor Systems | $ 5,356 | $ 1,986 | | Applied Global Services | 1,594 | 447 | | Display | 183 | 14 | | Corporate and Other | 33 | ( 272 ) | | Total | $ 7,166 | $ 2,175 | | January 28, 2024: | | | | Semiconductor Systems | $ 4,909 | $ 1,744 | | Applied Global Services | 1,476 | 417 | | Display | 244 | 25 | | Corporate and Other | 78 | ( 219 ) | | Total | $ 6,707 | $ 1,967 | Semiconductor Systems and Display revenues are recognized at a point in time. AGS revenue is recognized at a point in time for tangible goods such as spare parts and equipment, and over time for service agreements. The majority of revenue recognized over time is recognized within 12 months of the contract inception. Details of goodwill by reportable segment as of January 26, 2025 and October 27, 2024 were as follows: | | January 26, 2025 | October 27, 2024 | | --- | --- | --- | | | (In millions) | | | Goodwill by reportable segment | | | | Semiconductor Systems | $ 2,496 | $ 2,460 | | Applied Global Services | 1,032 | 1,032 | | Display | 199 | 199 | | Corporate and Other | 41 | 41 | | | $ 3,768 | $ 3,732 | From time to time, we acquire companies related to our existing or new markets. During the first quarter of fiscal 2025, goodwill increased primarily due to the preliminary purchase accounting for an acquisition, net of adjustments, which was not material to our results of operations or to our balance sheet. APPLIED MATERIALS, INC. NOTES TO CONSOLIDATED CONDENSED FINANCIAL STATEMENTS - (Continued)",
+            "parser_version": "section-text-chunk384-overlap0-v4",
+            "rank": 5,
+            "bm25_score": 5.254696259587155,
+            "text_sha256": "6295417a4d657cc5d4693c7c077edc094d27691b6c0338e4cced80c5be624bf2"
+          }
+        ]
+      },
+      "human_review": {
+        "review_status": "human_approved_in_chat",
+        "remark_chunk_id": "6951:2025:Q1:remark:3:chunk:10",
+        "topic": "Financials",
+        "reasoning_type": "Quantitative",
+        "evidence_relationship": "direct_lookup",
+        "information_request": "What were Applied Materials’ Semiconductor Systems sales and year-over-year growth in fiscal Q1 2025?",
+        "required_inputs": [
+          "FY2025 Q1 Semiconductor Systems sales",
+          "Reported year-over-year growth in FY2025 Q1 Semiconductor Systems sales"
+        ],
+        "period": "Three months ended January 26, 2025 versus January 28, 2024",
+        "passages": [
+          {
+            "chunk_id": "0000006951-25-000011:PART I:ITEM 2:section0:4",
+            "coverage": "complete",
+            "supplies": [
+              "Semiconductor Systems revenue $5,356 million",
+              "Reported year-over-year growth 9%"
+            ]
+          },
+          {
+            "chunk_id": "0000006951-25-000011:PART I:ITEM 1:section0:27",
+            "coverage": "calculation_support",
+            "supplies": [
+              "Semiconductor Systems revenue $5,356 million current quarter and $4,909 million prior-year quarter"
+            ]
+          },
+          {
+            "chunk_id": "0000006951-25-000011:PART I:ITEM 2:section0:5",
+            "coverage": "qualitative_support_for_broader_remark",
+            "supplies": [
+              "Foundry and logic spending increased",
+              "Memory spending lower due to decreased DRAM technology transition investments"
+            ]
+          }
+        ],
+        "notes": "Approval applies to narrowed sales-and-growth request, not every assertion in original remark. Exact 20% foundry/logic growth and China explanation are not established directly by these reviewed candidates. Market revenue share is not growth rate.",
+        "reviewed_at": "2026-11-17T18:02:50.143574+00:00"
+      }
+    },
+    {
+      "case_id": "case-03",
+      "input": {
+        "ticker": "LH",
+        "call_id": "920148:2025:Q1",
+        "company_quarter_id": "0000920148:2025:Q1",
+        "fiscal_year": 2025,
+        "fiscal_quarter": 1,
+        "filing_accession": "0000920148-25-000059",
+        "filing_period_end": "2025-03-31",
+        "original_remark": "We also completed the acquisition of select assets of North Mississippi Health Services ambulatory outreach laboratory business, and we became a referral lab for its seven hospitals and clinical laboratories.",
+        "candidate_passages": [
+          {
+            "chunk_id": "0000920148-25-000059:PART I:ITEM 1:10",
+            "accession_number": "0000920148-25-000059",
+            "part": "PART I",
+            "item": "ITEM 1",
+            "item_title": "FINANCIAL STATEMENTS",
+            "chunk_index": 10,
+            "text": "AND SUBSIDIARIES**\n\n**NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS**\n\n**(Dollars and Shares in Millions, Except Per Share Data)**\n**(Unaudited)**\n**2. REVENUES**\n**(Unaudited)**\n**2. REVENUES**\nThe Company’s revenues by segment and by payers/customer groups were as follows:\n||Three Months Ended March 31, 2025 — North America|Europe|Other|Total|Three Months Ended March 31, 2024 — North America|Europe|Other|Total|\n|---|---|---|---|---|---|---|---|---|\n|Payer/Customer|||||||||\n|Dx|||||||||\n|Clients|24 %|— %|— %|24 %|25 %|— %|— %|25 %|\n|Patients|10 %|— %|— %|10 %|10 %|— %|— %|10 %|\n|Medicare and Medicaid|8 %|— %|— %|8 %|8 %|— %|— %|8 %|\n|Third party|36 %|— %|— %|36 %|35 %|— %|— %|35 %|\n|Total Dx revenues by payer|78 %|— %|— %|78 %|78 %|— %|— %|78 %|\n|BLS|||||||||\n|Pharmaceutical, biotechnology, and medical device companies|9 %|9 %|4 %|22 %|9 %|9 %|4 %|22 %|\n|Total Revenues|87 %|9 %|4 %|100 %|87 %|9 %|4 %|100 %|",
+            "parser_version": "sec2md-0.1.23-item-fallback-chunk384-overlap96-v2",
+            "rank": 1,
+            "bm25_score": 5.9841540892904455,
+            "text_sha256": "c888bb3512353f251d39f080b6e76d3f4ce50b8b78f6b23d8b1aab833ea8bc9e"
+          },
+          {
+            "chunk_id": "0000920148-25-000059:PART I:ITEM 1:48",
+            "accession_number": "0000920148-25-000059",
+            "part": "PART I",
+            "item": "ITEM 1",
+            "item_title": "FINANCIAL STATEMENTS",
+            "chunk_index": 48,
+            "text": "Protecting Access to Medicare Act of 2014;\n2. significant monetary damages, fines, penalties, assessments, refunds, repayments, damage to the Company’s reputation, unanticipated compliance expenditures, and/or exclusion or debarment from or ineligibility to participate in government programs, among other adverse consequences, arising from enforcement of anti-fraud and abuse laws and other laws applicable to the Company in jurisdictions in which the Company conducts business;\n\n3. significant fines, penalties, costs, unanticipated compliance expenditures, and/or damage to the Company’s reputation arising from the failure to comply with applicable privacy and security laws and regulations, including the U.S. Health Insurance Portability and Accountability Act of 1996, the U.S. Health Information Technology for Economic and Clinical Health Act, the European Union’s General Data Protection Regulation and similar laws and regulations in jurisdictions in which the Company conducts business;\n4. loss or suspension of a license or imposition of fines or penalties under, or future changes in, or interpretations of applicable licensing laws or regulations regarding the operation of clinical laboratories, the development and commercialization of laboratory-developed tests (LDTs), and the delivery of clinical laboratory test results, including, but not limited to, the U.S. Clinical Laboratory Improvement Act of 1967, the U.S. Clinical Laboratory Improvement Amendments of 1988, the European Union In Vitro Diagnostics Regulation, and similar laws and regulations in jurisdictions in which the Company conducts business;\n5. penalties or loss of license arising from the failure to comply with applicable occupational and workplace safety laws and regulations, including the U.S. Occupational Safety and Health Administration requirements, the U.S.",
+            "parser_version": "sec2md-0.1.23-item-fallback-chunk384-overlap96-v2",
+            "rank": 2,
+            "bm25_score": 5.639011973569381,
+            "text_sha256": "fedec2b4ff5fd977a6da8e8ca2db8bfff818e93549c9d396e90884901963efe6"
+          },
+          {
+            "chunk_id": "0000920148-25-000059:PART I:ITEM 2:1",
+            "accession_number": "0000920148-25-000059",
+            "part": "PART I",
+            "item": "ITEM 2",
+            "item_title": "MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS",
+            "chunk_index": 1,
+            "text": "1. changes in government and third-party payer regulations, reimbursement, or coverage policies or other future reforms in the United States (U.S.) healthcare system (or in the interpretation of current regulations), new insurance or payment systems, including state, regional or private insurance cooperatives (e.g., health insurance exchanges) affecting governmental and third-party coverage or reimbursement for commercial laboratory testing, including the impact of the U.S. Protecting Access to Medicare Act of 2014;\n2. significant monetary damages, fines, penalties, assessments, refunds, repayments, damage to the Company’s reputation, unanticipated compliance expenditures, and/or exclusion or debarment from or ineligibility to participate in government programs, among other adverse consequences, arising from enforcement of anti-fraud and abuse laws and other laws applicable to the Company in jurisdictions in which the Company conducts business;\n\n3. significant fines, penalties, costs, unanticipated compliance expenditures, and/or damage to the Company’s reputation arising from the failure to comply with applicable privacy and security laws and regulations, including the U.S. Health Insurance Portability and Accountability Act of 1996, the U.S. Health Information Technology for Economic and Clinical Health Act, the European Union’s General Data Protection Regulation and similar laws and regulations in jurisdictions in which the Company conducts business;\n4. loss or suspension of a license or imposition of fines or penalties under, or future changes in, or interpretations of applicable licensing laws or regulations regarding the operation of clinical laboratories, the development and commercialization of laboratory-developed tests (LDTs), and the delivery of clinical laboratory test results, including, but not limited to, the U.S. Clinical Laboratory Improvement Act of 1967, the U.S. Clinical Laboratory Improvement Amendments of 1988, the European Union In Vitro Diagnostics Regulation, and similar laws and regulations in jurisdictions in which the Company conducts business;",
+            "parser_version": "sec2md-0.1.23-item-fallback-chunk384-overlap96-v2",
+            "rank": 3,
+            "bm25_score": 5.62570217152701,
+            "text_sha256": "eec0625602a8bb09d0aec1ff0c4142217030a60aa049377418d5149c4325a468"
+          },
+          {
+            "chunk_id": "0000920148-25-000059:PART I:ITEM 1:14",
+            "accession_number": "0000920148-25-000059",
+            "part": "PART I",
+            "item": "ITEM 1",
+            "item_title": "FINANCIAL STATEMENTS",
+            "chunk_index": 14,
+            "text": "On March 11, 2025, the Company announced that it entered into an agreement with OPKO Health, Inc. to acquire select assets of the laboratory business of BioReference Health, focused on oncology and oncology-related clinical testing services across the U.S. The purchase price for the transaction is up to $ 225.0 , including $ 192.5 payable at closing and up to $ 32.5 of additional consideration contingent on performance. The transaction is anticipated to close in the second half of 2025, subject to customary closing conditions for a transaction of this type, including applicable regulatory approvals.\n**Dispositions**\n\nDuring the three months ended March 31, 2024, the Company sold the assets of Beacon Laboratory Benefit Solutions, Inc. for $ 13.5 and recorded a gain of $ 4.9 included in Other, net in the Condensed Consolidated Statements of Operations.\n**4. EARNINGS PER SHARE**\n\nBasic earnings per share (Basic EPS) is computed by dividing Net earnings attributable to Labcorp Holdings Inc. by the weighted-average number of common shares outstanding. Diluted earnings per common share (Diluted EPS) is computed by dividing Net earnings attributable to Labcorp Holdings Inc., and if applicable, including the impact of dilutive adjustments by the weighted-average number of common shares outstanding plus potentially dilutive shares, as if they had been issued at the earlier of the date of issuance or the beginning of the period presented. Potentially dilutive common shares result primarily from the Company’s outstanding stock options, restricted stock units, and performance share awards.\nTABLE OF CONTENTS\n**LABCORP HOLDINGS INC. AND SUBSIDIARIES**\n\n**NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS**\n\n**(Dollars and Shares in Millions, Except Per Share Data)**",
+            "parser_version": "sec2md-0.1.23-item-fallback-chunk384-overlap96-v2",
+            "rank": 4,
+            "bm25_score": 5.546997824712463,
+            "text_sha256": "493be88a74154e172c634724f1ae78be6fde1d2123a8034808a38b1c238adaf9"
+          },
+          {
+            "chunk_id": "0000920148-25-000059:PART I:ITEM 1:8",
+            "accession_number": "0000920148-25-000059",
+            "part": "PART I",
+            "item": "ITEM 1",
+            "item_title": "FINANCIAL STATEMENTS",
+            "chunk_index": 8,
+            "text": "The accompanying notes are an integral part of these unaudited Condensed Consolidated Financial Statements.\nTABLE OF CONTENTS\n**LABCORP HOLDINGS INC. AND SUBSIDIARIES**\n\n**NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS**\n\n**(Dollars and Shares in Millions, Except Per Share Data)**\n**(Unaudited)**\n**1. BASIS OF FINANCIAL STATEMENT PRESENTATION**\n\nLabcorp ® Holdings Inc. (Labcorp, LHI, or the Company) is a global leader of innovative and comprehensive laboratory services that provides vital information to help doctors, hospitals, pharmaceutical companies, researchers, and patients make clear and confident decisions. By leveraging its unparalleled diagnostics and drug development capabilities, the Company provides insights and accelerates innovations to improve health and improve lives. The Company reports its business in two segments, Diagnostics Laboratories (Dx) and Biopharma Laboratory Services (BLS). During each of the three months ended March 31, 2025 and 2024, Dx and BLS contributed approximately 78 % and 22 %, respectively, of Revenues to the Company.\nThe accompanying Condensed Consolidated Financial Statements of the Company are unaudited. In the opinion of management, all adjustments necessary for a fair statement of results of operations, cash flows, and financial position have been made. Except as otherwise disclosed, all such adjustments are of a normal recurring nature. Interim results are not necessarily indicative of results for a full year. The year-end Condensed Consolidated Balance Sheet data was derived from audited financial statements but does not include all disclosures required by generally accepted accounting principles in the United States (GAAP).\nThese unaudited Condensed Consolidated Financial Statements and notes are presented in accordance with the rules and regulations of the Securities and Exchange Commission (SEC) and GAAP for interim reporting.",
+            "parser_version": "sec2md-0.1.23-item-fallback-chunk384-overlap96-v2",
+            "rank": 5,
+            "bm25_score": 5.363239134302017,
+            "text_sha256": "18456225565561a55c6023262c155f39a147a3844a2954942faa31c5acdd5a40"
+          }
+        ]
+      },
+      "human_review": {
+        "review_status": "human_approved_in_chat",
+        "remark_chunk_id": "920148:2025:Q1:remark:2:chunk:28",
+        "topic": "Company Overview",
+        "reasoning_type": "Qualitative",
+        "verdict": "insufficient_evidence",
+        "create_positive_pair": false,
+        "notes": "Five BM25 candidates do not establish North Mississippi acquisition or seven-hospital referral agreement. OPKO/BioReference is a different acquisition. Keyword search across all 90 parsed chunks found no North Mississippi or ambulatory reference. Raw filing coverage remains unchecked; not a contradiction.",
+        "reviewed_at": "2026-11-17T18:10:46.584986+00:00"
+      }
+    },
+    {
+      "case_id": "case-04",
+      "input": {
+        "ticker": "AES",
+        "call_id": "874761:2025:Q1",
+        "company_quarter_id": "0000874761:2025:Q1",
+        "fiscal_year": 2025,
+        "fiscal_quarter": 1,
+        "filing_accession": "0000874761-25-000035",
+        "filing_period_end": "2025-03-31",
+        "original_remark": "Of the 7 gigawatts in our backlog scheduled to come online in the U.S. between 2025 and 2027, nearly all of the CapEx is protected with zero exposure to tariffs as the equipment is already in the U.S., in transit or contracted to be produced domestically.",
+        "candidate_passages": [
+          {
+            "chunk_id": "0000874761-25-000035:PART I:ITEM 2:section0:27",
+            "accession_number": "0000874761-25-000035",
+            "part": "PART I",
+            "item": "ITEM 2",
+            "item_title": "MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS",
+            "chunk_index": 27,
+            "text": "or other tariffs. More specifically, we have contracted and imported into the U.S. all of the solar panels that are necessary to complete our U.S. backlog of solar projects scheduled to finish construction and become operational in 2025. For our U.S backlog of solar projects scheduled to finish construction and become operational in 2026 or 2027, we have contracted for all of our panel supply needs, with the majority of such panels being manufactured in the U.S. and most of the remaining panels have already been imported into the U.S. Additionally, we have contracted and imported into the U.S. all the batteries needed for our U.S. energy storage projects scheduled to be completed in 2025. 49 | The AES Corporation | March 31, 2025 Form 10-Q For our backlog of storage projects scheduled to finish construction and become operational in 2026 or 2027, we have contracted for approximately 80% of our battery needs, with almost all of such batteries coming from U.S. or Korean suppliers. We are also well advanced in contracting U.S. domestically manufactured battery modules to support the remainder of our U.S. energy storage growth through 2027. For our U.S. backlog of wind projects scheduled to be completed in 2025 through 2026, we have contracted and received delivery of all turbines, and for our 2027 backlog of U.S. wind projects, we are fully contracted with U.S. suppliers. Operational Sensitivity to Dry Hydrological Conditions — Our hydroelectric generation facilities are sensitive to changes in the weather, particularly the level of water inflows into generation facilities. Dry hydrological conditions in Panama, Colombia, and Chile can present challenges for our businesses in these markets. Low inflows can result in low reservoir levels, reduced generation output, and subsequently possible increased prices for electricity. If our hydroelectric generation facilities cannot generate sufficient energy to meet contractual arrangements, we may need to purchase energy to fulfill our obligations, which could have an adverse impact on AES. As mitigation, AES has invested in thermal, wind, and solar generation assets, which have a complementary profile to hydroelectric plants. These plants are expected to have increased generation in low hydrology scenarios, offsetting possible impacts described from hydro assets. According to the National Oceanic and Atmospheric Administration (\"NOAA\"), weather conditions are currently transitioning from weak La Niña conditions to ENSO-neutral. The ENSO",
+            "parser_version": "section-text-chunk384-overlap0-v4",
+            "rank": 1,
+            "bm25_score": 14.59054539906784,
+            "text_sha256": "8a51728388414777925d0ee702515aa366981383348efda7900e20a787a553d7"
+          },
+          {
+            "chunk_id": "0000874761-25-000035:PART I:ITEM 2:section0:26",
+            "accession_number": "0000874761-25-000035",
+            "part": "PART I",
+            "item": "ITEM 2",
+            "item_title": "MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS",
+            "chunk_index": 26,
+            "text": "to have a material impact on our business. On February 1, 2025, President Trump issued an Executive Order declaring a national emergency under the International Emergency Economic Powers Act (“IEEPA”) and imposing a 10% additional tariff on imports from China, effective February 4, 2025. Effective March 4, 2025, this tariff was increased to 20%. On April 2, 2025, President Trump issued an Executive Order pursuant to IEEPA imposing an indefinite, baseline reciprocal 10% tariff on almost all goods imported into the U.S., effective April 5, 2025, and individualized higher IEEPA tariffs (11% to 50%) starting April 9, 2025 on goods originating from 57 countries with trade surpluses with the U.S. On April 9, 2025, the U.S. government issued a further Executive Order increasing the IEEPA reciprocal tariff on China to 125% effective April 10, 2025. Concurrently, the U.S. government announced a temporary suspension of the country-specific reciprocal tariff measures targeting most U.S. trading partners for a 90-day period, or until July 9, 2025. During the 90-day suspension, many countries have been seeking to reach bilateral trade agreements with the U.S. and the ultimate outcome of any reciprocal or other tariffs with these countries is uncertain. We expect the tariffs on imports from China will increase overall costs for materials and parts that are imported to build and maintain renewable energy plants for the U.S. industry. However, AES has already shifted its supply chain outside of China for the vast majority of final products used to build and maintain renewable energy plants in the U.S. and we expect limited impact to projects scheduled to become operational in 2025 through 2027 due to the recently announced tariffs on China. The impact of new tariffs, reciprocal tariffs, or Commerce investigations, the impact of any additional adverse Commerce determinations or other tariff disputes or litigation, the impact of the UFLPA, potential future disruptions to the renewable energy supply chain and their effect on AES’ U.S. project development and construction activities remain uncertain. AES will continue to monitor developments and take prudent steps towards maintaining a robust supply chain for our renewable energy projects. To that end, we have accelerated imports into the U.S. and increased our contracting for U.S. domestically manufactured solar panels, batteries, wind turbines, trackers, and other equipment, significantly mitigating the potential impacts from reciprocal tariffs",
+            "parser_version": "section-text-chunk384-overlap0-v4",
+            "rank": 2,
+            "bm25_score": 14.083133104896016,
+            "text_sha256": "2a2573181eb6315ef81cfd18334bbd6d3ec3a53b18af1c03014194371a93e94b"
+          },
+          {
+            "chunk_id": "0000874761-25-000035:PART I:ITEM 1:section0:38",
+            "accession_number": "0000874761-25-000035",
+            "part": "PART I",
+            "item": "ITEM 1",
+            "item_title": "FINANCIAL STATEMENTS (UNAUDITED)",
+            "chunk_index": 38,
+            "text": "Lease receipts from such contracts are recognized as lease revenue on a straight-line basis over the lease term, whereas variable lease receipts are recognized when earned. The following table presents lease revenue from operating leases in which the Company is the lessor, recognized in *Revenue* on the Condensed Consolidated Statements of Operations for the periods indicated (in millions): | Operating Lease Revenue | 2025 | 2024 | | --- | --- | --- | | Non-variable lease revenue | $ 76 | $ 102 | | Variable lease revenue | 15 | 13 | | Total lease revenue | $ 91 | $ 115 | 21 | Notes to Condensed Consolidated Financial Statements—(Continued) | March 31, 2025 and 2024 The following table presents the underlying gross assets and accumulated depreciation of operating leases included in *Property, plant and equipment, net* on the Condensed Consolidated Balance Sheets as of the dates indicated (in millions): | Property, Plant and Equipment, Net | March 31, 2025 | December 31, 2024 | | --- | --- | --- | | Gross assets | $ 2,119 | $ 1,085 | | Less: Accumulated depreciation | ( 240 ) | ( 218 ) | | Net assets | $ 1,879 | $ 867 | The option to extend or terminate a lease is based on customary early termination provisions in the contract, such as payment defaults, bankruptcy, or lack of performance on energy delivery. The Company has not recognized any early terminations as of March 31, 2025. Certain leases may provide for variable lease payments based on usage or index-based (e.g., the U.S. Consumer Price Index) adjustments to lease payments. The following table shows the future lease receipts as of March 31, 2025 for the remainder of 2025 through 2029 and thereafter (in millions): | | Future Cash Receipts for — Sales-Type Leases | Operating Leases | | --- | --- | --- | | 2025 | $ 33 | $ 223 | | 2026 | 44 | 136 | | 2027 | 44 | 65 | | 2028 | 44 | — | | 2029 | 44 | — | | Thereafter | 602 | 1 | | Total | $ 811 | $ 425 | | Less: Imputed interest | ( 362 ) | | | Present value",
+            "parser_version": "section-text-chunk384-overlap0-v4",
+            "rank": 3,
+            "bm25_score": 8.947434180189823,
+            "text_sha256": "205b9c175b148fe0780350267745176a0133a7a99355e7bd480c9e96fe2269a8"
+          },
+          {
+            "chunk_id": "0000874761-25-000035:PART I:ITEM 2:section0:25",
+            "accession_number": "0000874761-25-000035",
+            "part": "PART I",
+            "item": "ITEM 2",
+            "item_title": "MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS",
+            "chunk_index": 25,
+            "text": "expected to be announced May 20, 2025. A final affirmative determination by the ITC would result in the issuance of new AD/CVD orders in early June 2025. We do not expect a final affirmative AD/CVD determination by ITC to have a negative impact on our business. 48 | The AES Corporation | March 31, 2025 Form 10-Q Separately, the U.S. maintains a global safeguard tariff (currently 14% ad valorem) on solar cells and modules pursuant to the Section 201 Safeguard Action on crystalline silicon photovoltaic products, which became effective in February 2018. On June 21, 2024, President Biden issued Proclamation 10779, revoking the exclusion of bifacial panels from safeguard relief previously proclaimed in Proclamation 10339, and reinstating the tariff on bifacial panels under the Section 201 Safeguard Action, subject to certain qualifications. These global tariffs are expected to expire in February 2026. The U.S. also maintains Section 301 tariffs on certain Chinese made lithium-ion batteries and related components utilized for energy storage systems, with such tariff currently set at 7.5% and increasing to 25% effective January 1, 2026. There is also an ongoing AD/CVD investigation with respect to exports by China of natural and synthetic graphite used to make lithium-ion battery anode material. Any determinations or orders arising from such investigation could result in price increases. Additionally, the Uyghur Forced Labor Prevention Act (“UFLPA”) seeks to block the import of products made with forced labor in certain areas of China, at any point in the supply chain, and may lead to certain suppliers being blocked from importing solar cells and panels into the U.S. While this has impacted the U.S. market, AES has managed this issue without significant impact to our projects. Further forced labor designations of entities under the UFLPA may impact our suppliers’ ability or willingness to meet their contractual agreements or to continue to supply cells or panels into the U.S. market on terms that we deem satisfactory. The Trump Administration has threatened or imposed tariffs on a wide range of countries and products. On February 10, 2025, President Trump signed Executive Orders modifying existing Section 232 tariffs on steel and aluminum imports to expand their scope of applicability and imposing 25% tariffs on both products. At this time, we do not expect the modifications to tariffs on steel and aluminum",
+            "parser_version": "section-text-chunk384-overlap0-v4",
+            "rank": 4,
+            "bm25_score": 8.567088322512799,
+            "text_sha256": "3184f401dd5bb7841e9050168e6f3330d1f08f76430a95718d302b5d62065b84"
+          },
+          {
+            "chunk_id": "0000874761-25-000035:PART I:ITEM 2:section0:33",
+            "accession_number": "0000874761-25-000035",
+            "part": "PART I",
+            "item": "ITEM 2",
+            "item_title": "MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS",
+            "chunk_index": 33,
+            "text": "we owned in 2022. Due to a number of factors, including grid and market dynamics, we will continue to work towards exiting coal in the limited markets where we have coal generation. We currently anticipate these efforts will continue beyond 2027. We expect to further reduce the carbon intensity of our operations as we add more long-term contracted renewables to the grid each year. In addition, initiatives have been announced by regulators, including in Chile, Puerto Rico, Bulgaria, and offtakers in recent years, with the intention of reducing GHG emissions generated by the energy industry. In parallel, the shift towards renewables has caused certain customers to migrate to other low-carbon energy solutions and this trend may continue. Although we cannot currently estimate the financial impact of these decarbonization initiatives, new legislative or regulatory programs further restricting carbon emissions or other initiatives to voluntarily exit coal generation could require material capital expenditures, result in a reduction of the estimated useful life of certain coal facilities, or have other material adverse effects on our financial results. 52 | The AES Corporation | March 31, 2025 Form 10-Q For further information about the risks associated with decarbonization initiatives, see Item 1A. *—Risk Factors* — *Concerns about GHG emissions and the potential risks associated with climate change have led to increased regulation and other actions that could impact our businesses* included in the 2024 Form 10-K. Regulatory FERC, RTOs, and Interconnection Prioritization — On February 11, 2025, FERC approved PJM's request for a one-time change in its interconnection process to expedite the interconnection of a limited number of high-capacity resources to support near-term resource adequacy and grid reliability. This change to PJM's interconnection process is not expected to impact the PJM projects already in our backlog since they have received interconnection approvals. However, it will likely create uncertainty and delays in the time for interconnection approvals for our development pipeline of renewables projects in PJM. Other RTOs are considering similar proposals to expedite interconnection approvals for certain high-capacity resources. See Item 1A.— **Risk Factors* - Our development projects are subject to substantial uncertainties* included in the 2024 Form 10-K for further details. U.S. Executive Orders — A recent Executive Order has required a review of all federal onshore wind leasing and federal permitting practices. In executing this order,",
+            "parser_version": "section-text-chunk384-overlap0-v4",
+            "rank": 5,
+            "bm25_score": 6.9284242526875,
+            "text_sha256": "116626093d3cdcaf9b12d3a1f20eefd39dfc67040e7b7dd366a8ad20c53284a0"
+          }
+        ]
+      },
+      "human_review": {
+        "review_status": "human_reviewed_in_chat",
+        "remark_chunk_id": "874761:2025:Q1:remark:2:chunk:23",
+        "topic": "Risk",
+        "reasoning_type": "Qualitative",
+        "verdict": "weak_support",
+        "create_positive_pair": false,
+        "proposed_information_request": "How has AES mitigated tariff exposure for its U.S. renewable projects scheduled for 2025–2027?",
+        "passages": [
+          {
+            "chunk_id": "0000874761-25-000035:PART I:ITEM 2:section0:27",
+            "coverage": "supports_mitigation_topic_not_full_remark"
+          },
+          {
+            "chunk_id": "0000874761-25-000035:PART I:ITEM 2:section0:26",
+            "coverage": "supports_mitigation_topic_not_full_remark"
+          }
+        ],
+        "notes": "User judgment: weak support. Passages describe sourcing/import mitigation and uncertainty, not the full 7-GW / nearly all CapEx zero-exposure assertion. Retain for review, not an accepted training pair.",
+        "reviewed_at": "2026-11-17T22:16:47.276442+00:00"
+      }
+    },
+    {
+      "case_id": "case-05",
+      "input": {
+        "ticker": "GPN",
+        "call_id": "1123360:2025:Q1",
+        "company_quarter_id": "0001123360:2025:Q1",
+        "fiscal_year": 2025,
+        "fiscal_quarter": 1,
+        "filing_accession": "0001123360-25-000030",
+        "filing_period_end": "2025-03-31",
+        "original_remark": "As a reminder, this quarter, we changed the presentation of cash flows for settlement assets and obligations and certain funds held for customers.",
+        "candidate_passages": [
+          {
+            "chunk_id": "0001123360-25-000030:PART I:ITEM 1:section0:7",
+            "accession_number": "0001123360-25-000030",
+            "part": "PART I",
+            "item": "ITEM 1",
+            "item_title": "Unaudited Consolidated Statements of Income for the three months ended March 31, 2025 and 2024",
+            "chunk_index": 7,
+            "text": "reflect the financial statement effects based upon management’s estimates and assumptions utilizing the most currently available information. *Change in presentation -* During the first quarter of 2025, we elected to change our presentation of cash flows associated with \"Changes in settlement processing assets and obligations, net\" and \"Changes in funds held for customers\" from operating activities to financing activities within our consolidated statements of cash flows. The change has been applied retrospectively and the prior period has been conformed to the current period presentation. This change had no effect on our consolidated statements of income, consolidated statements of comprehensive income, consolidated balance sheets or consolidated statements of changes in equity. The change in presentation resulted in an increase in net cash provided by operating activities and an increase in net cash used in financing activities of $ 113.3 million for the three months ended March 31, 2024. *SEC rule changes -* On March 27, 2025, the SEC voted to withdraw its litigation defense of its climate risk disclosure rules requiring disclosure of certain climate-related information and greenhouse gas emissions. Table of Contents *Recently issued accounting pronouncements not yet adopted* *Accounting Standards Update (\"ASU\") 2024-03* - In November 2024, the Financing Accounting Standards Board (\"FASB\") issued ASU 2024-03, \" *Disaggregation of Income Statement Expenses,\"* which requires disclosure in the notes to financial statements of specified information about certain costs and expenses. The amendments in this update are effective for fiscal years beginning after December 15, 2026. Early adoption is permitted. The amendments should be applied either prospectively to financial statements issued for reporting periods after the effective date of this update or retrospectively to any or all prior periods presented in the financial statements. We are evaluating the potential effects of ASU 2024-03 on our consolidated financial statements and related disclosures. *ASU 2023-09* - In December 2023, the FASB issued ASU 2023-09, \"Income Taxes (Topic 740): *Improvement to Income Tax Disclosures,\"* which is intended to enhance the transparency and decision usefulness of income tax information through improvements to income tax disclosures, primarily related to the rate reconciliation and income taxes paid information. The amendments in this update are effective for annual periods beginning with our year ending December 31, 2025. The amendments should be applied on a prospective basis with the option to apply the",
+            "parser_version": "section-text-chunk384-overlap0-v4",
+            "rank": 1,
+            "bm25_score": 14.628723116236618,
+            "text_sha256": "b46d68f8c40da254cac909626ed84ceca71ce412737f9f6542c715f73f1c826d"
+          },
+          {
+            "chunk_id": "0001123360-25-000030:PART I:ITEM 2:section0:11",
+            "accession_number": "0001123360-25-000030",
+            "part": "PART I",
+            "item": "ITEM 2",
+            "item_title": "Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "chunk_index": 11,
+            "text": "be indefinitely reinvested outside the U.S. The avail able cash of $816.9 million d oes not include the following: (i) settlement-related cash balances, (ii) funds held as collateral for merchant losses (\"Merchant Reserves\") and (iii) certain funds held for customers. Settlement-related cash balances represent funds that we hold when the incoming amount from the card networks precedes the funding obligation to the merchant. Settlement-related cash balances are not restricted in their use; however, these funds are generally paid out in satisfaction of settlement processing obligations the following day. Merchant Reserves serve as collateral to minimize contingent liabilities associated with any losses that may occur under the merchant's agreement. While this cash is not restricted in its use, we believe that designating this cash as a Merchant Reserve strengthens our fiduciary standing with our member sponsors. Funds held for customers, which are not restricted in their use, include amounts collected before the corresponding obligation is due to be settled to or at the direction of our customers. We also had restricted cash of $252.3 million as of March 31, 2025, representing amounts under legal restriction, amounts deposited by customers for prepaid card transactions and funds held as a liquidity reserve. These balances are subject to local regulatory restrictions requiring appropriate segregation and restriction in their use. Operating activities provided net cash of $555.1 million a nd $529.6 million for the three months ended March 31, 2025 and 2024, respectively, which reflect net income adjusted for noncash items, including depreciation, amortization and the provision for credit losses, and changes in operating assets and liabilities. Cash flows from operating activities increased 5% from the prior year in spite of a decrease in net income in the current year period primarily due to a noncash tax valuation allowance in the prior year period. We used net cash in investing activities of $173.1 million and $148.0 million during the three months ended March 31, 2025 and 2024, respectively. Cash used for investing activities primarily represents cash used to fund acquisitions and capital expenditures. During the three months ended March 31, 2025 and 2024, we used cash of $49.9 million and $2.6 million, respectively, for acquisitions. We made capital expenditures of $127.6 million and $145.4 million during the three months ended March 31, 2025 and 2024, respectively. These investments include",
+            "parser_version": "section-text-chunk384-overlap0-v4",
+            "rank": 2,
+            "bm25_score": 10.737119209107233,
+            "text_sha256": "cf2ca3243c21e9ef68331d756092af9082d7e45dea2d54b1c4a2dc73dcf4b483"
+          },
+          {
+            "chunk_id": "0001123360-25-000030:PART I:ITEM 2:section0:12",
+            "accession_number": "0001123360-25-000030",
+            "part": "PART I",
+            "item": "ITEM 2",
+            "item_title": "Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "chunk_index": 12,
+            "text": "software and hardware to support the development of new technologies, infrastructure to support our growing business and the consolidation and enhancement of our operating platforms. These investments also include new product development and innovation to further enhance and differentiate our suite of technology and cloud-based solutions available to customers. We expect to continue to make capital investments in the business, and we anticipate capital expenditures to be approximately $800 million during the year ending December 31, 2025. Financing activities include borrowings and repayments made under our various debt arrangements, as well as borrowings and repayments made under specialized lines of credit to fund daily settlement activities. Our borrowing arrangements are further described in \"Note 5—Long-Term Debt and Lines of Credit\" in the notes to the accompanying unaudited consolidated financial statements and below under \"Long-Term Debt and Lines of Credit.\" Financing activities also include cash flows associated with changes in funds held from customers, changes in settlement processing assets and liabilities, common stock repurchase programs and share-based compensation programs, cash distributions made to our shareholders and cash contributions from and distributions to noncontrolling interests. Net cash used in financing activities was $31.5 million and $276.7 million for the three months ended March 31, 2025 and 2024, respectively. Proceeds from long-term debt we re $1,551.0 million an d $4,609.0 million for the three months ended March 31, 2025 and 2024, respectively. Repayments of long-term debt we re $2,546.6 million and $2,628.5 million for the three months ended March 31, 2025 and 2024, respectively. Proceeds from and repayments of long-term debt consist of borrowings and repayments that we make with available cash, from time to time, under our revolving credit facility, as well as scheduled principal repayments we make on our senior notes, finance leases and other vendor financing arrangements. Changes in settlement processing assets and obligations, net were a source of cash of $479.2 million and a use of cash of $24.7 million for the three months ended March 31, 2025 and 2024, respectively. The change in cash from settlement processing assets and liabilities was due primarily to transaction volume and the timing of month-end. During the three months ended March 31, 2025 and 2024, we had net borrowings o f $867.6 million and net repayments of $1,093.0 million, respectively, under our commercial paper program. Furthermore,",
+            "parser_version": "section-text-chunk384-overlap0-v4",
+            "rank": 3,
+            "bm25_score": 10.541824612502982,
+            "text_sha256": "c3bf6737f5a7d5f83f02547a9770f503ed963b954c4e1fbbd99539a227414a98"
+          },
+          {
+            "chunk_id": "0001123360-25-000030:PART I:ITEM 1:section0:3",
+            "accession_number": "0001123360-25-000030",
+            "part": "PART I",
+            "item": "ITEM 1",
+            "item_title": "Unaudited Consolidated Statements of Income for the three months ended March 31, 2025 and 2024",
+            "chunk_index": 3,
+            "text": "| ( 102,081 ) | ( 158,669 ) | | Net cash provided by operating activities | 555,124 | 529,579 | | Cash flows from investing activities: | | | | Business combinations and other acquisitions, net of cash and restricted cash acquired | ( 49,886 ) | ( 2,557 ) | | Capital expenditures | ( 127,577 ) | ( 145,441 ) | | Payment received on notes receivable | 4,375 | — | | Net cash used in investing activities | ( 173,088 ) | ( 147,998 ) | | Cash flows from financing activities: | | | | Changes in funds held for customers | ( 58,461 ) | ( 88,573 ) | | Changes in settlement processing assets and obligations, net | 479,153 | ( 24,689 ) | | Net borrowings from settlement lines of credit | 223,216 | 133,228 | | Net borrowings (repayments) from commercial paper notes | 867,582 | ( 1,093,043 ) | | Proceeds from long-term debt | 1,551,000 | 4,609,000 | | Repayments of long-term debt | ( 2,546,613 ) | ( 2,628,548 ) | | Payments of debt issuance costs | — | ( 29,391 ) | | Repurchases of common stock | ( 446,286 ) | ( 800,048 ) | | Proceeds from stock issued under share-based compensation plans | 6,340 | 11,031 | | Common stock repurchased - share-based compensation plans | ( 36,006 ) | ( 41,140 ) | | Distributions to noncontrolling interests | ( 10,327 ) | ( 4,748 ) | | Proceeds and contributions from noncontrolling interests | — | 89 | | Purchase of capped calls related to issuance of convertible notes | — | ( 256,250 ) | | Dividends paid | ( 61,124 ) | ( 63,616 ) | | Net cash used in financing activities | ( 31,526 ) | ( 276,698 ) | | Effect of exchange rate changes on cash, cash equivalents and restricted cash | 61,790 | ( 34,035 ) | | Increase in cash, cash equivalents and restricted cash | 412,300 | 70,848 | | Cash, cash equivalents and restricted cash, beginning of the period | 2,735,975 | 2,256,875 | | Cash, cash equivalents and restricted cash, end of the period | $ 3,148,275 | $ 2,327,723 | *See Notes",
+            "parser_version": "section-text-chunk384-overlap0-v4",
+            "rank": 4,
+            "bm25_score": 9.426155799862448,
+            "text_sha256": "bfff6e0c1d3d1e5a2362afaf22a8f73483e0164b342d440a4f9976d42ed5b173"
+          },
+          {
+            "chunk_id": "0001123360-25-000030:PART I:ITEM 2:section0:10",
+            "accession_number": "0001123360-25-000030",
+            "part": "PART I",
+            "item": "ITEM 2",
+            "item_title": "Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "chunk_index": 10,
+            "text": "allocation priorities are to pay dividends, to repurchase shares of our common stock, to pursue acquisitions that meet our corporate objectives, to make planned capital investments in our business and to pay principal and interest on our outstanding debt. Our significant contractual cash requirements also include ongoing payments for lease liabilities and contractual obligations related to service arrangements with suppliers for fixed or minimum amounts, which primarily relate to software, technology infrastructure and related services. Commitments under our borrowing arrangements are further described in \"Note 5—Long-Term Debt and Lines of Credit\" in the notes to the accompanying unaudited consolidated financial statements and below under \"Long-Term Debt and Lines of Credit.\" For additional information regarding our other cash commitments and contractual obligations, see \"Note 7—Leases\" and “Note 19—Commitments and Contingencies” in our Annual Report on Form 10-K for the year ended December 31, 2024. Our capital plan objectives are to support our operational needs and strategic plan for long-term growth while optimizing our cost of capital and financial position. To supplement cash from operating activities, we use a combination of bank financing, such as borrowings under our credit facilities, commercial paper program and senior note issuances, for general corporate purposes and to fund acquisitions. Our commercial paper program provides a cost effective means of addressing our short-term liquidity needs and is backstopped by our credit agreement, in that the amount of commercial paper notes outstanding cannot exceed the undrawn portion of our revolving credit facility. Finally, specialized lines of credit are also used in certain of our markets to fund merchant settlement prior to receipt of funds from the card networks. We regularly evaluate our liquidity and capital position relative to cash requirements, and we may elect to raise additional funds in the future through the issuance of debt or equity or by other means. Accumulated cash balances are invested in high-quality, marketable short-term instruments. We believe that our current and projected sources of liquidity will be sufficient to meet our projected liquidity requirements associated with our operations for the near and long term. Table of Contents At March 31, 2025, we had cash and cash equivalents totalin g $2,896.0 million . Of this amount, we considered $816.9 million to be available for general purposes, of which $62.6 million is undistributed foreign earnings considered to",
+            "parser_version": "section-text-chunk384-overlap0-v4",
+            "rank": 5,
+            "bm25_score": 5.597665151682375,
+            "text_sha256": "28d6275c6457a92901bd4ee5707cd7e43c8a369f7e2951d578c8ea997e4210a2"
+          }
+        ]
+      },
+      "human_review": {
+        "review_status": "human_approved_in_chat",
+        "remark_chunk_id": "1123360:2025:Q1:remark:4:chunk:57",
+        "topic": "Accounting",
+        "reasoning_type": "Qualitative",
+        "verdict": "supported",
+        "create_positive_pair": true,
+        "evidence_relationship": "direct_support",
+        "information_request": "How did Global Payments change the classification of settlement-related and customer-fund cash flows in Q1 2025?",
+        "required_evidence": [
+          "Identity of affected cash-flow items",
+          "Reclassification from operating to financing activities",
+          "First-quarter 2025 timing"
+        ],
+        "passages": [
+          {
+            "chunk_id": "0001123360-25-000030:PART I:ITEM 1:section0:7",
+            "coverage": "complete",
+            "supplies": [
+              "Changes in settlement processing assets and obligations, net, and changes in funds held for customers moved from operating to financing activities in Q1 2025",
+              "Retrospective application to prior periods"
+            ]
+          },
+          {
+            "chunk_id": "0001123360-25-000030:PART I:ITEM 2:section0:11",
+            "coverage": "related_topic_only",
+            "supplies": [],
+            "notes": "Discusses balances but does not establish classification change"
+          }
+        ],
+        "reviewed_at": "2026-11-17T22:18:30.098930+00:00"
+      }
+    },
+    {
+      "case_id": "case-06",
+      "input": {
+        "ticker": "PCAR",
+        "call_id": "75362:2025:Q1",
+        "company_quarter_id": "0000075362:2025:Q1",
+        "fiscal_year": 2025,
+        "fiscal_quarter": 1,
+        "filing_accession": "0000950170-25-061813",
+        "filing_period_end": "2025-03-31",
+        "original_remark": "PACCAR's first quarter adjusted net income of $770 million excludes a $265 million after-tax provision related to EU civil litigation settlements.",
+        "candidate_passages": [
+          {
+            "chunk_id": "0000950170-25-061813:PART I:ITEM 1:72",
+            "accession_number": "0000950170-25-061813",
+            "part": "PART I",
+            "item": "ITEM 1",
+            "item_title": "FINANCIAL STATEMENTS",
+            "chunk_index": 72,
+            "text": "**NOTE L - Employee Benefit Plans**\nThe Company has several defined benefit pension plans, which cover a majority of its employees. The following information details the components of net pension (income) expense for the Company’s defined benefit plans:\n|Three Months Ended March 31, — Service cost|2025 — $ 24.2||2024 — $ 27.8||\n|---|---|---|---|---|\n|Interest on projected benefit obligation|35.8||33.6||\n|Expected return on assets|( 62.3|)|( 60.6|)|\n|Amortization of prior service costs|.3||.3||\n|Recognized actuarial loss|.7||1.2||\n|Net pension (income) expense|$ ( 1.3|)|$ 2.3||\nThe components of net pension expense other than service cost are included in Interest and other expenses (income), net on the Consolidated Statements of Comprehensive Income. The Company contributed $ 6.5 and $ 26.0 for the three months ended March 31, 2025 and 2024 , respectively.\n**NOTE M – Commitments and Contingencies**\n\nOn July 19, 2016, the European Commission (EC) concluded its investigation of all major European truck manufacturers and reached a settlement with DAF Trucks N.V., DAF Trucks Deutschland GmbH and PACCAR Inc (collectively “the Company”). Following the settlement, certain EC-related claims and lawsuits have been filed in various jurisdictions primarily in Europe against all major European truck manufacturers including the Company and certain subsidiaries. These claims and lawsuits include individual and collective proceedings seeking monetary damages, including class actions in the United Kingdom (U.K.), the Netherlands, and Israel. In certain jurisdictions, additional claimants may bring EC-related claims and lawsuits against the Company or its subsidiaries.",
+            "parser_version": "sec2md-0.1.23-item-fallback-chunk384-overlap96-v2",
+            "rank": 1,
+            "bm25_score": 8.614068728639483,
+            "text_sha256": "0f1425fa7c4aecf836b0eab48a8614ae4cbe2b3d21f063082a749bfeb1563a6e"
+          },
+          {
+            "chunk_id": "0000950170-25-061813:PART I:ITEM 2:1",
+            "accession_number": "0000950170-25-061813",
+            "part": "PART I",
+            "item": "ITEM 2",
+            "item_title": "MANAGEMENT'S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS",
+            "chunk_index": 1,
+            "text": "• Financial Services revenues were $528.0 million in 2025 compared to $509.3 million in 2024, primarily due portfolio growth and higher portfolio yields.\n\n• Net income was $505.1 million ($.96 per diluted share) in 2025 compared to $1.20 billion ($2.27 per diluted share) in 2024. In 2025, adjusted net income (non-GAAP), excluding a $264.5 million after-tax charge related to civil litigation in Europe was $769.6 million ($1.46 per diluted share). See Reconciliation of GAAP to Non-GAAP Financial Measures on page 44.\n• Capital investments were $171.9 million in 2025 compared to $164.3 million in 2024.\n\n• Research and development (R&D) expenses were $115.4 million in 2025 compared to $105.5 million in 2024. The PACCAR Financial Services (PFS) group of companies has operations covering four continents and 26 countries. The global breadth of PFS and its rigorous credit application process support a portfolio of loans and leases with total assets of $22.75 billion. PFS issued $694.6 million in medium-term notes during the first three months of 2025 to support new business volume and repay maturing debt.\n***Truck Outlook***\n\nTruck industry heavy-duty retail sales in the U.S. and Canada in 2025 are expected to be 235,000 to 265,000 units compared to 268,100 in 2024. In Europe, 2025 truck industry registrations for over 16-tonne vehicles are expected to be 270,000 to 300,000 units compared to 316,100 in 2024.",
+            "parser_version": "sec2md-0.1.23-item-fallback-chunk384-overlap96-v2",
+            "rank": 2,
+            "bm25_score": 8.451965016406861,
+            "text_sha256": "fd9772169d3e578107f14404e5ed7b03214c138673b7042fe5ab693e2139bab7"
+          },
+          {
+            "chunk_id": "0000950170-25-061813:PART I:ITEM 2:39",
+            "accession_number": "0000950170-25-061813",
+            "part": "PART I",
+            "item": "ITEM 2",
+            "item_title": "MANAGEMENT'S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS",
+            "chunk_index": 39,
+            "text": "Forward-looking statements include statements relating to future results of operations or financial position and any other statement that does not relate to any historical or current fact. Such statements are based on currently available operating, financial and other information and are subject to risks and uncertainties that may affect actual results. Risks and uncertainties include, but are not limited to: a significant decline in industry sales; competitive pressures; reduced market share; reduced availability of or higher prices for fuel; increased safety, emissions, or other regulations or tariffs resulting in higher costs and/or sales restrictions; currency or commodity price fluctuations; lower used truck prices; insufficient or under-utilization of manufacturing capacity; supplier interruptions; insufficient liquidity in the capital markets; fluctuations in interest rates; changes in the levels of the Financial Services segment new business volume due to unit fluctuations in new PACCAR truck sales or reduced market shares; changes affecting the profitability of truck owners and operators; price changes impacting truck sales prices and residual values; insufficient supplier capacity or access to raw materials and components, including semiconductors; labor disruptions; shortages of commercial truck drivers; increased warranty costs; cybersecurity risks to the Company’s information technology systems; pandemics; climate-related risks; global conflicts; litigation, including European Commission (EC) settlement-related claims; or legislative and governmental regulations. A more detailed description of these and other risks is included under the headings Part I, Item 1A, “Risk Factors” in the Company’s Annual Report on Form 10‑K for the year ended December 31, 2024 and in Part II, Item 1, “Legal Proceedings” and Part II, Item 1A, “Risk Factors” of this Quarterly Report on Form 10-Q.",
+            "parser_version": "sec2md-0.1.23-item-fallback-chunk384-overlap96-v2",
+            "rank": 3,
+            "bm25_score": 8.175921784418648,
+            "text_sha256": "c26f3be92bb5a896ecfaef9f9f5c1f7dafe514a529ac58e80c7dc50d4fc0494a"
+          },
+          {
+            "chunk_id": "0000950170-25-061813:PART I:ITEM 2:5",
+            "accession_number": "0000950170-25-061813",
+            "part": "PART I",
+            "item": "ITEM 2",
+            "item_title": "MANAGEMENT'S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS",
+            "chunk_index": 5,
+            "text": "* In 2025, Other includes a $350.0 million charge related to civil litigation in Europe (EC-related claims).\n\n** See Reconciliation of GAAP to Non-GAAP Financial Measures for 2025 on page 44. The following provides an analysis of the results of operations for the Company’s three reportable segments - Truck, Parts and Financial Services. Where possible, the Company has quantified the impact of factors identified in the following discussion and analysis. In cases where it is not possible to quantify the impact of factors, the Company lists them in estimated order of importance. Factors for which the Company is unable to specifically quantify the impact include market demand and impact from tariffs, fuel prices, freight tonnage and economic conditions affecting the Company’s results of operations.\n- 32 -\n**2025 Compared to 2024:**\n***Truck***\nThe Company’s Truck segment accounted for 70% of revenues in the first quarter of 2025 compared to 75% in the first quarter of 2024.\nThe Company’s new truck deliveries are summarized below:\n|Three Months Ended March 31, — U.S. and Canada|2025 — 22,200|2024 — 29,500|(25|)|\n|---|---|---|---|---|\n|Europe|10,400|11,600|(10|)|\n|Mexico, South America, Australia and other|7,500|7,000|7||\n|Total units|40,100|48,100|(17|)|\nWorldwide new truck deliveries decreased in the first quarter of 2025 compared to the same period of 2024, primarily due to lower deliveries in the U.S. and Canada and Europe, partially offset by an increase in Mexico.",
+            "parser_version": "sec2md-0.1.23-item-fallback-chunk384-overlap96-v2",
+            "rank": 4,
+            "bm25_score": 7.379132048831497,
+            "text_sha256": "46279b478d856eca01d82ef103219946db3e088c02b3eedb17c3a30883b78ec6"
+          },
+          {
+            "chunk_id": "0000950170-25-061813:PART I:ITEM 1:53",
+            "accession_number": "0000950170-25-061813",
+            "part": "PART I",
+            "item": "ITEM 1",
+            "item_title": "FINANCIAL STATEMENTS",
+            "chunk_index": 53,
+            "text": "* In the first quarter of 2025, Other includes a $ 350.0 million charge related to civil litigation in Europe (EC-related claims) which is discussed in Note M.\n||Three Months Ended March 31, 2024 — Truck|Parts||Other||Truck, Parts and Other|Financial Services|Total||\n|---|---|---|---|---|---|---|---|---|---|\n|Net sales and revenues|$ 6,678.9|$|1,695.3|$ 18.1||$ 8,392.3|$ 509.3|$ 8,901.6||\n|Less intersegment|( 137.9|)|( 19.4|)||( 157.3|)|( 157.3|)|\n|External Customers|$ 6,541.0|$|1,675.9|$ 18.1||$ 8,235.0|$ 509.3|$ 8,744.3||\n|Cost of sales and revenues|5,521.2||1,130.9|21.7||6,673.8||6,673.8||\n|Research and development|78.1||27.2|.2||105.5||105.5||\n|Selling, general and administrative|61.7||61.3|24.6||147.6|39.0|186.6||\n|Interest and other borrowing expenses|||||||160.0|160.0||\n|Depreciation and other expenses|||||||180.3|180.3||\n|Provision for losses on receivables|||||||16.1|16.1||\n|Other segment (income) expenses|( 1.6|)|.7|( 26.1|)|( 27.0|)|( 27.0|)|\n||$ 881.6|$|455.8|$ ( 2.3|)|$ 1,335.1|$ 113.9|$ 1,449.0||\n|Investment income||||||||85.5||\n|Income (loss) before income taxes|$ 881.6|$|455.8|$ ( 2.3|)|$ 1,335.1|$ 113.9|$ 1,534.5||\n|Depreciation and amortization|$ 99.6|$|3.8|$ 6.0||$ 109.4|$ 125.6|$ 235.0||\n|Expenditures for long-lived assets|$ 149.7|$|5.5|$ 11.2||$ 166.4|$ 158.3|$ 324.7||",
+            "parser_version": "sec2md-0.1.23-item-fallback-chunk384-overlap96-v2",
+            "rank": 5,
+            "bm25_score": 7.33404848472175,
+            "text_sha256": "9608f782240eefb3d7781244707d66775969290ebe09766d3b777f4d53c88bef"
+          }
+        ]
+      },
+      "human_review": {
+        "review_status": "human_approved_in_chat",
+        "remark_chunk_id": "75362:2025:Q1:remark:3:chunk:1",
+        "topic": "Legal",
+        "reasoning_type": "Quantitative",
+        "verdict": "supported",
+        "create_positive_pair": true,
+        "evidence_relationship": "direct_support",
+        "information_request": "What after-tax European litigation charge did PACCAR exclude from adjusted net income in Q1 2025?",
+        "required_inputs": [
+          "After-tax European civil-litigation charge excluded from Q1 2025 adjusted net income"
+        ],
+        "passages": [
+          {
+            "chunk_id": "0000950170-25-061813:PART I:ITEM 2:1",
+            "coverage": "complete",
+            "supplies": [
+              "Excluded after-tax European civil-litigation charge $264.5 million",
+              "Adjusted net income $769.6 million"
+            ]
+          },
+          {
+            "chunk_id": "0000950170-25-061813:PART I:ITEM 1:72",
+            "coverage": "legal_background_only"
+          }
+        ],
+        "notes": "Original rounded remark $265 million / $770 million matches filing $264.5 million / $769.6 million. Distinguish after-tax charge from $350 million pre-tax charge.",
+        "reviewed_at": "2026-11-17T22:22:12.825340+00:00"
+      }
+    },
+    {
+      "case_id": "case-07",
+      "input": {
+        "ticker": "VTRS",
+        "call_id": "1792044:2025:Q1",
+        "company_quarter_id": "0001792044:2025:Q1",
+        "fiscal_year": 2025,
+        "fiscal_quarter": 1,
+        "filing_accession": "0001792044-25-000018",
+        "filing_period_end": "2025-03-31",
+        "original_remark": "GAAP purposes, we recorded a non-cash goodwill impairment charge of $2.9 billion, driven by an increase in discount rate assumptions reflecting the increased business risk.",
+        "candidate_passages": [
+          {
+            "chunk_id": "0001792044-25-000018:PART I:ITEM 2:47",
+            "accession_number": "0001792044-25-000018",
+            "part": "PART I",
+            "item": "ITEM 2",
+            "item_title": "*MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS*",
+            "chunk_index": 47,
+            "text": "As of March 31, 2025 (prior to the impairment charges noted below), the allocation of the Company’s total goodwill was as follows: North America $3.09 billion, Europe $3.92 billion, Emerging Markets $1.17 billion, JANZ $0.30 billion and Greater China $0.92 billion.\nIn conjunction with its March 31, 2025 interim goodwill impairment test, the Company recorded the following impairment charges:\n|(In millions)|North America|Europe|JANZ|Emerging Markets|Total|\n|---|---|---|---|---|---|\n|Impairment charge|$ 707.0|$ 1,554.0|$ 300.8|$ 375.0|$ 2,936.8|\nFor the North America reporting unit at March 31, 2025, the Company forecasted cash flows for the next 10 years. During the forecast period, the revenue compound annual growth rate was approximately 3.1%. A terminal year value was calculated with a negative 3.0% revenue growth rate applied. The discount rate utilized was 12.5% and the estimated tax rate was 24.8%. For the Europe reporting unit at March 31, 2025, the Company forecasted cash flows for the next 10 years. During the forecast period, the revenue compound annual growth rate was approximately 3.3%. A terminal year value was calculated with a 2.0% revenue growth rate applied. The discount rate utilized was 12.0% and the estimated tax rate was 15.8%.\nFor the Emerging Markets reporting unit at March 31, 2025, the Company forecasted cash flows for the next 10 years. During the forecast period, the revenue compound annual growth rate was approximately 3.5%.",
+            "parser_version": "sec2md-0.1.23-item-fallback-chunk384-overlap96-v2",
+            "rank": 1,
+            "bm25_score": 15.826103395853599,
+            "text_sha256": "ac4dd6aa731a6d4f13459bebd89b8bf9fb5e221202a18a0fde3382f8dc6b3e33"
+          },
+          {
+            "chunk_id": "0001792044-25-000018:PART I:ITEM 1:34",
+            "accession_number": "0001792044-25-000018",
+            "part": "PART I",
+            "item": "ITEM 1",
+            "item_title": "FINANCIAL STATEMENTS",
+            "chunk_index": 34,
+            "text": "When compared to the prior year annual goodwill impairment test completed on April 1, 2024, the recent significantly increased uncertainty and volatility in the geopolitical and economic environments in which the Company operates has increased the Company’s business risks, including, but not limited to, the potential for continued or additional drug pricing reduction pressures, general uncertainty related to timing of responses and approvals from the FDA resulting from evolving regulatory priorities and associated changes to the operations of the agency, and the potential for adverse impacts from future tariffs and trade restrictions. The negative impact of any or all of these factors could be material. The recent significant increase in business risks and uncertainty have led to an increase in discount rate assumptions impacting all reporting units as compared to the April 1, 2024 annual goodwill impairment test.\nAs of March 31, 2025 (prior to the impairment charges noted below), the allocation of the Company’s total goodwill was as follows: North America $ 3.09 billion, Europe $ 3.92 billion, Emerging Markets $ 1.17 billion, JANZ $ 0.30 billion and Greater China $ 0.92 billion.\nIn conjunction with its March 31, 2025 interim goodwill impairment test, the Company recorded the following impairment charges:\n|(In millions)|North America|Europe|JANZ|Emerging Markets|Total|\n|---|---|---|---|---|---|\n|Impairment charge|$ 707.0|$ 1,554.0|$ 300.8|$ 375.0|$ 2,936.8|\n****Table of Contents****\n\n**VIATRIS INC.",
+            "parser_version": "sec2md-0.1.23-item-fallback-chunk384-overlap96-v2",
+            "rank": 2,
+            "bm25_score": 14.015294087745385,
+            "text_sha256": "336398d8bcb92b736711f6c351588e2925c35c7bec5865ee15743d73e49850aa"
+          },
+          {
+            "chunk_id": "0001792044-25-000018:PART I:ITEM 2:48",
+            "accession_number": "0001792044-25-000018",
+            "part": "PART I",
+            "item": "ITEM 2",
+            "item_title": "*MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS*",
+            "chunk_index": 48,
+            "text": "A terminal year value was calculated with a 2.0% revenue growth rate applied. The discount rate utilized was 14.5% and the estimated tax rate was 16.7%. For the JANZ reporting unit at March 31, 2025, the Company forecasted cash flows for the next 10 years. During the forecast period, the revenue compound annual growth rate was approximately negative 0.9%. A terminal year value was calculated with a 1.0% revenue growth rate applied. The discount rate utilized was 8.5% and the estimated tax rate was 30.2%. After the goodwill impairment charge recorded during the first quarter of 2025, there is no remaining goodwill allocated to the JANZ reporting unit.\nFollowing the goodwill impairment charges recorded in these reporting units, since the carrying value of the reporting units is equal to their estimated fair value as of March 31, 2025, if market conditions or the projected results were to negatively change, it may be necessary to record further impairment charges to one or more of these reporting units in future periods. Any such future charges could be material. For the Greater China reporting unit, the estimated fair value exceeded its carrying value by approximately $322.0 million or 5.8% for the March 31, 2025 interim goodwill impairment test. As it relates to the discounted cash flow approach for the Greater China reporting unit at March 31, 2025, the Company forecasted cash flows for the next 10 years. During the forecast period, the revenue compound annual growth rate was approximately 1.6%. A terminal year value was calculated with a negative 1.5% revenue growth rate applied. The discount rate utilized was 15.0% and the estimated tax rate was 24.7%.",
+            "parser_version": "sec2md-0.1.23-item-fallback-chunk384-overlap96-v2",
+            "rank": 3,
+            "bm25_score": 13.755216889289747,
+            "text_sha256": "63051ee49773d819e8349c5d315598dbf2ab858bea150c0b022ab3f282a8781c"
+          },
+          {
+            "chunk_id": "0001792044-25-000018:PART I:ITEM 1:36",
+            "accession_number": "0001792044-25-000018",
+            "part": "PART I",
+            "item": "ITEM 1",
+            "item_title": "FINANCIAL STATEMENTS",
+            "chunk_index": 36,
+            "text": "After the goodwill impairment charge recorded during the first quarter of 2025, there is no remaining goodwill allocated to the JANZ reporting unit.\nFollowing the goodwill impairment charges recorded in these reporting units, since the carrying value of the reporting units is equal to their estimated fair value as of March 31, 2025, if market conditions or the projected results were to negatively change, it may be necessary to record further impairment charges to one or more of these reporting units in future periods. Any such future charges could be material. For the Greater China reporting unit, the estimated fair value exceeded its carrying value by approximately $ 322.0 million or 5.8 % for the March 31, 2025 interim goodwill impairment test. As it relates to the discounted cash flow approach for the Greater China reporting unit at March 31, 2025, the Company forecasted cash flows for the next 10 years. During the forecast period, the revenue compound annual growth rate was approximately 1.6 %. A terminal year value was calculated with a negative 1.5 % revenue growth rate applied. The discount rate utilized was 15.0 % and the estimated tax rate was 24.7 %. If all other assumptions are held constant, a reduction in the terminal value growth rate by 3.5 % or an increase in discount rate by 1.0 % would result in an impairment charge for the Greater China reporting unit.\nDue to the inherent uncertainty involved in making these estimates, actual results could differ from those estimates. In addition, changes in underlying assumptions, especially as they relate to the key assumptions detailed, could have a significant impact on the fair value of the reporting units.",
+            "parser_version": "sec2md-0.1.23-item-fallback-chunk384-overlap96-v2",
+            "rank": 4,
+            "bm25_score": 12.345345329678949,
+            "text_sha256": "4f66a00465cb8232f54f4e642255410740cd13f92d953b26f711d90dca3892e4"
+          },
+          {
+            "chunk_id": "0001792044-25-000018:PART I:ITEM 2:8",
+            "accession_number": "0001792044-25-000018",
+            "part": "PART I",
+            "item": "ITEM 2",
+            "item_title": "*MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS*",
+            "chunk_index": 8,
+            "text": "As a result of these factors, the Company determined that a triggering event had occurred for each of its reporting units and performed an interim goodwill impairment test as of March 31, 2025. When compared to the prior year annual goodwill impairment test completed on April 1, 2024, the recent significantly increased uncertainty and volatility in the geopolitical and economic environments in which the Company operates has increased the Company’s business risks, including, but not limited to, the potential for continued or additional drug pricing reduction pressures, general uncertainty related to timing of responses and approvals from the FDA resulting from evolving regulatory priorities and associated changes to the operations of the agency, and the potential for adverse impacts from future tariffs and trade restrictions. The negative impact of any or all of these factors could be material. The recent significant increase in business risks and uncertainty have led to an increase in discount rate assumptions impacting all reporting units as\n****Table of Contents****\n\ncompared to the April 1, 2024 annual goodwill impairment test. For the three months ended March 31, 2025, the Company recorded a non-cash goodwill impairment charge of $2.9 billion as a result of the interim goodwill impairment test performed as of March 31, 2025.\n\n*Indore Manufacturing Facility*\n\nFollowing an inspection by the FDA at our oral finished dose manufacturing facility in Indore, India in 2024, the FDA has issued a warning letter, and an import alert related to this facility. The import alert affects 11 actively distributed products that will no longer be accepted into the U.S. until the warning letter is lifted. It makes exceptions, subject to certain conditions, for four products based on shortage concerns. Following discussions with the FDA, the Company does not expect additional product exceptions to be granted by the FDA.",
+            "parser_version": "sec2md-0.1.23-item-fallback-chunk384-overlap96-v2",
+            "rank": 5,
+            "bm25_score": 11.868152160071237,
+            "text_sha256": "0f39a8768448eb33b6182b1d589bb717a16e56b6bf90171328c191bb5cd64b6f"
+          }
+        ]
+      },
+      "human_review": {
+        "review_status": "human_approved_in_chat",
+        "remark_chunk_id": "1792044:2025:Q1:remark:4:chunk:31",
+        "topic": "Footnotes",
+        "reasoning_type": "Quantitative",
+        "verdict": "supported",
+        "create_positive_pair": true,
+        "evidence_relationship": "direct_amount_and_explanation",
+        "information_request": "What goodwill impairment charge did Viatris record in Q1 2025, and what drove the increase in discount-rate assumptions?",
+        "required_evidence": [
+          "Q1 2025 goodwill impairment total",
+          "Explanation for increased discount-rate assumptions"
+        ],
+        "passages": [
+          {
+            "chunk_id": "0001792044-25-000018:PART I:ITEM 1:34",
+            "coverage": "complete",
+            "supplies": [
+              "Total goodwill impairment $2,936.8 million",
+              "Increased business risks and geopolitical/economic uncertainty led to higher discount-rate assumptions"
+            ]
+          },
+          {
+            "chunk_id": "0001792044-25-000018:PART I:ITEM 2:47",
+            "coverage": "partial",
+            "supplies": [
+              "Total goodwill impairment $2,936.8 million"
+            ]
+          }
+        ],
+        "notes": "Rounded $2.9 billion matches reported total. Approval covers amount and explanation; non-cash descriptor was not separately established in these excerpts.",
+        "reviewed_at": "2026-11-17T23:11:34.297353+00:00"
+      }
+    },
+    {
+      "case_id": "case-08",
+      "input": {
+        "ticker": "CBOE",
+        "call_id": "1374310:2025:Q1",
+        "company_quarter_id": "0001374310:2025:Q1",
+        "fiscal_year": 2025,
+        "fiscal_quarter": 1,
+        "filing_accession": "0001628280-25-021680",
+        "filing_period_end": "2025-03-31",
+        "original_remark": "Before I dive into our results, I want to express my support for the announced appointment of Craig Donahue as Cboe's new CEO.",
+        "candidate_passages": [
+          {
+            "chunk_id": "0001628280-25-021680:PART I:ITEM 4:section0:0",
+            "accession_number": "0001628280-25-021680",
+            "part": "PART I",
+            "item": "ITEM 4",
+            "item_title": "Controls and Procedures",
+            "chunk_index": 0,
+            "text": "**a) *Disclosure controls and procedures.*** The Company’s management, with the participation of its Chief Executive Officer and Chief Financial Officer, has evaluated the effectiveness of the Company’s disclosure controls and procedures (as defined in Rule 13a-15(e) and Rule 15d-15(e) under the Securities Exchange Act of 1934) as of the end of the period Tab l e of Contents covered by this report. Based upon that evaluation, the Company’s Chief Executive Officer and Chief Financial Officer have concluded that, as of the end of such period, the Company’s disclosure controls and procedures are effective. **b) *Internal controls over financial reporting.*** No changes occurred in the Company’s internal control over financial reporting during the first quarter of 2025 that materially affected, or are reasonably likely to materially affect, the Company’s internal control over financial reporting. Tab l e of Contents",
+            "parser_version": "section-text-chunk384-overlap0-v4",
+            "rank": 1,
+            "bm25_score": 17.949449296283063,
+            "text_sha256": "80e8b643315eece01bac7bfd8c9dd0d289c255ec3b9658e5f061ba4de181108c"
+          },
+          {
+            "chunk_id": "0001628280-25-021680:PART I:ITEM 1:section0:48",
+            "accession_number": "0001628280-25-021680",
+            "part": "PART I",
+            "item": "ITEM 1",
+            "item_title": "Financial Statements.",
+            "chunk_index": 48,
+            "text": "approximate fair value due to their liquid or short-term nature. Tab l e of Contents ***Debt*** The debt balance consists of fixed rate Senior Notes. The fair values of the Senior Notes are classified as Level 2 under the fair value hierarchy and are estimated using prevailing market quotes. At March 31, 2025 and December 31, 2024, the fair values of the Company’s debt obligations were as follows (in millions): | | Fair Value — March 31, 2025 | December 31, 2024 | | --- | --- | --- | | 3.650 % Senior Notes | $ 643.1 | $ 638.4 | | 1.625 % Senior Notes | 425.2 | 416.2 | | 3.000 % Senior Notes | 267.1 | 262.4 | ***Information on Level 3 Financial Assets and Liabilities*** The following table sets forth a summary of changes in the fair value of the Company’s Level 3 financial assets and liabilities during the three months ended March 31, 2025 (in millions): | | Level 3 Financial Assets and Liabilities for the Three Months Ended March 31, 2025 — Balance at Beginning of Period | Gains during Period | Adjustments | Additions | Settlements | Foreign Currency Translation | Balance at End of Period | | --- | --- | --- | --- | --- | --- | --- | --- | | Assets: | | | | | | | | | Note receivable - building sale | $ 6.2 | $ 0.1 | $ — | $ — | $ — | $ — | $ 6.3 | | Total assets | $ 6.2 | $ 0.1 | $ — | $ — | $ — | $ — | $ 6.3 | **14. SEGMENT REPORTING** The Company previously operated six reportable business segments as of December 31, 2024. As of January 1, 2025, the Company operates five reportable business segments: Options, North American Equities, Europe and Asia Pacific, Futures, and Global FX, which are further described below and is reflective of how the Company's CODM reviews and operates the business, as discussed in Note 1 (“Organization and Basis of Presentation”). The Company's reportable business segments represent strategic business units that offer different products and services across different geographic areas. The Company's CODM is the chief executive officer. The CODM function is",
+            "parser_version": "section-text-chunk384-overlap0-v4",
+            "rank": 2,
+            "bm25_score": 9.687468401856753,
+            "text_sha256": "b2dc5f54bcf00a2a8bb688438161704fa85532bc8c00e8acf1ad1019b9f9682d"
+          },
+          {
+            "chunk_id": "0001628280-25-021680:PART I:ITEM 2:section0:1",
+            "accession_number": "0001628280-25-021680",
+            "part": "PART I",
+            "item": "ITEM 2",
+            "item_title": "Management’s Discussion and Analysis of Financial Condition and Results of Operations",
+            "chunk_index": 1,
+            "text": "business segments represent strategic business units that offer different products and services across different geographic areas. The Company's CODM is the chief executive officer. The CODM function is supported by business segment management and leadership personnel who lead the day-to-day operations of each reportable business segment. Segment performance is primarily evaluated on operating income (loss). The CODM uses segment operating income (loss) to allocate resources (which includes, but is not limited to: employees, financial, or capital resources). The Company's CODM does not assess assets or income and expenses below operating income (loss) at the segment-level as key performance metrics. The Company has aggregated all of its corporate costs, as well as other business ventures, within the Corporate Items and Eliminations totals based on the decision that those activities should not be used to evaluate the operating performance of the segments; however, operating expenses that relate to activities of a specific segment have been allocated to that segment. The Company's CODM primarily reviews operating expenses at the consolidated level for purposes of evaluating actual results versus budgets. On April 25, 2024, the Company announced plans to refocus the digital asset business to leverage its core strengths in derivatives, technology, and product innovation. Effective May 31, 2024, the Cboe Digital spot market (“Cboe Digital spot market”) is closed for all participant and trading purposes. The Company has brought Cboe Clear U.S. (formerly, Cboe Clear Digital) under unified leadership with the Global Head of Clearing, and expects to continue to facilitate the clearing of cash-settled margin Bitcoin and Ether futures contracts. The Company retained and presented Digital as a reportable segment through December 31, 2024. As of January 1, 2025, the Company prospectively reorganized the Digital operating segment results into the Futures reporting segment as the Company expects to transition its cash-settled margin Bitcoin and Ether futures contracts, currently available for trading on the Cboe Digital Exchange, to CFE during the second quarter of 2025, pending regulatory review. Comparative-period results have not been recast as the historic results of the Digital segment were not material, nor do they materially impact the financial results, trends, or forecasts of the Futures segment. As a result, for the three months ended March 31, 2025, operating results included within the Digital operating segment are presented within the Futures reporting segment. See",
+            "parser_version": "section-text-chunk384-overlap0-v4",
+            "rank": 3,
+            "bm25_score": 8.54235358012218,
+            "text_sha256": "4b1b8d3ab4cc96f28c4ce896888c0e2ead48aeba4220a5f76d54daaf39ea9112"
+          },
+          {
+            "chunk_id": "0001628280-25-021680:PART I:ITEM 1:section0:55",
+            "accession_number": "0001628280-25-021680",
+            "part": "PART I",
+            "item": "ITEM 1",
+            "item_title": "Financial Statements.",
+            "chunk_index": 55,
+            "text": "may participate in the Supplemental Executive Retirement Plan and the Deferred Compensation Plan, which are defined contribution plans that are non-qualified under the Internal Revenue Code. Directors may contribute a percentage of their cash and equity compensation to cash and equity deferred compensation plans that are maintained by the Company and defer income taxes thereon. The non-qualified plans' assets, held in a trust, are subject to the claims of general creditors of the Company and totaled $ 27.9 million and $ 40.3 million at March 31, 2025, and December 31, 2024, respectively. Although the value of the plans are recorded in financial investments on the condensed consolidated balance sheets, there is an equal and offsetting liability in other non-current liabilities. The investment results of the non-qualified plans have no impact on net income as the investment results are recorded in equal amounts to both other income, net and compensation and benefits expense in the condensed consolidated statements of income. The Company matches a portion of employee Tab l e of Contents contributions made to the SMART Plan and Supplemental Executive Retirement Plan. The Company contributed $ 3.8 million and $ 3.7 million to these plans for the three months ended March 31, 2025, and 2024, respectively. Eligible employees outside of the U.S., which includes employees of Cboe Europe, Cboe NL, Cboe Clear Europe, BIDS, Cboe Asia Pacific, and Cboe Canada are eligible to participate in various employee-selected stakeholder contribution plans or plans covered by local jurisdictions or by applicable laws. The Company’s contribution amounted to $ 1.8 million and $ 1.4 million for the three months ended March 31, 2025 and 2024, respectively. This expense is included in compensation and benefits in the condensed consolidated statements of income. **16. REGULATORY CAPITAL** As broker-dealers registered with the SEC, Cboe Trading, BIDS Trading, and Cboe Fixed Income are subject to the SEC’s Uniform Net Capital Rule (“Rule 15c3-1”), which requires the maintenance of minimum net capital, as defined therein. The SEC’s requirement also provides that equity capital may not be withdrawn or a cash dividend paid if certain minimum net capital requirements are not met. Cboe Trading, BIDS Trading, and Cboe Fixed Income compute the net capital requirements under the basic method provided for in Rule 15c3-1. As of March 31, 2025, Cboe Trading and BIDS",
+            "parser_version": "section-text-chunk384-overlap0-v4",
+            "rank": 4,
+            "bm25_score": 4.2000935955333585,
+            "text_sha256": "1486c917eb380320ab7f5486b4bcfb56789ca53f76ac30e765b210be592e5926"
+          },
+          {
+            "chunk_id": "0001628280-25-021680:PART I:ITEM 1:section0:32",
+            "accession_number": "0001628280-25-021680",
+            "part": "PART I",
+            "item": "ITEM 1",
+            "item_title": "Financial Statements.",
+            "chunk_index": 32,
+            "text": "Certificate, dated as of January 12, 2017, supplementing the Indenture. The Company used a portion of the net proceeds from the 3.650 % Senior Notes to fund, in part, the Merger, including the payment of related fees and expenses and the repayment of Bats’ existing indebtedness, and the remainder for general corporate purposes. The 3.650 % Senior Notes mature on January 12, 2027 and bear interest at the rate of 3.650 % per annum, payable semi-annually in arrears on January 12 and July 12 of each year, commencing July 12, 2017. On December 15, 2020, the Company issued $ 500 million aggregate principal amount of 1.625 % Senior Notes due 2030 (\" 1.625 % Senior Notes\"). The form and terms of the 1.625 % Senior Notes were established pursuant to an Officer’s Certificate, dated as of December 15, 2020, supplementing the Indenture. The Company used the net proceeds from the Tab l e of Contents 1.625 % Senior Notes to finance the acquisition of BIDS Trading, repay a portion of amounts outstanding under the term loan facility and all outstanding indebtedness under the revolving credit facility and the remainder for general corporate purposes, which may include the financing of future acquisitions or the repayment of other outstanding indebtedness. The 1.625 % Senior Notes mature on December 15, 2030 and bear interest at the rate of 1.625 % per annum, payable semi-annually in arrears on June 15 and December 15 of each year, commencing June 15, 2021. On March 16, 2022, the Company issued $ 300 million aggregate principal amount of 3.000 % Senior Notes due 2032 (“ 3.000 % Senior Notes” and, together with the 1.625 % Senior Notes and the 3.650 % Senior Notes, the “Senior Notes”). The form and terms of the 3.000 % Senior Notes were established pursuant to an Officer’s Certificate, dated as of March 16, 2022, supplementing the Indenture. The Company used the net proceeds from the 3.000 % Senior Notes, together with cash on hand, and the proceeds of additional borrowings, to partially fund its acquisition of Cboe Digital. The 3.000 % Senior Notes mature on March 16, 2032 and bear interest at the rate of 3.000 % per annum, payable semi-annually in arrears on March 16 and September 16 of each year, commencing September 16, 2022. The",
+            "parser_version": "section-text-chunk384-overlap0-v4",
+            "rank": 5,
+            "bm25_score": 3.7972347147125727,
+            "text_sha256": "28931ac2399adf424809b7b01e9c26af458603cb481e1a00da83fba348ce0504"
+          }
+        ]
+      },
+      "human_review": {
+        "review_status": "human_reviewed_in_chat",
+        "remark_chunk_id": "1374310:2025:Q1:remark:2:chunk:1",
+        "topic": "Governance",
+        "reasoning_type": "Qualitative",
+        "verdict": "personal_opinion",
+        "create_positive_pair": false,
+        "notes": "User correction: sentence expresses the individual speaker’s support for an appointment. Corporate filing evidence does not establish that personal sentiment. Reject the remark as personal opinion, not as a retrieval failure or a blanket exclusion of leadership announcements.",
+        "reviewed_at": "2026-11-18T01:18:29.866176+00:00"
+      }
+    },
+    {
+      "case_id": "case-09",
+      "input": {
+        "ticker": "AAPL",
+        "call_id": "320193:2025:Q1",
+        "company_quarter_id": "0000320193:2025:Q1",
+        "fiscal_year": 2025,
+        "fiscal_quarter": 1,
+        "filing_accession": "0000320193-25-000008",
+        "filing_period_end": "2024-12-28",
+        "original_remark": "This included $3.9 billion in dividends and equivalents and $23.3 billion through open market repurchases of 100 million Apple shares.",
+        "candidate_passages": [
+          {
+            "chunk_id": "0000320193-25-000008:PART I:ITEM 1:section0:3",
+            "accession_number": "0000320193-25-000008",
+            "part": "PART I",
+            "item": "ITEM 1",
+            "item_title": "Financial Statements",
+            "chunk_index": 3,
+            "text": "cash equivalents, and restricted cash and cash equivalents, beginning balances | $ 29,943 | $ 30,737 | | Operating activities: | | | | Net income | 36,330 | 33,916 | | Adjustments to reconcile net income to cash generated by operating activities: | | | | Depreciation and amortization | 3,080 | 2,848 | | Share-based compensation expense | 3,286 | 2,997 | | Other | ( 2,009 ) | ( 989 ) | | Changes in operating assets and liabilities: | | | | Accounts receivable, net | 3,597 | 6,555 | | Vendor non-trade receivables | 3,166 | 4,569 | | Inventories | 215 | ( 137 ) | | Other current and non-current assets | 939 | ( 1,457 ) | | Accounts payable | ( 6,671 ) | ( 4,542 ) | | Other current and non-current liabilities | ( 11,998 ) | ( 3,865 ) | | Cash generated by operating activities | 29,935 | 39,895 | | Investing activities: | | | | Purchases of marketable securities | ( 6,124 ) | ( 9,780 ) | | Proceeds from maturities of marketable securities | 15,967 | 13,046 | | Proceeds from sales of marketable securities | 3,492 | 1,337 | | Payments for acquisition of property, plant and equipment | ( 2,940 ) | ( 2,392 ) | | Other | ( 603 ) | ( 284 ) | | Cash generated by investing activities | 9,792 | 1,927 | | Financing activities: | | | | Payments for taxes related to net share settlement of equity awards | ( 2,921 ) | ( 2,591 ) | | Payments for dividends and dividend equivalents | ( 3,856 ) | ( 3,825 ) | | Repurchases of common stock | ( 23,606 ) | ( 20,139 ) | | Repayments of term debt | ( 1,009 ) | — | | Repayments of commercial paper, net | ( 7,944 ) | ( 3,984 ) | | Other | ( 35 ) | ( 46 ) | | Cash used in financing activities | ( 39,371 ) | ( 30,585 ) | | Increase in cash, cash equivalents, and restricted cash and cash equivalents | 356 | 11,237 | | Cash, cash equivalents, and restricted cash and cash equivalents,",
+            "parser_version": "section-text-chunk384-overlap0-v4",
+            "rank": 1,
+            "bm25_score": 10.814895221521452,
+            "text_sha256": "ce3779045ea492c74b41954c9631efea5f4ce306cd95ed2dfe03eb24670b3caf"
+          },
+          {
+            "chunk_id": "0000320193-25-000008:PART I:ITEM 1:section0:2",
+            "accession_number": "0000320193-25-000008",
+            "part": "PART I",
+            "item": "ITEM 1",
+            "item_title": "Financial Statements",
+            "chunk_index": 2,
+            "text": "Common stock and additional paid-in capital, $ 0.00001 par value: 50,400,000 shares authorized; 15,040,731 and 15,116,786 shares issued and outstanding, respectively | 84,768 | 83,276 | | Accumulated deficit | ( 11,221 ) | ( 19,154 ) | | Accumulated other comprehensive loss | ( 6,789 ) | ( 7,172 ) | | Total shareholders’ equity | 66,758 | 56,950 | | Total liabilities and shareholders’ equity | $ 344,085 | $ 364,980 | See accompanying Notes to Condensed Consolidated Financial Statements. Apple Inc. CONDENSED CONSOLIDATED STATEMENTS OF SHAREHOLDERS’ EQUITY (Unaudited) (In millions, except per-share amounts) | | Three Months Ended — December 28, 2024 | December 30, 2023 | | --- | --- | --- | | Total shareholders’ equity, beginning balances | $ 56,950 | $ 62,146 | | Common stock and additional paid-in capital: | | | | Beginning balances | 83,276 | 73,812 | | Common stock withheld related to net share settlement of equity awards | ( 1,891 ) | ( 1,660 ) | | Share-based compensation | 3,383 | 3,084 | | Ending balances | 84,768 | 75,236 | | Retained earnings/(Accumulated deficit): | | | | Beginning balances | ( 19,154 ) | ( 214 ) | | Net income | 36,330 | 33,916 | | Dividends and dividend equivalents declared | ( 3,819 ) | ( 3,774 ) | | Common stock withheld related to net share settlement of equity awards | ( 1,102 ) | ( 1,018 ) | | Common stock repurchased | ( 23,476 ) | ( 20,668 ) | | Ending balances | ( 11,221 ) | 8,242 | | Accumulated other comprehensive loss: | | | | Beginning balances | ( 7,172 ) | ( 11,452 ) | | Other comprehensive income | 383 | 2,074 | | Ending balances | ( 6,789 ) | ( 9,378 ) | | Total shareholders’ equity, ending balances | $ 66,758 | $ 74,100 | | Dividends and dividend equivalents declared per share or RSU | $ 0.25 | $ 0.24 | See accompanying Notes to Condensed Consolidated Financial Statements. Apple Inc. CONDENSED CONSOLIDATED STATEMENTS OF CASH FLOWS (Unaudited) (In millions) | | Three Months Ended — December 28, 2024 | December 30, 2023 | | --- | --- | --- | | Cash,",
+            "parser_version": "section-text-chunk384-overlap0-v4",
+            "rank": 2,
+            "bm25_score": 7.5515510695745185,
+            "text_sha256": "d710518dc02f730ff5f990bfaba8874713ed35f051ff5791c2c2bb7342629af1"
+          },
+          {
+            "chunk_id": "0000320193-25-000008:PART I:ITEM 1:section0:10",
+            "accession_number": "0000320193-25-000008",
+            "part": "PART I",
+            "item": "ITEM 1",
+            "item_title": "Financial Statements",
+            "chunk_index": 10,
+            "text": "more of total vendor non-trade receivables, which accounted f or 43 % and 24 % . A s of September 28, 2024, the Company had two vendors that individually represented 10% or more of total vendor non-trade receivables, which accounted for 44 % and 23 %. Note 5 – Condensed Consolidated Financial Statement Details The following tables show the Company’s condensed consolidated financial statement details as of December 28, 2024 and September 28, 2024 (in millions): Inventories | | December 28, 2024 | September 28, 2024 | | --- | --- | --- | | Components | $ 2,792 | $ 3,627 | | Finished goods | 4,119 | 3,659 | | Total inventories | $ 6,911 | $ 7,286 | Property, Plant and Equipment, Net | | December 28, 2024 | September 28, 2024 | | --- | --- | --- | | Gross property, plant and equipment | $ 120,615 | $ 119,128 | | Accumulated depreciation | ( 74,546 ) | ( 73,448 ) | | Total property, plant and equipment, net | $ 46,069 | $ 45,680 | Note 6 – Debt Commercial Paper The Company issues unsecured short-term promissory notes pursuant to a commercial paper program. The Company uses net proceeds from the commercial paper program for general corporate purposes, including dividends and share repurchases. As of December 28, 2024 and September 28, 2024, the Company had $ 2.0 billion and $ 10.0 billion of commercial paper outstanding, respectively. Term Debt As of December 28, 2024 and September 28, 2024, the Company had outstanding fixed-rate notes with varying maturities for an aggregate carrying amount of $ 94.8 billion and $ 96.7 billion, respectively (collectively the “Notes”). As of December 28, 2024 and September 28, 2024, the fair value of the Company’s Notes, based on Level 2 inputs, was $ 82.7 billion and $ 88.4 billion, respectively. Note 7 – Shareholders’ Equity Share Repurchase Program During the three months ended December 28, 2024, the Company repurchased 100 million shares of its common stock for $ 23.3 billion. The Company’s share repurchase program does not obligate the Company to acquire a minimum amount of shares. Under the program, shares may be repurchased in privately negotiated or open market transactions, including under plans complying with Rule 10b5-1 under the Securities Exchange Act",
+            "parser_version": "section-text-chunk384-overlap0-v4",
+            "rank": 3,
+            "bm25_score": 6.569247711896842,
+            "text_sha256": "dd7f6d07d394dbf9918de22fb6f9ff68843ead7c1b853d6316f25af4f3b062f3"
+          },
+          {
+            "chunk_id": "0000320193-25-000008:PART I:ITEM 2:section0:5",
+            "accession_number": "0000320193-25-000008",
+            "part": "PART I",
+            "item": "ITEM 2",
+            "item_title": "Management’s Discussion and Analysis of Financial Condition and Results of Operations",
+            "chunk_index": 5,
+            "text": "a commercial paper program. As of December 28, 2024, the Company had $2.0 billion of commercial paper outstanding, which was payable within 12 months. *Manufacturing Purchase Obligations* The Company utilizes several outsourcing partners to manufacture subassemblies for the Company’s products and to perform final assembly and testing of finished products. The Company also obtains individual components for its products from a wide variety of individual suppliers. As of December 28, 2024, the Company had manufacturing purchase obligations of $39.8 billion, which were payable within 12 months. *State Aid Decision Tax Payable* During the first quarter of 2025, the Company paid €11.0 billion or $11.9 billion to Ireland in connection with the State Aid Decision. As of December 28, 2024, the Company had a remaining obligation to pay €3.3 billion or $3.4 billion, which was expected to be paid within 12 months. The funds necessary to settle the remaining obligation were held in escrow as of December 28, 2024, and restricted from general use. *Capital Return Program* In addition to its contractual cash requirements, the Company has an authorized share repurchase program. The program does not obligate the Company to acquire a minimum amount of shares. As of December 28, 2024, the Company’s quarterly cash dividend was $0.25 per share. The Company intends to increase its dividend on an annual basis, subject to declaration by the Board of Directors. During the first quarter of 2025, the Company repurchased $23.3 billion of its common stock and paid dividends and dividend equivalents of $3.9 billion. Recent Accounting Pronouncements *Disaggregation of Income Statement Expenses* In November 2024, the Financial Accounting Standards Board (the “FASB”) issued Accounting Standards Update (“ASU”) No. 2024-03, *Income Statement—Reporting Comprehensive Income—Expense Disaggregation Disclosures (Subtopic 220-40): Disaggregation of Income Statement Expenses* (“ASU 2024-03”) and in January 2025, the FASB issued ASU No. 2025-01, *Income Statement—Reporting Comprehensive Income—Expense Disaggregation Disclosures (Subtopic 220-40): Clarifying the Effective Date* , which clarified the effective date of ASU 2024-03. ASU 2024-03 will require the Company to disclose the amounts of purchases of inventory, employee compensation, depreciation and intangible asset amortization, as applicable, included in certain expense captions in the Consolidated Statements of Operations, as well as qualitatively describe remaining amounts included in those captions. ASU 2024-03 will also require the Company to disclose both the amount and the Company’s definition",
+            "parser_version": "section-text-chunk384-overlap0-v4",
+            "rank": 4,
+            "bm25_score": 6.01374754415154,
+            "text_sha256": "0c8273fbcd896720d2eb344dd97f51a28f2a194f5d000260e5bd54fcbabc9e8c"
+          },
+          {
+            "chunk_id": "0000320193-25-000008:PART I:ITEM 1:section0:1",
+            "accession_number": "0000320193-25-000008",
+            "part": "PART I",
+            "item": "ITEM 1",
+            "item_title": "Financial Statements",
+            "chunk_index": 1,
+            "text": "2,435 | ( 1,354 ) | | Change in unrealized gains/losses on marketable debt securities, net of tax: | | | | Change in fair value of marketable debt securities | ( 1,647 ) | 3,045 | | Adjustment for net (gains)/losses realized and included in net income | 220 | 75 | | Total change in unrealized gains/losses on marketable debt securities | ( 1,427 ) | 3,120 | | Total other comprehensive income | 383 | 2,074 | | Total comprehensive income | $ 36,713 | $ 35,990 | See accompanying Notes to Condensed Consolidated Financial Statements. Apple Inc. CONDENSED CONSOLIDATED BALANCE SHEETS (Unaudited) (In millions, except number of shares, which are reflected in thousands, and par value) | | December 28, 2024 | September 28, 2024 | | --- | --- | --- | | ASSETS: | | | | Current assets: | | | | Cash and cash equivalents | $ 30,299 | $ 29,943 | | Marketable securities | 23,476 | 35,228 | | Accounts receivable, net | 29,639 | 33,410 | | Vendor non-trade receivables | 29,667 | 32,833 | | Inventories | 6,911 | 7,286 | | Other current assets | 13,248 | 14,287 | | Total current assets | 133,240 | 152,987 | | Non-current assets: | | | | Marketable securities | 87,593 | 91,479 | | Property, plant and equipment, net | 46,069 | 45,680 | | Other non-current assets | 77,183 | 74,834 | | Total non-current assets | 210,845 | 211,993 | | Total assets | $ 344,085 | $ 364,980 | | LIABILITIES AND SHAREHOLDERS’ EQUITY: | | | | Current liabilities: | | | | Accounts payable | $ 61,910 | $ 68,960 | | Other current liabilities | 61,151 | 78,304 | | Deferred revenue | 8,461 | 8,249 | | Commercial paper | 1,995 | 9,967 | | Term debt | 10,848 | 10,912 | | Total current liabilities | 144,365 | 176,392 | | Non-current liabilities: | | | | Term debt | 83,956 | 85,750 | | Other non-current liabilities | 49,006 | 45,888 | | Total non-current liabilities | 132,962 | 131,638 | | Total liabilities | 277,327 | 308,030 | | Commitments and contingencies | | | | Shareholders’ equity: | | | |",
+            "parser_version": "section-text-chunk384-overlap0-v4",
+            "rank": 5,
+            "bm25_score": 4.17596081535951,
+            "text_sha256": "87aaa8688b97a6c6caa8984d5de0e5ba24c03edaa6b14a21a056bcf8cceccdfa"
+          }
+        ]
+      },
+      "human_review": {
+        "review_status": "human_approved_in_chat",
+        "remark_chunk_id": "320193:2025:Q1:remark:2:chunk:50",
+        "topic": "Shareholder Return",
+        "reasoning_type": "Quantitative",
+        "verdict": "supported",
+        "create_positive_pair": true,
+        "evidence_relationship": "multiple_passage_direct_support",
+        "information_request": "How much did Apple pay in dividends and dividend equivalents, and how many shares did it repurchase for what amount in fiscal Q1 2025?",
+        "period": "Three months ended December 28, 2024 (fiscal Q1 2025)",
+        "required_inputs": [
+          "Dividend and dividend-equivalent payments",
+          "Number of shares repurchased",
+          "Amount for those share repurchases",
+          "Applicable quarter"
+        ],
+        "passages": [
+          {
+            "chunk_id": "0000320193-25-000008:PART I:ITEM 1:section0:3",
+            "coverage": "partial",
+            "supplies": [
+              "Dividend and dividend-equivalent payments $3,856 million"
+            ]
+          },
+          {
+            "chunk_id": "0000320193-25-000008:PART I:ITEM 1:section0:10",
+            "coverage": "partial",
+            "supplies": [
+              "100 million shares repurchased for $23.3 billion",
+              "Three months ended December 28, 2024"
+            ]
+          },
+          {
+            "chunk_id": "0000320193-25-000008:PART I:ITEM 1:section0:2",
+            "coverage": "period_header",
+            "supplies": [
+              "Cash-flow statement period header: three months ended December 28, 2024"
+            ]
+          }
+        ],
+        "notes": "Approval excludes open-market-only assertion, not established by these excerpts. Use explicit note amount $23.3bn for share purchases; cash-flow repurchase outflow $23,606m is a different reported figure. $3,856m rounds to $3.9bn.",
+        "reviewed_at": "2026-11-18T01:19:54.170904+00:00"
+      }
+    },
+    {
+      "case_id": "case-10",
+      "input": {
+        "ticker": "AES",
+        "call_id": "874761:2025:Q1",
+        "company_quarter_id": "0000874761:2025:Q1",
+        "fiscal_year": 2025,
+        "fiscal_quarter": 1,
+        "filing_accession": "0000874761-25-000035",
+        "filing_period_end": "2025-03-31",
+        "original_remark": "Our business model is based on long-term contracted generation with creditworthy offtakers as well as growth in our U.S. regulated utilities.",
+        "candidate_passages": [
+          {
+            "chunk_id": "0000874761-25-000035:PART I:ITEM 1:section0:53",
+            "accession_number": "0000874761-25-000035",
+            "part": "PART I",
+            "item": "ITEM 1",
+            "item_title": "FINANCIAL STATEMENTS (UNAUDITED)",
+            "chunk_index": 53,
+            "text": "| Three Months Ended March 31, 2025 — Renewables SBU | Utilities SBU | Energy Infrastructure SBU | New Energy Technologies SBU | Corporate, Other and Eliminations | Total | | --- | --- | --- | --- | --- | --- | --- | | Non-Regulated Revenue | | | | | | | | Revenue from contracts with customers | $ 620 | $ 23 | $ 1,222 | $ — | $ ( 69 ) | $ 1,796 | | Other non-regulated revenue (1) | 46 | 1 | 98 | — | — | 145 | | Total non-regulated revenue | 666 | 24 | 1,320 | — | ( 69 ) | 1,941 | | Regulated Revenue | | | | | | | | Revenue from contracts with customers | — | 976 | — | — | — | 976 | | Other regulated revenue | — | 9 | — | — | — | 9 | | Total regulated revenue | — | 985 | — | — | — | 985 | | Total revenue | $ 666 | $ 1,009 | $ 1,320 | $ — | $ ( 69 ) | $ 2,926 | | | Three Months Ended March 31, 2024 | | | | | | | | Renewables SBU | Utilities SBU | Energy Infrastructure SBU | New Energy Technologies SBU | Corporate, Other and Eliminations | Total | | Non-Regulated Revenue | | | | | | | | Revenue from contracts with customers | $ 594 | $ 19 | $ 1,402 | $ — | $ ( 40 ) | $ 1,975 | | Other non-regulated revenue (1) | 49 | 1 | 207 | — | — | 257 | | Total non-regulated revenue | 643 | 20 | 1,609 | — | ( 40 ) | 2,232 | | Regulated Revenue | | | | | | | | Revenue from contracts with customers | — | 847 | — | — | — | 847 | | Other regulated revenue | — | 6 | — | — | — | 6 | | Total regulated revenue | — | 853 | — | — | — | 853 | | Total revenue",
+            "parser_version": "section-text-chunk384-overlap0-v4",
+            "rank": 1,
+            "bm25_score": 9.943648726813468,
+            "text_sha256": "5dc0f851e60032471c9cfeca8703ee2abebe3b70fcbae6749a447ac36dde7632"
+          },
+          {
+            "chunk_id": "0000874761-25-000035:PART I:ITEM 1:section0:24",
+            "accession_number": "0000874761-25-000035",
+            "part": "PART I",
+            "item": "ITEM 1",
+            "item_title": "FINANCIAL STATEMENTS (UNAUDITED)",
+            "chunk_index": 24,
+            "text": "15 | $ 1 | | Foreign currency derivatives — Foreign currency transaction gains (losses) | 3 | 1 | | Commodity derivatives — Cost of sales—Non-Regulated | 2 | — | | Total | $ 20 | $ 2 | | Gains (losses) on fair value hedging relationships | | | | Cross-currency derivatives | | | | Derivatives designated as hedging instruments | $ — | $ ( 56 ) | | Hedged items | — | 43 | | Total | $ — | $ ( 13 ) | | Gains reclassified from AOCL to earnings due to change in forecast | $ 8 | $ — | | Gain (losses) recognized in earnings related to | | | | Not designated as hedging instruments: | | | | Foreign currency derivatives — Foreign currency transaction gains (losses) | $ ( 2 ) | $ 13 | | Commodity derivatives — Revenue—Non-Regulated | 23 | 95 | | Commodity derivatives — Cost of sales—Non-Regulated | ( 5 ) | ( 4 ) | | Total | $ 16 | $ 104 | Reclassifications from AOCL to earnings are forecasted to increase pre-tax income from continuing operations by $ 2 million for the twelve months ended March 31, 2026, primarily related to interest rate derivatives. 5. FINANCING RECEIVABLES Receivables with contractual maturities of greater than one year are considered financing receivables. The following table presents long-term financing receivables, excluding lease receivables and amounts classified as held-for-sale, by country as of the dates indicated (in millions): | | March 31, 2025 — Gross Receivable | Allowance | Net Receivable | December 31, 2024 — Gross Receivable | Allowance | Net Receivable | | --- | --- | --- | --- | --- | --- | --- | | U.S. | $ 49 | $ 16 | $ 33 | $ 48 | $ 15 | $ 33 | | Chile | 49 | — | 49 | 45 | — | 45 | | Other | 8 | — | 8 | 9 | — | 9 | | Total (1) | $ 106 | $ 16 | $ 90 | $ 102 | $ 15 | $ 87 | *U.S.* — AES has recorded non-current receivables pertaining to the sale of the",
+            "parser_version": "section-text-chunk384-overlap0-v4",
+            "rank": 2,
+            "bm25_score": 7.394146901061166,
+            "text_sha256": "060470af222a4a100f489555641a82d2b1883765473f38d0f490e630993f7169"
+          },
+          {
+            "chunk_id": "0000874761-25-000035:PART I:ITEM 2:section0:33",
+            "accession_number": "0000874761-25-000035",
+            "part": "PART I",
+            "item": "ITEM 2",
+            "item_title": "MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS",
+            "chunk_index": 33,
+            "text": "we owned in 2022. Due to a number of factors, including grid and market dynamics, we will continue to work towards exiting coal in the limited markets where we have coal generation. We currently anticipate these efforts will continue beyond 2027. We expect to further reduce the carbon intensity of our operations as we add more long-term contracted renewables to the grid each year. In addition, initiatives have been announced by regulators, including in Chile, Puerto Rico, Bulgaria, and offtakers in recent years, with the intention of reducing GHG emissions generated by the energy industry. In parallel, the shift towards renewables has caused certain customers to migrate to other low-carbon energy solutions and this trend may continue. Although we cannot currently estimate the financial impact of these decarbonization initiatives, new legislative or regulatory programs further restricting carbon emissions or other initiatives to voluntarily exit coal generation could require material capital expenditures, result in a reduction of the estimated useful life of certain coal facilities, or have other material adverse effects on our financial results. 52 | The AES Corporation | March 31, 2025 Form 10-Q For further information about the risks associated with decarbonization initiatives, see Item 1A. *—Risk Factors* — *Concerns about GHG emissions and the potential risks associated with climate change have led to increased regulation and other actions that could impact our businesses* included in the 2024 Form 10-K. Regulatory FERC, RTOs, and Interconnection Prioritization — On February 11, 2025, FERC approved PJM's request for a one-time change in its interconnection process to expedite the interconnection of a limited number of high-capacity resources to support near-term resource adequacy and grid reliability. This change to PJM's interconnection process is not expected to impact the PJM projects already in our backlog since they have received interconnection approvals. However, it will likely create uncertainty and delays in the time for interconnection approvals for our development pipeline of renewables projects in PJM. Other RTOs are considering similar proposals to expedite interconnection approvals for certain high-capacity resources. See Item 1A.— **Risk Factors* - Our development projects are subject to substantial uncertainties* included in the 2024 Form 10-K for further details. U.S. Executive Orders — A recent Executive Order has required a review of all federal onshore wind leasing and federal permitting practices. In executing this order,",
+            "parser_version": "section-text-chunk384-overlap0-v4",
+            "rank": 3,
+            "bm25_score": 6.779217401326724,
+            "text_sha256": "116626093d3cdcaf9b12d3a1f20eefd39dfc67040e7b7dd366a8ad20c53284a0"
+          },
+          {
+            "chunk_id": "0000874761-25-000035:PART I:ITEM 1:section0:46",
+            "accession_number": "0000874761-25-000035",
+            "part": "PART I",
+            "item": "ITEM 1",
+            "item_title": "FINANCIAL STATEMENTS (UNAUDITED)",
+            "chunk_index": 46,
+            "text": "subsidiaries | 1 | — | | Net income (loss) attributable to The AES Corporation | $ 15 | $ 2 | ***Common Stock Dividends*** — The Parent Company paid dividends of $ 0.17595 per outstanding share to its common stockholders during the first quarter of 2025 for dividends declared in December 2024. 25 | Notes to Condensed Consolidated Financial Statements—(Continued) | March 31, 2025 and 2024 On February 20, 2025, the Board of Directors declared a quarterly common stock dividend of $ 0.17595 per share payable on May 15, 2025, to shareholders of record at the close of business on May 1, 2025. 13. SEGMENTS The segment reporting structure uses the Company’s management reporting structure as its foundation to reflect how the Company manages the businesses internally. The management reporting structure is composed of four SBUs, mainly organized by technology, led by our President and Chief Executive Officer, who is our Chief Operating Decision Maker. Using the accounting guidance on segment reporting, the Company determined that its four operating segments are aligned with its four reportable segments corresponding to its SBUs. *• Renewables —* Solar, wind, energy storage, and hydro generation facilities; *• Utilities —* AES Indiana, AES Ohio, and AES El Salvador regulated utilities and their generation facilities; *• Energy Infrastructure —* Natural gas, LNG, coal, pet coke, diesel, and oil generation facilities; and *• New Energy Technologies —* Investments in Fluence, Uplight, Maximo, and other new and innovative energy technology businesses. Prior to the first quarter of 2025, our businesses in Chile (which had a mix of generation sources, including renewables, that were pooled to service our existing PPAs initially entered into for sale of the output of the coal plants) were reported in the Energy Infrastructure SBU. After the sale or disconnection of a significant portion of AES Andes’ coal plants and the expiration of its coal-indexed contracts with regulated customers at the end of 2024, the results of our businesses in Chile, excluding the two remaining coal plants, are now reported as part of the Renewables SBU in financial information regularly reviewed by the Chief Operating Decision Maker. The results of the two remaining coal plants in Chile, Angamos and Cochrane, remain within the Energy Infrastructure SBU. As the composition of the segments has changed in the first quarter",
+            "parser_version": "section-text-chunk384-overlap0-v4",
+            "rank": 4,
+            "bm25_score": 6.034343809225881,
+            "text_sha256": "c1c1958c1dfc81c4dfa2e2f0ad1883ddac42ba3d10cad005e53c1ee2dced42d6"
+          },
+          {
+            "chunk_id": "0000874761-25-000035:PART I:ITEM 4:section0:1",
+            "accession_number": "0000874761-25-000035",
+            "part": "PART I",
+            "item": "ITEM 4",
+            "item_title": "CONTROLS AND PROCEDURES",
+            "chunk_index": 1,
+            "text": "the underlying prices the transactions are exposed to and excludes correlation effects, includin g those due to renewable resource availability. The models reference market prices of commodities across future periods and associated volatility of these market prices. Prices and volatilities are predominantly based on observable market prices. Exposures at individual businesses will change as new contracts or financial hedges are executed, and our sensitivity to changes in commodity prices generally increases in later years with reduced hedge levels at some of our businesses. In the Energy Infrastructure SBU, the generation businesses are largely contracted, but may have residual risk to the extent contracts are not perfectly indexed to the business drivers. In California, our Southland once-through cooling generation units (“Legacy Assets”) in Long Beach and Huntington Beach have been extended to operate through 2026 under capacity contracts with the State as part of the Strategic Reserve program. Our facility in Redondo Beach has been retired effective January 1, 2024. Our ability to operate the Long Beach facility at full capacity through 2025 was approved under Tentative Time Schedule Order coverage in November 2023. Approval to operate Long Beach through 2026 will be subject to review with State Agencies. Our Southland combined cycle gas turbine (Southland Energy) units benefit from higher power and lower gas prices, depending on the contracted or hedge position. The AES Andes business in Chile owns assets in the central and northern regions of the country and has a portfolio of contract sales in both. A significant portion of our PPAs through 2025 include mechanisms of indexation that adjust the price of energy based on fluctuations in the price of coal, with an index defined by the National Energy Commission based on the physical coal imports for the energy system. This mechanism mitigates exposures to changes in the price of fuel. The increasing share of renewable energy in Chile's power market may reduce reliance on thermal units and impact power price volatility, which could impact our cost to serve certain unregulated PPAs. In the Dominican Republic, we own natural gas plants contracted under a portfolio of contract sales, and both contract and spot prices may move with commodity prices through 2024. Our thermal asset in Panama has PPAs with distribution companies which matches the term of the LNG supply agreement of",
+            "parser_version": "section-text-chunk384-overlap0-v4",
+            "rank": 5,
+            "bm25_score": 5.9545717593491805,
+            "text_sha256": "eaedb358397867231e817d994127731111da1b93e93e3f0ba2115c6c88e28dd0"
+          }
+        ]
+      },
+      "human_review": {
+        "review_status": "human_reviewed_in_chat",
+        "remark_chunk_id": "874761:2025:Q1:remark:2:chunk:11",
+        "topic": "Company Overview",
+        "reasoning_type": "Qualitative",
+        "verdict": "too_general",
+        "create_positive_pair": false,
+        "notes": "User judgment: the statement itself is not very specific. Reject as broad business-model description without a sufficiently specific factual target, not as a retrieval failure. Do not salvage by inventing a different utilities-ownership question.",
+        "reviewed_at": "2026-11-18T14:51:31.967390+00:00"
+      }
+    }
+  ]
+}

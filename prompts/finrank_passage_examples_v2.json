@@ -1,0 +1,32 @@
+{
+  "version": "finrank-passage-examples-v2",
+  "examples": [
+    {
+      "id": "54ae50bb-4f89-46e9-a124-5564d92f7b88",
+      "ticker": "MRK",
+      "source_record_sha256": "d319419a7a2e26d25db0fe5bf10eda56cef18a82222883cc2ec68c4ae8c0eb21",
+      "passage_excerpt": "Gross margin was 76.3% in 2024 compared with 73.2% in 2023. The gross margin improvement was primarily due to the favorable effects of product mix (including lower royalty rates related to Keytruda and Gardasil/Gardasil 9 sales) and foreign exchange, partially offset by increased amortization of intangible assets, higher restructuring costs (primarily reflecting asset impairment charges), and increased manufacturing-related costs (including inventory write-offs).",
+      "excerpt_is_shortened": true,
+      "question": "How did Merck’s gross margin improve in 2024 compared to 2023, and what were the main drivers behind this change?",
+      "teaching_note": "Identify the company, metric and both comparison periods; ask for explanations only when the passage states them."
+    },
+    {
+      "id": "97546a79-b989-48df-96c5-82c119a9c38c",
+      "ticker": "JNJ",
+      "source_record_sha256": "2d3b91548698681ba29b267ad5c2ea07a53d605aab6bb72580dbf2f9ab1a94bb",
+      "passage_excerpt": "The Company is organized into two business segments: Innovative Medicine and MedTech. The Innovative Medicine segment is focused on the following therapeutic areas: Immunology, Infectious Diseases, Neuroscience, Oncology, Pulmonary Hypertension, and Cardiovascular and Metabolism. Products in this segment are distributed directly to retailers, wholesalers, distributors, hospitals and healthcare professionals for prescription use. The MedTech segment includes a broad portfolio of products used in the Orthopaedic, Surgery, Cardiovascular (previously referred to as Interventional Solutions) and Vision fields. These products are distributed to wholesalers, hospitals and retailers, and used principally in the professional fields by physicians, nurses, hospitals, eye care professionals and clinics.",
+      "excerpt_is_shortened": true,
+      "question": "Which reportable business segments does Johnson & Johnson operate in as of FY2024?",
+      "teaching_note": "Identify the company and relevant as-of period. FY2024 is supplied by the source question/context, not inferred from this excerpt."
+    },
+    {
+      "id": "2cb207a9-13eb-48d8-8c83-20bde4871b71",
+      "ticker": "ABBV",
+      "source_record_sha256": "4c4f30b6336d6ad853e0e99b559f6aa5208eb6f44ca4a7f1f65561a9ace44630",
+      "passage_excerpt": "The successful discovery, development, manufacturing and sale of biologics is a long, expensive and uncertain process. There are unique risks and uncertainties with biologics. For example, access to and supply of necessary biological materials, such as cell lines, may be limited and current governmental regulations restrict access to and regulate the transport and use of such materials. In addition, the development, manufacturing and sale of biologics is subject to regulations that are often more complex and extensive than the regulations applicable to other pharmaceutical products. As a result, manufacturing biologics, especially in large quantities, is often complex and may require the use of innovative technologies. Such manufacturing also requires facilities specifically designed and validated for this purpose and sophisticated quality assurance and quality control procedures. Biologics are also frequently costly to manufacture because production inputs are derived from living animal or plant material, and some biologics cannot be made synthetically. Failure to successfully discover, develop, manufacture and sell biologics—including Humira, Skyrizi, Botox and Creon —could have a negative impact on AbbVie's business and results of operations.",
+      "excerpt_is_shortened": true,
+      "question": "What specific risks does AbbVie face in relation to biologics?",
+      "teaching_note": "Identify the company and specific risk subject. Do not force a date into a general risk question when it is unnecessary."
+    }
+  ]
+}

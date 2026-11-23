@@ -1,0 +1,106 @@
+[
+  {
+    "case_id": "trial-07",
+    "ticker": "NUE",
+    "company_name": "Nucor Corporation",
+    "year": 2025,
+    "quarter": 1,
+    "fiscal_period_end": "2025-04-05",
+    "form": "10-Q",
+    "accession_number": "0000950170-25-071567",
+    "original_remark": "We've prefunded upcoming debt maturities raising $1 billion in new senior notes with a weighted average coupon of 4.88%, and took steps to wind down or repurpose certain operations at divisions where we believe resources can be allocated more efficiently.",
+    "bounded_remark": "We've prefunded upcoming debt maturities raising $1 billion in new senior notes with a weighted average coupon of 4.88%.",
+    "correction": "Exclude unrelated wind-down/repurposing assertion.",
+    "selection_status": "user_authorized_pilot_input_assistant_evidence_review",
+    "passages": [
+      {
+        "passage_id": "0000950170-25-071567:PART I:ITEM 1:29",
+        "text": "14\nThe following stock options were excluded from the computation of diluted net earnings per share because their effect would have been anti-dilutive (shares in thousands):\n||Three Months (13 Weeks) Ended \u2014 April 5, 2025|March 30, 2024|\n|---|---|---|\n|Anti-dilutive stock options:|||\n|Weighted-average shares|66|-|\n|Weighted-average exercise price|$ 142.08|$ -|\n**17. Debt and Other Financing Arrangements**\n\nIn March 2025, Nucor completed the issuance and sale of $ 500 million aggregate principal amount of its 4.650 % Notes due 2030 (the \u201c2030 Notes\u201d) and $ 500 million aggregate principal amount of its 5.100 % Notes due 2035 (the \u201c2035 Notes\u201d and, together with the 2030 Notes, the \u201cNotes\u201d). We plan to use the net proceeds from the issuance and sale of the Notes, along with cash on hand, if necessary, to redeem all of the outstanding $ 500 million aggregate principal amount of our 2.000 % Notes due 2025 and $ 500 million aggregate principal amount of our 3.950 % Notes due 2025 (collectively, the \u201c2025 Notes\u201d) pursuant to the terms of the indenture governing the 2025 Notes, with remaining proceeds, if any, to be used for general corporate purposes. Net proceeds from the issuance and sale of the Notes were $ 997 million. Costs of $ 9 million associated with the issuance and sale of the Notes have been capitalized and will be amortized over the life of the Notes."
+      }
+    ]
+  },
+  {
+    "case_id": "trial-14",
+    "ticker": "WEC",
+    "company_name": "WEC Energy Group, Inc.",
+    "year": 2025,
+    "quarter": 1,
+    "fiscal_period_end": "2025-03-31",
+    "form": "10-Q",
+    "accession_number": "0000107815-25-000182",
+    "original_remark": "Now as you may recall, our Board at its January meeting increased the dividend by 6.9%.",
+    "bounded_remark": "Now as you may recall, our Board at its January meeting increased the dividend by 6.9%.",
+    "correction": "None",
+    "selection_status": "user_authorized_pilot_input_assistant_evidence_review",
+    "passages": [
+      {
+        "passage_id": "0000107815-25-000182:PART I:ITEM 2:41",
+        "text": "In January 2025, our Board of Directors increased our quarterly dividend by $0.0575 per share (6.9%) effective with the March 2025 dividend payment.\n**Other Significant Financing Activities**\n\nFor more information on our other significant financing activities, see Note 7, Common Equity, Note 8, Short-Term Debt and Lines of Credit, and Note 9, Long-Term Debt.\n**Cash Requirements**\n\nWe require funds to support and grow our businesses. Our significant cash requirements primarily consist of capital and investment expenditures, payments to retire and pay interest on long-term debt, the payment of common stock dividends to our shareholders, and the funding of our ongoing operations. See the discussion below and Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations \u2013 Liquidity and Capital Resources \u2013 Cash Requirements in our 2024 Annual Report on Form 10-K for additional information regarding our significant cash requirements.\n***Significant Capital Projects***\n\nWe have several capital projects and acquisitions that will require significant capital expenditures over the next three years and beyond. All projected capital requirements are subject to periodic review and may vary significantly from estimates, depending on a number of factors. These factors include environmental requirements, regulatory restraints and requirements, changes in tax laws and regulations, acquisition and development opportunities, market volatility, economic trends, supply chain disruptions, inflation, and interest rates. Our estimated capital expenditures and acquisitions for the next three years are reflected below. These amounts include anticipated expenditures for environmental compliance and certain remediation issues. For a discussion of certain environmental matters affecting us, see Note 21, Commitments and Contingencies."
+      }
+    ]
+  },
+  {
+    "case_id": "trial-22",
+    "ticker": "FITB",
+    "company_name": "Fifth Third Bancorp",
+    "year": 2025,
+    "quarter": 1,
+    "fiscal_period_end": "2025-03-31",
+    "form": "10-Q",
+    "accession_number": "0000035527-25-000137",
+    "original_remark": "During the quarter, our $225 million share repurchase reduced our share count by 5.2 million shares.",
+    "bounded_remark": "During the quarter, our $225 million share repurchase reduced our share count by 5.2 million shares.",
+    "correction": "None",
+    "selection_status": "user_authorized_pilot_input_assistant_evidence_review",
+    "passages": [
+      {
+        "passage_id": "0000035527-25-000137:PART I:ITEM 1:section0:89",
+        "text": "These senior notes are redeemable at the Bank\u2019s option, in whole, but not in part, one year prior to their maturity date, or in whole or in part beginning 30 days prior to maturity, at par plus accrued and unpaid interest.\n**12. Capital Actions**\n\n***Accelerated Share Repurchase Transaction***\n\nDuring the three months ended March 31, 2025, the Bancorp entered into and settled an accelerated share repurchase transaction. As part of the transaction, the Bancorp entered into a forward contract in which the final number of shares delivered at settlement was based on a discount to the average daily volume-weighted average price of the Bancorp\u2019s common stock during the term of the repurchase agreement. The accelerated share repurchase was treated as two separate transactions: (i) the repurchase of treasury shares on the repurchase date and (ii) a forward contract indexed to the Bancorp\u2019s common stock.\nThe following table presents a summary of the Bancorp\u2019s accelerated share repurchase transaction that was entered into and settled during the three months ended March 31, 2025:\n|Repurchase Date|Amount ($ in millions)|Shares Repurchased on Repurchase Date|Shares Received from Forward Contract Settlement|Total Shares Repurchased|Final Settlement Date|\n|---|---|---|---|---|---|\n|January 23, 2025|$ 225|4,353,517|888,865|5,242,382|March 5, 2025|\nThe Bancorp increased the cost basis of shares repurchased during the three months ended March 31, 2025 by $ 1 million as a result of the excise tax on share repurchases.\n****Table of Contents****\nFifth Third Bancorp and Subsidiaries Notes to Condensed Consolidated Financial Statements (unaudited)\n**13."
+      }
+    ]
+  },
+  {
+    "case_id": "trial-23",
+    "ticker": "PLTR",
+    "company_name": "Palantir Technologies Inc.",
+    "year": 2025,
+    "quarter": 1,
+    "fiscal_period_end": "2025-03-31",
+    "form": "10-Q",
+    "accession_number": "0001321655-25-000066",
+    "original_remark": "Additionally, our combined revenue growth and adjusted operating margin accelerated to 83% in the first quarter, a 2-point increase to our rule of 40 score from the prior quarter on our seventh consecutive quarter of an expanding rule of 40 score.",
+    "bounded_remark": "Our combined revenue growth and adjusted operating margin was 83% in the first quarter.",
+    "correction": "Remove unsupported prior-quarter comparison and consecutive-quarter assertion; add rank 2 explicit adjusted margin.",
+    "selection_status": "user_authorized_pilot_input_assistant_evidence_review",
+    "passages": [
+      {
+        "passage_id": "0001321655-25-000066:PART I:ITEM 2:2",
+        "text": "For the three months ended March 31, 2025, we generated $883.9 million in revenue, reflecting a 39% growth rate from the three months ended March 31, 2024, when we generated $634.3 million in revenue.\nIn the three months ended March 31, 2025, we generated income from operations of $176.0 million, or adjusted income from operations of $390.7 million when excluding stock-based compensation and related employer payroll taxes. In the three months\n****Table of contents****\n\nended March 31, 2024, we generated income from operations of $80.9 million, or adjusted income from operations of $226.5 million when excluding stock-based compensation and related employer payroll taxes. In the three months ended March 31, 2025, our gross profit was $710.9 million, reflecting a gross margin of 80%, or 82% when excluding stock-based compensation. In the three months ended March 31, 2024, our gross profit was $518.1 million, reflecting a gross margin of 82%, or 83% when excluding stock-based compensation.\nFor more information about our adjusted income from operations, which excludes stock-based compensation and related employer payroll taxes; and gross profit and gross margin, when excluding stock-based compensation; as well as reconciliations from income from operations and gross profit, see the section titled *\u201cNon-GAAP Reconciliations\u201d* below .\n***Our Customers***\n\nWe define a customer as an organization from which we have recognized revenue during the trailing twelve-month period. During the period ended March 31, 2025, we had 769 customers, including companies in various commercial sectors and government agencies around the world. During the period ended March 31, 2024, we had 554 customers."
+      },
+      {
+        "passage_id": "0001321655-25-000066:PART I:ITEM 2:10",
+        "text": "***Adjusted Income from Operations***\nThe following table provides a reconciliation of adjusted income from operations, which excludes stock-based compensation and related employer payroll taxes for the three months ended March 31, 2025 and 2024 (in thousands):\n||Three Months Ended March 31, \u2014 2025|2024|\n|---|---|---|\n|Income from operations|$ 176,048|$ 80,881|\n|Add: stock-based compensation|155,339|125,651|\n|Add: employer payroll taxes related to stock-based compensation|59,323|19,926|\n|Adjusted income from operations|$ 390,710|$ 226,458|\n|Adjusted operating margin|44 %|36 %|\n**Components of Results of Operations**\n\n***Revenue***\n\nWe generate revenue from the sale of subscriptions to access our software platforms in our hosted environment along with ongoing operating and maintenance (\u201cO&M\u201d) services (\u201cPalantir Cloud\u201d), software subscriptions in our customers\u2019 environments with ongoing O&M services (\u201cOn-Premises Software\u201d), and professional services.\n\n*Palantir Cloud*\n\nOur Palantir Cloud subscriptions grant customers the right to access the software functionality in a hosted environment controlled by Palantir and are sold together with stand-ready O&M services, as further described below. We agree to provide continuous access to our hosted software throughout the contract term. Revenue associated with Palantir Cloud subscriptions is\n****Table of contents****\n\ngenerally recognized over the contract term on a ratable basis, which is consistent with the transfer of control of the Palantir services to the customer.\n\n*On-Premises Software*\n\nSales of our software licenses, primarily term licenses, grant customers the right to use functional intellectual property, either on their internal hardware infrastructure or on their own cloud instance, over the contractual term and are also sold together with stand-ready O&M services."
+      }
+    ]
+  },
+  {
+    "case_id": "trial-27",
+    "ticker": "MSI",
+    "company_name": "Motorola Solutions, Inc.",
+    "year": 2025,
+    "quarter": 1,
+    "fiscal_period_end": "2025-03-29",
+    "form": "10-Q",
+    "accession_number": "0000068505-25-000024",
+    "original_remark": "GAAP earnings per share was $2.53, up from a $0.23 in the year-ago quarter, which then included a non-operating loss due to the accounting treatment for the settlement of our Silver Lake convertible debt.",
+    "bounded_remark": "GAAP earnings per share was $2.53, up from a loss of $0.23 in the year-ago quarter, which then included a non-operating loss due to the accounting treatment for the settlement of our Silver Lake convertible debt.",
+    "correction": "Correct prior-year EPS sign to negative, as reported by the filing.",
+    "selection_status": "user_authorized_pilot_input_assistant_evidence_review",
+    "passages": [
+      {
+        "passage_id": "0000068505-25-000024:PART I:ITEM 1:section0:14",
+        "text": "29, 2025 | March 30, 2024 | | --- | --- | --- | | Interest, net: | | | | Interest expense | $ ( 69 ) | $ ( 61 ) | | Interest income | 18 | 17 | | | $ ( 51 ) | $ ( 44 ) | | Other, net: | | | | Net periodic pension and postretirement benefit (Note 8) | $ 30 | $ 32 | | Loss from the extinguishment of Silver Lake Convertible Debt | \u2014 | ( 585 ) | | Investment impairments | \u2014 | ( 3 ) | | Foreign currency gain (loss) | ( 20 ) | 1 | | Gain (loss) on derivative instruments (Note 6) | 13 | ( 10 ) | | Fair value adjustments to equity investments | ( 5 ) | ( 2 ) | | Other | ( 2 ) | 2 | | | $ 16 | $ ( 565 ) | **Earnings (Loss) Per Common Share** Basic and diluted earnings (loss) per common share from net earnings attributable to Motorola Solutions, Inc. are computed as follows: | | Amounts attributable to Motorola Solutions, Inc. common stockholders | | | --- | --- | --- | | | Three Months Ended | | | | March 29, 2025 | March 30, 2024 | | Basic earnings per common share: | | | | Earnings (loss) | $ 430 | $ ( 39 ) | | Weighted average common shares outstanding | 166.9 | 166.3 | | Per share amount | $ 2.58 | $ ( 0.23 ) | | Diluted earnings per common share: | | | | Earnings (loss) | $ 430 | $ ( 39 ) | | Weighted average common shares outstanding | 166.9 | 166.3 | | Add effect of dilutive securities: | | | | Share-based awards | 2.9 | \u2014 | | Diluted weighted average common shares outstanding | 169.8 | 166.3 | | Per share amount | $ 2.53 | $ ( 0.23 ) | In the computation of diluted earnings per common share for the three months ended March 29, 2025 , the assumed exercise of 0.1 million options and 0.1 million awards subject to performance conditions, were excluded from the computation of"
+      }
+    ]
+  }
+]

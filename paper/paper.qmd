@@ -19,11 +19,15 @@ editor: visual
 
 # Introduction
 
-SEC filings are the primary data source available for public companies. They are at their core legal documents with significant boilerplate legalese language and text carried across filings periods. This linguistic style and repetition creates a challenge for dense passage retrievers to identify relevant information in retrieval tasks. FinRank (Mansouri 2026) established a benchmark for this task using human generated questions and matched filings pairs. The baseline result demonstrates that a dense passage retreiver (Karpukhin 202) performs on par with algorithmic methods TF-IDF and BM25.
+SEC filings are the primary data source available for public companies. They are at their core legal documents with significant boilerplate legalese language and text carried across filings periods. This linguistic style and repetition creates a challenge for dense passage retrievers to identify relevant information in retrieval tasks. FinRank (Mansouri 2026) established a benchmark for this task using human generated questions and matched filings pairs. On the full FinRank benchmark, MPNet performed on par with lexical retrieval. At rank 20, it recovered 42.0% of supporting passages on average, compared with 41.9% for TF-IDF and 40.1% for BM25. Karpukhin et al. (2020) reported gains of 9–19 percentage points over BM25 in top-20 passage retrieval accuracy using different open-domain question answering datasets.
 
-Training a retriever/reranker requires significant volume of labeled training data in the forms of natural language question and matched filing passage pairs. This is a significant human effort to interpret and label, so I look to other sources to scale the training process faster. Earnings call transcripts fit the shape of the gap. They have a natural language interpretation of the most important parts of the related SEC filings.
+Similar wording can appear in filings from different companies or reporting periods. I add the issuer, filing year, and form to each passage to give the retriever that context. This metadata-enriched system serves as the baseline for testing whether earnings-call supervision improves retrieval.
 
-In this study, I ask 2 research questions: - Can earnings call transcript supervision be used to train a retriever/reranker for SEC passage retrieval? - Can a small set of human labels extend the supervised learning through remark classification and question generation?
+Fine-tuning a retriever and reranker requires labeled examples pairing questions with supporting filing passages. Creating these examples requires human interpretation and review. Earnings-call transcripts provide a potential source of supervision because management discusses financial results and business developments also reported in the filings.
+
+**Research question.** Does fine-tuning an MPNet retriever and MiniLM reranker on original earnings-call remarks or synthetic questions paired with filing passages improve SEC passage retrieval over the same system with metadata enrichment alone?
+
+I used a small set of hand-labeled remarks to understand why similarity-based selection retained boilerplate and to guide which remarks entered the training-data pipeline.
 
 ```{r}
 #| label: data-construction-counts
@@ -130,22 +134,9 @@ I parsed `r n_transcripts` earnings-call transcripts into prepared remarks and a
 
 # Methods
 
-## Data exploration
+## Remark–filing pairs
 
-```{r}
-#| label: ect-skie-audit-counts
-#| include: false
-
-audit_n <- 100L
-boilerplate_n <- 6L
-boilerplate_high_high <- 5L
-high_high_substantive <- 17L
-high_high_n <- 25L
-```
-
-### Part I ECT-SKIE matching (need inline variables)
-
-Huang et al. (2025) used an information bottleneck and the structure of earnings calls to select informative remarks without human labels. I adapted this approach to ask whether a selector using transcript and filing embeddings could identify remarks with supporting evidence in the corresponding SEC filing. In the exploratory runs, boilerplate in a call sometimes matched boilerplate in the filing. These matches could score well while providing little useful evidence for a financial question. The selector ablation (@tbl-ect-skie-ablation) compares held-out filing alignment, Q&A alignment, and duplicate selections.”
+Huang et al. (2025) used an information bottleneck and the structure of earnings calls to select informative remarks without human labels. I adapted this approach to ask whether a selector using transcript and filing embeddings could identify remarks with supporting evidence in the corresponding SEC filing. In the exploratory runs, boilerplate in a call sometimes matched boilerplate in the filing. These matches could score well while providing little useful evidence for a financial question. The [appendix](#sec-ect-skie) reports the selector training and manual review.
 
 ```{r}
 #| label: load-blinded-audit
@@ -171,11 +162,14 @@ stopifnot(!anyDuplicated(audit$audit_id), !anyDuplicated(scores$sentence_id),
 audit_counts <- table(factor(groups, levels = group_ids),
                       factor(labels, levels = label_ids))
 audit_high_substantive <- sum(audit_counts[1, 1:2])
+audit_same_similarity <- scores$same_company_similarity[match(audit$sentence_id, scores$sentence_id)]
+stopifnot(!anyNA(audit_same_similarity))
+audit_label_median <- function(label) {
+  sprintf("%.3f", median(audit_same_similarity[labels == label]))
+}
 ```
 
-Following Brown and Tucker (2011), I used TF-IDF cosine similarity to compare each prepared remark with sentences from the same company’s preceding call and another company’s call, keeping the highest score for each comparison. Similarity was higher for the same company’s preceding call (median 0.3177) than for another company’s call (median 0.1451), so I report the audit results by same-company similarity. Of the `r sum(audit_counts[, 1:2])` substantive sentences in the blinded audit, `r sum(audit_counts[, 2])` were labeled repeated substantive. Also, `r sum(audit_counts[1:2, 3:4])` of the `r sum(audit_counts[, 3:4])` sentences labeled boilerplate or administrative had at-or-above-median similarity to the same company’s preceding call. This helps explain why the ECT-SKIE-inspired selector could retain boilerplate when it relied on alignment. Companies could reuse the same wording to report a new result, so I used hand-labeled examples to help the model distinguish substantive updates from boilerplate. The [blinded audit protocol](#sec-blinded-remark-audit) defines the similarity groups and human labels. Table\~\ref{tab:blinded-remark-audit} reports the counts.
-
-### Part II LLM matching
+Following Brown and Tucker (2011), I examined repeated language using TF-IDF cosine similarity and a blinded human audit of `r length(labels)` remarks. Of the `r sum(audit_counts[, 1:2])` substantive remarks, `r sum(audit_counts[, 2])` were labeled repeated substantive and `r sum(audit_counts[, 1])` novel substantive. Their median similarity to the same company’s preceding call was `r audit_label_median("repeated_substantive")` and `r audit_label_median("novel_substantive")`, respectively, compared with `r audit_label_median("boilerplate")` for boilerplate. Yet `r sum(audit_counts[1:2, 1:2])` substantive remarks also had at-or-above-median similarity to the preceding call. Both novel and repeated remarks could be useful, so similarity alone was not enough to exclude boilerplate. I used hand-labeled examples to help the model distinguish them. The [appendix](#sec-blinded-remark-audit) reports the audit procedure and results.
 
 ```{r}
 #| label: load-usefulness-audit
@@ -201,15 +195,11 @@ usefulness_example <- function(id, label) {
 }
 ```
 
-I reviewed `r usefulness_total` remarks previously labeled substantive and judged `r usefulness_yes` useful for generating a specific question that the matched SEC filing could plausibly answer. I gave Qwen3-8B examples of both decisions in a few-shot prompt. Qwen screened `r data_count("Remark usefulness", "Labeled chunks")` prepared-remark chunks and flagged `r data_count("Remark usefulness", "Useful")` as useful. The [usefulness audit](#sec-usefulness-audit) gives the decision rules and examples.
+I reviewed `r usefulness_total` remarks previously labeled substantive and judged `r usefulness_yes` useful for generating a specific question that the matched SEC filing could plausibly answer. I gave Qwen3-8B examples of both decisions in a few-shot prompt. Qwen screened `r data_count("Remark usefulness", "Labeled chunks")` prepared-remark chunks and flagged `r data_count("Remark usefulness", "Useful")` as useful. Qwen’s screening favored precision over recall, retaining fewer non-useful remarks but missing some useful ones. The [usefulness audit](#sec-usefulness-audit) gives the decision rules and examples.
 
-For each flagged remark selected for the training-data pipeline, I used BM25 to search the filing for the same company and fiscal period. The highest-ranked passage became the candidate evidence. The generator used the remark and candidate passage to produce a summary and a question. After a retrieval check, JEV judged whether the passage supported the claims in the generated summary, including any figures, reporting periods, and qualifiers. This gave each stage a distinct role. Qwen screened for a promising topic, BM25 proposed a passage, and JEV checked the evidence behind the summary.
+For each flagged remark selected for the training-data pipeline, I used BM25 to search the filing for the same company and fiscal period. The highest-ranked passage became the candidate evidence. Qwen screened for a promising topic, and BM25 proposed a passage. Generation and evidence checks followed, as described below.
 
-In practice, the process favored questions about reported financial results, especially questions about specific values and comparisons. Broader questions were harder to support with the retrieved evidence. This motivated the focus on FinRank’s quantitative questions in the training evaluations.
-
-### Processed data
-
-I constructed two datasets from remarks and their associated filing passages. The direct dataset used the original prepared remark as the query. It contained `r remark_filing_pairs` remark–passage pairs. These were recovered from accepted generation runs, where verification checked the generated summary against the passage. The passage could therefore support the topic without supporting every statement in the original remark.
+## Synthetic question generation
 
 ```{r}
 #| label: load-generation-cases
@@ -227,13 +217,15 @@ generation_rate <- sprintf("%.1f%%", 100 * generation_status("accepted") / nrow(
 
 The synthetic-data pipeline processed `r generation_n(nrow(generation_inputs))` remark–passage inputs across the initial run and `r generation_n(sum(startsWith(unique(generation_cases$run), "batch-")))` batches, representing `r generation_n(length(unique(generation_inputs$remark_text_hash)))` distinct remark texts. BM25 proposed one passage per input from the filing for the same issuer and fiscal period. Within each batch, I grouped remarks that pointed to the same passage. This left `r generation_n(nrow(generation_cases))` generation cases covering `r generation_n(length(unique(generation_cases$passage_id)))` distinct passage IDs. A passage could appear in more than one batch.
 
-Following Promptagator, I used few-shot examples to guide Nemotron Nano 9B in generating a summary and then a question. The remark guided the topic, and the passage supplied the evidence. The final training example paired the generated question with the passage.
+Following Promptagator (Dai et al., 2022), I used few-shot examples to guide Nemotron Nano 9B in generating a summary and then a question. The remark guided the topic, and the passage supplied the evidence. The final training example paired the generated question with the passage.
 
-Removing `r sum(generation_cases$status == "accepted") - generation_unique` duplicate questions left `r generation_unique` unique accepted questions. I retained the first `r synthetic_questions` pairs for the experiment.
+After the retrieval and evidence checks described below, removing `r sum(generation_cases$status == "accepted") - generation_unique` duplicate questions left `r generation_unique` unique accepted questions. I retained the first `r synthetic_questions` pairs for the experiment.
 
-### Part III. Supervised learning
+## Training
 
-I fine-tuned MPNet for retrieval and MiniLM for reranking in separate runs for the two datasets. MPNet used paired InfoNCE to bring the query closer to its positive passage than to sampled negatives. MiniLM used binary cross-entropy to score query–passage pairs as positive or negative. For the main comparison, I prefixed both positive and negative passages with the issuer, filing year, and form.
+I constructed two datasets from remarks and their associated filing passages. The direct dataset used the original prepared remark as the query. It contained `r remark_filing_pairs` remark–passage pairs. These were recovered from accepted generation runs, where verification checked the generated summary against the passage. The passage could therefore support the topic without supporting every statement in the original remark.
+
+I fine-tuned MPNet for retrieval and MiniLM for reranking in separate runs for the two datasets. I used the same training procedure for both datasets to compare original remarks with generated questions as supervision. MPNet used paired InfoNCE to bring the query closer to its positive passage than to sampled negatives. MiniLM used binary cross-entropy to score query–passage pairs as positive or negative. For the main comparison, I prefixed both positive and negative passages with the issuer, filing year, and form.
 
 For each query and positive passage, I randomly sampled up to one negative from each of four groups: a different section of the same filing, the same form and section from a different fiscal period for the same issuer, the same form and section from another issuer in the same industry (preferring the same fiscal period), and any passage from another issuer. I used a fixed seed, drew passages from issuers in the same split as the query, excluded exact text duplicates after normalizing case and whitespace, and skipped groups with no eligible passage. These were assumed negatives. A passage from another section or fiscal period could still contain relevant evidence.
 
@@ -241,7 +233,7 @@ The direct dataset contained 533 training and 28 validation pairs. The synthetic
 
 ## Evaluation of generated data
 
-I used the generated question to test whether MPNet recovered the source passage in its top 50 and MiniLM kept it in the top five. JEV then checked the summary claims against the source passage.
+I used the generated question to test whether MPNet recovered the source passage in its top 50 and MiniLM kept it in the top five. JEV then checked whether the source passage supported the claims in the generated summary, including any figures, reporting periods, and qualifiers.
 
 The pipeline accepted `r generation_status("accepted")` of `r generation_n(nrow(generation_cases))` cases (`r generation_rate`). Table\~\ref{tab:generation-outcomes} reports the outcomes. The acceptance rate describes the pipeline’s decisions.
 
@@ -273,6 +265,8 @@ cat("\\begin{table}[t]", "\\centering", "\\small",
 ```
 
 In a separate audit, I generated 100 questions and used JEV to judge each question and its proposed answer against the supplied filing evidence. I recorded source-passage recovery separately and reviewed the 59 cases JEV accepted. The review identified unsupported claims and cases where the question or answer needed a correction to its scope or reporting period.
+
+In practice, the process favored questions about reported financial results, especially questions about specific values and comparisons. Broader questions were harder to support with the retrieved evidence. This motivated the focus on FinRank’s quantitative questions in the training evaluations.
 
 # Experimental Setup
 
@@ -315,9 +309,9 @@ cat("\\hline\n\\end{tabular}\n",
     "\\label{tab:retrieval-results}\n\\end{table*}\n", sep = "")
 ```
 
-**Metadata.** On the full benchmark, filtering BM25 with FinRank's source metadata raised Recall@10 from 32.10 to 55.00. On the quantitative subset, adding passage metadata to MPNet and MiniLM raised Recall@10 from 28.54 to 31.78 and nDCG@10 from 18.33 to 21.24. Query-derived filtering alone reached 38.35 Recall@10. Combining filtering and enrichment slightly lowered Recall@10 to 37.94 and raised nDCG@10 to 25.01, the best ranking score among the conditions that derived filters from the question. With enrichment and the supplied source metadata, the oracle reached 52.37 Recall@10 and 36.29 nDCG@10.
+**Metadata.** On the full benchmark, filtering BM25 with FinRank's source metadata raised Recall\@10 from 32.10 to 55.00. On the quantitative subset, adding passage metadata to MPNet and MiniLM raised Recall\@10 from 28.54 to 31.78 and nDCG\@10 from 18.33 to 21.24. Query-derived filtering alone reached 38.35 Recall\@10. Combining filtering and enrichment slightly lowered Recall\@10 to 37.94 and raised nDCG\@10 to 25.01, the best ranking score among the conditions that derived filters from the question. With enrichment and the supplied source metadata, the oracle reached 52.37 Recall\@10 and 36.29 nDCG\@10.
 
-**Supervised training.** With metadata enrichment alone, Recall@10 was 31.78 and nDCG@10 was 21.24. Direct remark training reached 28.57 and 19.41, while synthetic question training reached 30.75 and 20.54. Synthetic questions performed better than direct remarks on both measures in this comparison. Both fell below enrichment alone. The comparison changes both query form and training set size, which limits what I can attribute to the use of generated questions. An earlier synthetic training run improved recall while lowering nDCG@10, so the outcome also depended on the training configuration and metric.
+**Supervised training.** With metadata enrichment alone, Recall\@10 was 31.78 and nDCG\@10 was 21.24. Direct remark training reached 28.57 and 19.41, while synthetic question training reached 30.75 and 20.54. Synthetic questions performed better than direct remarks on both measures in this comparison. Both fell below enrichment alone. The comparison changes both query form and training set size, which limits what I can attribute to the use of generated questions. An earlier synthetic training run improved recall while lowering nDCG\@10, so the outcome also depended on the training configuration and metric.
 
 # Conclusion
 
@@ -401,36 +395,15 @@ Tran, Kurry (huggingface: [@kurry]). (2025). S&P 500 earnings call transcripts \
 - Fine-tuning control using FinRank-labeled examples.
 - Data sources, code entry points, and saved experiment outputs.
 
-## ECT-SKIE-inspired remark selection
+## ECT-SKIE-inspired remark selection {#sec-ect-skie}
 
 **Question** Could a model learn to select prepared remarks that point to useful filing evidence without hand-labeled remark–passage pairs?
 
-**Approach** I adapted Huang et al.’s (2025) information bottleneck to select a small set of prepared remarks from each call. I trained the selector with two InfoNCE loss terms. One aligned the selected remarks with passages from the same issuer’s filing for that fiscal period. The other aligned them with analyst Q&A from the same call. Training used in-batch negatives and filtered BM25 hard negatives. I also tested a KL divergence penalty that encouraged the model to distribute weight more evenly across its selection slots. The experiment used 350 company-quarters for training, 44 for validation, and 43 for testing.
+**Approach** I adapted Huang et al.’s (2025) information bottleneck to select a small set of prepared remarks from each call. I trained the selector with two InfoNCE loss terms. One aligned the selected remarks with passages from the same issuer’s filing for that fiscal period. The other aligned them with analyst Q&A from the same call. Training used in-batch negatives and filtered BM25 hard negatives. The experiment used 350 company-quarters for training, 44 for validation, and 43 for testing.
 
-**Result** At a KL weight of 0.1, the duplicate-slot rate fell from 10.56% to 9.63%, and Q&A alignment loss fell from 0.4674 to 0.4404. Filing alignment loss rose from 0.4017 to 0.4315. The selector without KL had the lowest filing alignment loss, so I retained the two InfoNCE terms. The experiment measured alignment and duplicate selections. Whether the selected remarks could support filing-grounded questions remained open.
+**Result** During manual review, I found that some remarks aligned with filing passages because both used similar boilerplate. Alignment alone did not establish whether the selected remarks could support useful filing-grounded questions.
 
-```{=latex}
-\begin{table}[t]
-\centering
-\small
-\begin{tabular}{@{}rrrr@{}}
-\hline
-KL weight & Q\&A loss & Filing loss & Duplicates (\%) \\
-\hline
-0     & 0.4674          & \textbf{0.4017} & 10.56 \\
-0.001 & 0.4703          & 0.4107          & 10.35 \\
-0.01  & 0.5727          & 0.4369          & \textbf{9.52} \\
-0.1   & \textbf{0.4404} & 0.4315          & 9.63 \\
-\hline
-\end{tabular}
-\caption{Held-out results for the ECT-SKIE-inspired remark selector on 43 calls.
-Duplicates is the percentage of duplicate selection slots.
-Bold marks the lowest value in each metric.}
-\label{tab:ect-skie-ablation}
-\end{table}
-```
-
-**Hand labeling** During exploration, I saw boilerplate in a call align with boilerplate in its filing. I then examined repetition in a separate blinded audit. I report the audit counts by similarity to the same company’s preceding call, where the median similarity was higher. Reused wording could carry a new result, so I gave the model labeled examples of both repeated substantive updates and boilerplate. See Table\~\ref{tab:blinded-remark-audit}.
+**Hand labeling** During exploration, I saw boilerplate in a call align with boilerplate in its filing. I then examined repetition in a separate blinded audit. I report the audit counts by similarity to the same company’s preceding call, where the median similarity was higher. I looked for a similarity threshold to exclude boilerplate, but repeated language also appeared in substantive remarks. The audit did not establish a reliable cutoff, so I used labeled examples to guide remark selection. See Table\~\ref{tab:blinded-remark-audit}.
 
 #### Blinded audit of repeated language {#sec-blinded-remark-audit}
 
@@ -466,7 +439,6 @@ cat(
   "\\label{tab:blinded-remark-audit}", "\\end{table}", sep = "\n"
 )
 ```
-
 
 ### Usefulness audit {#sec-usefulness-audit}
 

@@ -1,0 +1,54 @@
+{
+  "target": 500,
+  "accepted_unique": 500,
+  "remaining": 0,
+  "available_unique": 532,
+  "duplicate_questions_excluded": 29,
+  "pipeline_counts": {
+    "accepted": 561,
+    "declined_summary": 151,
+    "rejected_rerank": 152,
+    "rejected_retrieval": 509,
+    "rejected_verification": 113,
+    "failed_generation_skipped": 1,
+    "declined_question": 6
+  },
+  "batch_count": 14,
+  "phase": "ready_for_dataset_preparation",
+  "baseline": "data/experiments/finrank_quantitative_baseline",
+  "note": "Accepted means pipeline-approved silver labels; measured precision is not implied.",
+  "baseline_metrics": {
+    "tfidf": {
+      "recall@1": 3.8785460992907796,
+      "recall@5": 18.018617021276594,
+      "recall@10": 26.285460992907794,
+      "recall@20": 35.305851063829785,
+      "mrr": 17.182128182034347,
+      "ndcg@10": 16.13856585356687
+    },
+    "bm25": {
+      "recall@1": 5.673758865248227,
+      "recall@5": 19.28191489361702,
+      "recall@10": 27.016843971631204,
+      "recall@20": 35.305851063829785,
+      "mrr": 18.452484363133056,
+      "ndcg@10": 17.213029515501727
+    },
+    "dense": {
+      "recall@1": 3.413120567375886,
+      "recall@5": 14.259751773049645,
+      "recall@10": 24.951241134751772,
+      "recall@20": 35.93085106382979,
+      "mrr": 14.776526732611103,
+      "ndcg@10": 14.209991040266823
+    },
+    "ce_dense": {
+      "recall@1": 5.740248226950354,
+      "recall@5": 19.28191489361702,
+      "recall@10": 28.541666666666664,
+      "recall@20": 35.93085106382979,
+      "mrr": 19.44060224454949,
+      "ndcg@10": 18.32964011409927
+    }
+  }
+}
